@@ -30,7 +30,7 @@ class App extends Component {
     }
   }
   
-  myLoop = () => {
+  binarySearch = () => {
     var iterations = this.state.iterations;
     var low = this.state.low;
     setTimeout(() => {
@@ -49,7 +49,7 @@ class App extends Component {
             low = mid;
         }
         this.setState({ high: high, low: low })
-        this.myLoop();
+        this.binarySearch();
       }
     }, 1000)
   }
@@ -57,7 +57,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <button onClick = { this.myLoop.bind(this) }>Start Binary Search</button>
+        <button onClick = { this.binarySearch.bind(this) }>Start Binary Search</button>
         <p>The search array is {formattedArray(searchArray)}</p>
         <p>The item we are looking for is { this.state.searchNumber }</p>
         <p>The item was located at array index: { this.state.index }</p>
