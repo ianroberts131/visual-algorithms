@@ -22,3 +22,63 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+#header {
+  text-align: center;
+}
+
+.binary-search-button {
+  width: 150px;
+  height: 50px;
+  background-color: blue;
+  color: white;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.side-bar {
+  position: relative;
+  float: left;
+  width: 25%;
+  height: 100vh;
+}
+
+.grid-section {
+  position: relative;
+  float: right;
+  width: 75%;
+  height: 100vh;
+}
+
+.grid {
+  width: 880px;
+  margin: auto;
+  padding-top: 10vh;
+  position: relative;
+  
+}
+
+.grid-item {
+  width: 40px;
+  height: 40px;
+  color: white;
+  margin: 1px;
+  float: left;
+  text-align: center;
+}
+
+.in-remaining-elements {
+  background-color: blue;
+}
+
+.not-in-remaining-elements {
+  background-color: grey;
+}
+
+.high-or-low-element {
+  background-color: red;
+}
+
+.target-element {
+  background-color: green;
+}
