@@ -20,6 +20,18 @@ var iterations;
 var low;
 var high;
 var mid;
+var testItem;
+
+var binarySearch = {
+  name: "Binary Search",
+  description: "A search algorithm that finds the position of a target value within a sorted array. It compares the target value to the middle element of the array; if they are unequal, the half in which the target cannot lie is eliminated and the search continues on the remaining half until it is successful."
+}
+
+var sequentialSearch = {
+  name: "Sequential Search",
+  description: "A search algorithm that finds the position of a target value within a sorted array. It sequentially checks each element of the list for the target value until a match is found or until all the elements have been searched."
+}
+
 
 class App extends Component {
   constructor(){
@@ -28,12 +40,12 @@ class App extends Component {
       index: "",
       low: 0,
       high: searchArray.length - 1,
-      mid: "",
+      testItem: "",
       target: "",
       targetFound: false,
       iterations: 0,
       searchNumber: searchArray[Math.floor((Math.random() * 400) + 1)],
-      searchAlgorithm: "Binary Search",
+      searchAlgorithm: binarySearch,
       regularActive: true,
       slowActive: false,
       fastActive: false,
@@ -41,6 +53,33 @@ class App extends Component {
     }
   }
   
+  sequentialSearch() {
+    if (iterations === 0 ) {
+        testItem = 0;
+    }
+    setTimeout(() => {
+      low = this.state.low;
+      high = this.state.high;
+      testItem = this.state.testItem;
+      iterations ++;
+      this.setState({
+        low: low,
+        high: high,
+        index: testItem,
+        testItem: testItem,
+        iterations: iterations
+      });
+      
+      if (searchArray[this.state.testItem] !== this.state.searchNumber) {
+        low ++;
+        testItem ++;
+        this.setState({ low: low, testItem: testItem, index: testItem });
+        this.sequentialSearch();
+      } else {
+        this.setState({ target: testItem, high: testItem, targetFound: true });
+      }
+    }, this.state.intervalSpeed);
+  }
   
   binarySearch() {
     
@@ -54,24 +93,24 @@ class App extends Component {
         low: low,
         high: high,
         target: mid,
-        mid: mid,
+        testItem: mid,
         index: mid,
         iterations: iterations 
       });
       
-      if (searchArray[mid] !== this.state.searchNumber) {
-        if (this.state.searchNumber < searchArray[mid]) {
+      if (searchArray[this.state.testItem] !== this.state.searchNumber) {
+        if (this.state.searchNumber < searchArray[this.state.testItem]) {
             high = mid;
         } else {
             low = mid;
         }
         mid = Math.floor((low + high) / 2);
-        this.setState({ high: high, low: low, mid: mid });
+        this.setState({ high: high, low: low, testItem: mid });
         this.binarySearch();
       } else {
         this.setState({ target: mid, targetFound: true});
       }
-    }, this.state.intervalSpeed)
+    }, this.state.intervalSpeed);
   }
   
   clearSearch() {
@@ -79,7 +118,7 @@ class App extends Component {
     this.setState({ 
       low: 0,
       high: searchArray.length - 1,
-      mid: "",
+      testItem: "",
       iterations: 0,
       targetFound: false,
       searchNumber: searchArray[Math.floor((Math.random() * 400) + 1)]
@@ -90,6 +129,13 @@ class App extends Component {
   startBinarySearch() {
     this.clearSearch();
     this.binarySearch();
+    this.setState({ searchAlgorithm: binarySearch });
+  }
+  
+  startSequentialSearch() {
+    this.clearSearch();
+    this.sequentialSearch();
+    this.setState({ searchAlgorithm: sequentialSearch });
   }
   
   clickRegularButton() {
@@ -109,7 +155,7 @@ class App extends Component {
         slowActive: true,
         regularActive: false,
         fastActive: false,
-        intervalSpeed: 3000
+        intervalSpeed: 2000
       });
     }
   }
@@ -120,7 +166,7 @@ class App extends Component {
         fastActive: true,
         regularActive: false,
         slowActive: false,
-        intervalSpeed: 500
+        intervalSpeed: 200
       });
     }
   }
@@ -152,8 +198,8 @@ class App extends Component {
         </div>
         <section className="side-bar-section">
           <div className="algorithm-info">
-            <p id="algorithm-name"><strong>Algorithm: </strong>{ this.state.searchAlgorithm }</p>
-            <p id="description">Description: A search algorithm that finds the position of a target value within a sorted array. It compares the target value to the middle element of the array; if they are unequal, the half in which the target cannot lie is eliminated and the search continues on the remaining half until it is successful.</p>
+            <p id="algorithm-name"><strong>Algorithm: </strong>{ this.state.searchAlgorithm.name }</p>
+            <p id="description">Description: { this.state.searchAlgorithm.description }</p>
           </div>
           <div className="iteration-info-container">
             <div className="iteration-info">
@@ -167,7 +213,7 @@ class App extends Component {
         </section>
         <section className="grid-section">
           <div className="buttons">
-            <button className='button-size sequential-search-button'>Sequential Search</button>
+            <button className='button-size sequential-search-button' onClick={ this.startSequentialSearch.bind(this) }>Sequential Search</button>
             <button className='button-size binary-search-button' onClick={ this.startBinarySearch.bind(this) }>Binary Search</button>
             <div className="speed-buttons">
               <button className={ slowSpeedClass } onClick={ this.clickSlowButton.bind(this) }>Slow</button>
@@ -179,7 +225,7 @@ class App extends Component {
             <div className="grid">
               { searchArray.map((number, index) => {
                 var inSearchArea = index >= this.state.low && index <= this.state.high;
-                var isMidItem = index === this.state.mid && this.state.targetFound === false;
+                var isTestItem = index === this.state.testItem && this.state.targetFound === false;
                 var isHighOrLow = index === this.state.low || index === this.state.high;
                 var isTargetItem = index === this.state.target && this.state.targetFound === true;
                 if (this.state.targetFound === false) {
@@ -187,7 +233,7 @@ class App extends Component {
                     return <div className="grid-item not-in-remaining-elements">{ number }</div>;
                   } else if (isHighOrLow) {
                     return <div className="grid-item high-or-low-element">{ number }</div>;
-                  } else if (isMidItem) {
+                  } else if (isTestItem) {
                     return <div className="grid-item target-element">{ number }</div>;
                   } else {
                     return <div className="grid-item in-remaining-elements">{ number }</div>;
