@@ -31,7 +31,8 @@ class App extends Component {
       target: "",
       targetFound: false,
       iterations: 0,
-      searchNumber: searchArray[Math.floor((Math.random() * 400) + 1)]
+      searchNumber: searchArray[Math.floor((Math.random() * 400) + 1)],
+      searchAlgorithm: "Binary Search"
     }
   }
   
@@ -89,42 +90,60 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1 id="header">Search Algorithms</h1>
-        <section className="side-bar">
-          <div className="side-bar-elements">
-            <button className='binary-search-button' onClick={ this.startBinarySearch.bind(this) }>Start Binary Search</button>
-            <p>The target item is { this.state.searchNumber }</p>
-            <p>Iterations: { this.state.iterations }</p>
-            <p>The min index is: { this.state.low }</p>
-            <p>The max index is: { this.state.high }</p>
-            <p>Item located at index: { this.state.index }</p>
+        <div className="nav-bar">
+          <h5 id="nav-title">Visual Algorithms</h5>
+        </div>
+        <section className="side-bar-section">
+          <div className="algorithm-info">
+            <p id="algorithm-name"><strong>Algorithm: </strong>{ this.state.searchAlgorithm }</p>
+            <p id="description">Description: A search algorithm that finds the position of a target value within a sorted array. It compares the target value to the middle element of the array; if they are unequal, the half in which the target cannot lie is eliminated and the search continues on the remaining half until it is successful.</p>
+          </div>
+          <div className="iteration-info-container">
+            <div className="iteration-info">
+              <p className="iteration-info-item">Target Item <span id="target-item"> { this.state.searchNumber }</span></p>
+              <p className="iteration-info-item">Iterations <span id="iterations">{ this.state.iterations }</span></p>
+              <p className="iteration-info-item">Minimum index <span id="min-index">{ this.state.low }</span></p>
+              <p className="iteration-info-item">Maximum index <span id="max-index">{ this.state.high }</span></p>
+              <p className="iteration-info-item">Item located at index <span id="found-item">{ this.state.index }</span></p>
+            </div>
           </div>
         </section>
         <section className="grid-section">
-          <div className="grid">
-            { searchArray.map((number, index) => {
-              var inSearchArea = index >= this.state.low && index <= this.state.high;
-              var isMidItem = index === this.state.mid && this.state.targetFound === false;
-              var isHighOrLow = index === this.state.low || index === this.state.high;
-              var isTargetItem = index === this.state.target && this.state.targetFound === true;
-              if (this.state.targetFound === false) {
-                if (!inSearchArea) {
-                  return <div className="grid-item not-in-remaining-elements">{ number }</div>;
-                } else if (isHighOrLow) {
-                  return <div className="grid-item high-or-low-element">{ number }</div>;
-                } else if (isMidItem) {
-                  return <div className="grid-item target-element">{ number }</div>;
-                } else {
-                  return <div className="grid-item in-remaining-elements">{ number }</div>;
-                }
-              } else {
-                  if (isTargetItem) {
+          <div className="buttons">
+            <button className='button-size sequential-search-button'>Sequential Search</button>
+            <button className='button-size binary-search-button' onClick={ this.startBinarySearch.bind(this) }>Binary Search</button>
+            <div className="speed-buttons">
+              <button className='button-size slow-button'>Slow</button>
+              <button className='button-size regular-button'>Regular</button>
+              <button className='button-size fast-button'>Fast</button>
+            </div>
+          </div>
+          <div className="grid-container">
+            <div className="grid">
+              { searchArray.map((number, index) => {
+                var inSearchArea = index >= this.state.low && index <= this.state.high;
+                var isMidItem = index === this.state.mid && this.state.targetFound === false;
+                var isHighOrLow = index === this.state.low || index === this.state.high;
+                var isTargetItem = index === this.state.target && this.state.targetFound === true;
+                if (this.state.targetFound === false) {
+                  if (!inSearchArea) {
+                    return <div className="grid-item not-in-remaining-elements">{ number }</div>;
+                  } else if (isHighOrLow) {
+                    return <div className="grid-item high-or-low-element">{ number }</div>;
+                  } else if (isMidItem) {
                     return <div className="grid-item target-element">{ number }</div>;
                   } else {
-                    return <div className="grid-item not-in-remaining-elements">{ number }</div>;
+                    return <div className="grid-item in-remaining-elements">{ number }</div>;
                   }
-              }
-            })}
+                } else {
+                    if (isTargetItem) {
+                      return <div className="grid-item target-element">{ number }</div>;
+                    } else {
+                      return <div className="grid-item not-in-remaining-elements">{ number }</div>;
+                    }
+                }
+              })}
+            </div>
           </div>
         </section>
       </div>
@@ -133,3 +152,4 @@ class App extends Component {
 }
 
 export default App;
+
