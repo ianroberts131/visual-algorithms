@@ -97,6 +97,10 @@
   height: 100vh;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 .buttons {
   background-color: white;
   width: 93%;
@@ -132,22 +136,15 @@
   margin-right: 10px;
 }
 
-.slow-button {
+.speed-button {
   background-color: white;
   width: 75px;
   border: 1px solid #d9d9d9;
 }
 
-.regular-button {
-  background-color: white;
-  width: 75px;
-  border: 1px solid #d9d9d9;
-}
-
-.fast-button {
-  background-color: white;
-  width: 75px;
-  border: 1px solid #d9d9d9;
+.active-btn {
+  background-color: green;
+  color: white;
 }
 
 .grid-container {

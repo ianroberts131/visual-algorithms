@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+var classNames = require('classnames');
 
 var randomlyGenerateArray = (size) => {
   var array = [];
@@ -32,7 +33,11 @@ class App extends Component {
       targetFound: false,
       iterations: 0,
       searchNumber: searchArray[Math.floor((Math.random() * 400) + 1)],
-      searchAlgorithm: "Binary Search"
+      searchAlgorithm: "Binary Search",
+      regularActive: true,
+      slowActive: false,
+      fastActive: false,
+      intervalSpeed: 1000
     }
   }
   
@@ -66,7 +71,7 @@ class App extends Component {
       } else {
         this.setState({ target: mid, targetFound: true});
       }
-    }, 1000)
+    }, this.state.intervalSpeed)
   }
   
   clearSearch() {
@@ -87,7 +92,59 @@ class App extends Component {
     this.binarySearch();
   }
   
+  clickRegularButton() {
+    if (this.state.regularActive === false) {
+      this.setState({ 
+        regularActive: true,
+        slowActive: false,
+        fastActive: false,
+        intervalSpeed: 1000
+      });
+    }
+  }
+  
+ clickSlowButton() {
+    if (this.state.slowActive === false) {
+      this.setState({ 
+        slowActive: true,
+        regularActive: false,
+        fastActive: false,
+        intervalSpeed: 3000
+      });
+    }
+  }
+  
+  clickFastButton() {
+    if (this.state.fastActive === false) {
+      this.setState({ 
+        fastActive: true,
+        regularActive: false,
+        slowActive: false,
+        intervalSpeed: 500
+      });
+    }
+  }
+   
   render() {
+    var regularSpeedClass = classNames({
+      'button-size': true,
+      'speed-button': true,
+      'active-btn': this.state.regularActive
+    });
+    
+    var slowSpeedClass = classNames({
+      'button-size': true,
+      'speed-button': true,
+      'active-btn': this.state.slowActive
+    });
+    
+    var fastSpeedClass = classNames({
+      'button-size': true,
+      'speed-button': true,
+      'active-btn': this.state.fastActive
+    });
+    
+    
     return (
       <div>
         <div className="nav-bar">
@@ -113,9 +170,9 @@ class App extends Component {
             <button className='button-size sequential-search-button'>Sequential Search</button>
             <button className='button-size binary-search-button' onClick={ this.startBinarySearch.bind(this) }>Binary Search</button>
             <div className="speed-buttons">
-              <button className='button-size slow-button'>Slow</button>
-              <button className='button-size regular-button'>Regular</button>
-              <button className='button-size fast-button'>Fast</button>
+              <button className={ slowSpeedClass } onClick={ this.clickSlowButton.bind(this) }>Slow</button>
+              <button className={ regularSpeedClass } onClick={ this.clickRegularButton.bind(this) }>Regular</button>
+              <button className={ fastSpeedClass } onClick={ this.clickFastButton.bind(this) }>Fast</button>
             </div>
           </div>
           <div className="grid-container">
