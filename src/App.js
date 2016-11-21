@@ -21,6 +21,8 @@ var low;
 var high;
 var mid;
 var testItem;
+var binaryTimeout;
+var sequentialTimeout;
 
 var binarySearch = {
   name: "Binary Search",
@@ -49,7 +51,8 @@ class App extends Component {
       regularActive: true,
       slowActive: false,
       fastActive: false,
-      intervalSpeed: 1000
+      intervalSpeed: 1000,
+      isRunning: false
     }
   }
   
@@ -57,7 +60,8 @@ class App extends Component {
     if (iterations === 0 ) {
         testItem = 0;
     }
-    setTimeout(() => {
+
+    sequentialTimeout = setTimeout(() => {
       low = this.state.low;
       high = this.state.high;
       testItem = this.state.testItem;
@@ -70,35 +74,33 @@ class App extends Component {
         iterations: iterations
       });
       
-      if (searchArray[this.state.testItem] !== this.state.searchNumber) {
+      if (searchArray[this.state.testItem] !== this.state.searchNumber && this.state.isRunning === true) {
         low ++;
         testItem ++;
         this.setState({ low: low, testItem: testItem, index: testItem });
         this.sequentialSearch();
       } else {
-        this.setState({ target: testItem, high: testItem, targetFound: true });
+        this.setState({ target: testItem, high: testItem, targetFound: true, isRunning: false});
       }
     }, this.state.intervalSpeed);
   }
   
   binarySearch() {
-    
-    setTimeout(() => {
+    binaryTimeout = setTimeout(() => {
       low = this.state.low;
       high = this.state.high;
       iterations ++;
       mid = Math.floor((low + high) / 2);
-      
       this.setState({ 
         low: low,
         high: high,
         target: mid,
         testItem: mid,
         index: mid,
-        iterations: iterations 
+        iterations: iterations
       });
       
-      if (searchArray[this.state.testItem] !== this.state.searchNumber) {
+      if (searchArray[this.state.testItem] !== this.state.searchNumber && this.state.isRunning === true) {
         if (this.state.searchNumber < searchArray[this.state.testItem]) {
             high = mid;
         } else {
@@ -108,9 +110,10 @@ class App extends Component {
         this.setState({ high: high, low: low, testItem: mid });
         this.binarySearch();
       } else {
-        this.setState({ target: mid, targetFound: true});
+        this.setState({ target: mid, targetFound: true, isRunning: false});
       }
     }, this.state.intervalSpeed);
+    
   }
   
   clearSearch() {
@@ -121,19 +124,24 @@ class App extends Component {
       testItem: "",
       iterations: 0,
       targetFound: false,
-      searchNumber: searchArray[Math.floor((Math.random() * 400) + 1)]
+      searchNumber: searchArray[Math.floor((Math.random() * 400) + 1)],
+      isRunning: false
     });
     iterations = 0;
+    clearTimeout(binaryTimeout);
+    clearTimeout(sequentialTimeout);
   }
   
   startBinarySearch() {
     this.clearSearch();
+    this.setState({ isRunning: true });
     this.binarySearch();
     this.setState({ searchAlgorithm: binarySearch });
   }
   
   startSequentialSearch() {
     this.clearSearch();
+    this.setState({ isRunning: true });
     this.sequentialSearch();
     this.setState({ searchAlgorithm: sequentialSearch });
   }
