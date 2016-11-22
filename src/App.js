@@ -211,11 +211,11 @@ class App extends Component {
           </div>
           <div className="iteration-info-container">
             <div className="iteration-info">
-              <p className="iteration-info-item">Target Item <span id="target-item"> { this.state.searchNumber }</span></p>
-              <p className="iteration-info-item">Iterations <span id="iterations">{ this.state.iterations }</span></p>
-              <p className="iteration-info-item">Minimum index <span id="min-index">{ this.state.low }</span></p>
-              <p className="iteration-info-item">Maximum index <span id="max-index">{ this.state.high }</span></p>
-              <p className="iteration-info-item">Item located at index <span id="found-item">{ this.state.index }</span></p>
+              <p className="iteration-info-item">Target Item <span> { this.state.searchNumber }</span></p>
+              <p className="iteration-info-item">Iterations <span> { this.state.iterations }</span></p>
+              <p className="iteration-info-item">Minimum index <span>{ this.state.low }</span></p>
+              <p className="iteration-info-item">Maximum index <span>{ this.state.high }</span></p>
+              <p className="iteration-info-item">Item located at index <span>{ this.state.index }</span></p>
             </div>
           </div>
         </section>
