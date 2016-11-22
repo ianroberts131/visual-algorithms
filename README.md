@@ -1,4 +1,4 @@
-A demo of this project can be found [here:](http://visual-algorithms.surge.sh/)
+A demo of this project can be found [here](http://visual-algorithms.surge.sh/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
