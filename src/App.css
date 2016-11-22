@@ -122,6 +122,8 @@ button:hover {
   color: white;
   border-radius: 5px;
   margin-left: 10px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 .binary-search-button {
@@ -129,6 +131,8 @@ button:hover {
   color: white;
   border-radius: 5px;
   margin-left: 10px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 .speed-buttons {
