@@ -1,18 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-var classNames = require('classnames');
+import Grid from './Grid';
 
-var randomlyGenerateArray = (size) => {
-  var array = [];
-  while (array.length < size) {
-    var newNumber = Math.floor((Math.random() * 1000) + 1);
-    if (array.length === 0 || array.indexOf(newNumber) === -1) {
-      array.push(newNumber);
-    }
-  }
-  return array.sort(function(a,b){return a - b});
-}
+import '../css/App.css';
+import { randomlyGenerateArray } from '../helpers';
+var classNames = require('classnames');
 
 var searchArray = randomlyGenerateArray(400);
 
@@ -38,6 +29,14 @@ var sequentialSearch = {
 class App extends Component {
   constructor(){
     super();
+    this.sequentialSearch = this.sequentialSearch.bind(this);
+    this.binarySearch = this.binarySearch.bind(this);
+    this.clearSearch = this.clearSearch.bind(this);
+    this.startBinarySearch = this.startBinarySearch.bind(this);
+    this.startSequentialSearch = this.startSequentialSearch.bind(this);
+    this.clickSlowButton = this.clickSlowButton.bind(this);
+    this.clickRegularButton = this.clickRegularButton.bind(this);
+    this.clickFastButton = this.clickFastButton.bind(this);
     this.state = { 
       index: "",
       low: 0,
@@ -221,41 +220,22 @@ class App extends Component {
         </section>
         <section className="grid-section">
           <div className="buttons">
-            <button className='button-size sequential-search-button' onClick={ this.startSequentialSearch.bind(this) }>Sequential Search</button>
-            <button className='button-size binary-search-button' onClick={ this.startBinarySearch.bind(this) }>Binary Search</button>
+            <button className='button-size sequential-search-button' onClick={ this.startSequentialSearch }>Sequential Search</button>
+            <button className='button-size binary-search-button' onClick={ this.startBinarySearch }>Binary Search</button>
             <div className="speed-buttons">
-              <button className={ slowSpeedClass } onClick={ this.clickSlowButton.bind(this) }>Slow</button>
-              <button className={ regularSpeedClass } onClick={ this.clickRegularButton.bind(this) }>Regular</button>
-              <button className={ fastSpeedClass } onClick={ this.clickFastButton.bind(this) }>Fast</button>
+              <button className={ slowSpeedClass } onClick={ this.clickSlowButton }>Slow</button>
+              <button className={ regularSpeedClass } onClick={ this.clickRegularButton }>Regular</button>
+              <button className={ fastSpeedClass } onClick={ this.clickFastButton }>Fast</button>
             </div>
           </div>
-          <div className="grid-container">
-            <div className="grid">
-              { searchArray.map((number, index) => {
-                var inSearchArea = index >= this.state.low && index <= this.state.high;
-                var isTestItem = index === this.state.testItem && this.state.targetFound === false;
-                var isHighOrLow = index === this.state.low || index === this.state.high;
-                var isTargetItem = index === this.state.target && this.state.targetFound === true;
-                if (this.state.targetFound === false) {
-                  if (!inSearchArea) {
-                    return <div className="grid-item not-in-remaining-elements">{ number }</div>;
-                  } else if (isHighOrLow) {
-                    return <div className="grid-item high-or-low-element">{ number }</div>;
-                  } else if (isTestItem) {
-                    return <div className="grid-item target-element">{ number }</div>;
-                  } else {
-                    return <div className="grid-item in-remaining-elements">{ number }</div>;
-                  }
-                } else {
-                    if (isTargetItem) {
-                      return <div className="grid-item target-element">{ number }</div>;
-                    } else {
-                      return <div className="grid-item not-in-remaining-elements">{ number }</div>;
-                    }
-                }
-              })}
-            </div>
-          </div>
+          <Grid
+            searchArray={searchArray}
+            low={this.state.low}
+            high={this.state.high}
+            testItem={this.state.testItem}
+            target={this.state.target}
+            targetFound={this.state.targetFound}
+            />
         </section>
       </div>
     );
