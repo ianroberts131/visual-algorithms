@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
 import Grid from './Grid';
+import SearchButtons from './SearchButtons';
 
 import '../css/App.css';
 import { randomlyGenerateArray } from '../helpers';
+
 var classNames = require('classnames');
 
 var searchArray = randomlyGenerateArray(400);
 
-var iterations;
-var low;
-var high;
-var mid;
-var testItem;
-var binaryTimeout;
-var sequentialTimeout;
+var iterations, low, high, mid, testItem, binaryTimeout, sequentialTimeout;
 
 var binarySearch = {
   name: "Binary Search",
@@ -210,8 +206,8 @@ class App extends Component {
           </div>
           <div className="iteration-info-container">
             <div className="iteration-info">
-              <p className="iteration-info-item">Target Item <span> { this.state.searchNumber }</span></p>
-              <p className="iteration-info-item">Iterations <span> { this.state.iterations }</span></p>
+              <p className="iteration-info-item">Target Item <span>{ this.state.searchNumber }</span></p>
+              <p className="iteration-info-item">Iterations <span>{ this.state.iterations }</span></p>
               <p className="iteration-info-item">Minimum index <span>{ this.state.low }</span></p>
               <p className="iteration-info-item">Maximum index <span>{ this.state.high }</span></p>
               <p className="iteration-info-item">Item located at index <span>{ this.state.index }</span></p>
@@ -219,15 +215,16 @@ class App extends Component {
           </div>
         </section>
         <section className="grid-section">
-          <div className="buttons">
-            <button className='button-size sequential-search-button' onClick={ this.startSequentialSearch }>Sequential Search</button>
-            <button className='button-size binary-search-button' onClick={ this.startBinarySearch }>Binary Search</button>
-            <div className="speed-buttons">
-              <button className={ slowSpeedClass } onClick={ this.clickSlowButton }>Slow</button>
-              <button className={ regularSpeedClass } onClick={ this.clickRegularButton }>Regular</button>
-              <button className={ fastSpeedClass } onClick={ this.clickFastButton }>Fast</button>
-            </div>
-          </div>
+          <SearchButtons
+            startSequentialSearch={this.startSequentialSearch}
+            startBinarySearch={this.startBinarySearch}
+            clickSlowButton={this.clickSlowButton}
+            clickRegularButton={this.clickRegularBUtton}
+            clickFastButton={this.clickFastButton}
+            slowSpeedClass={slowSpeedClass}
+            regularSpeedClass={regularSpeedClass}
+            fastSpeedClass={fastSpeedClass}
+          />
           <Grid
             searchArray={searchArray}
             low={this.state.low}
