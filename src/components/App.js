@@ -219,7 +219,7 @@ class App extends Component {
             startSequentialSearch={this.startSequentialSearch}
             startBinarySearch={this.startBinarySearch}
             clickSlowButton={this.clickSlowButton}
-            clickRegularButton={this.clickRegularBUtton}
+            clickRegularButton={this.clickRegularButton}
             clickFastButton={this.clickFastButton}
             slowSpeedClass={slowSpeedClass}
             regularSpeedClass={regularSpeedClass}
@@ -232,7 +232,7 @@ class App extends Component {
             testItem={this.state.testItem}
             target={this.state.target}
             targetFound={this.state.targetFound}
-            />
+          />
         </section>
       </div>
     );
