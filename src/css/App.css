@@ -1,26 +1,38 @@
-.App {
+.home {
+  margin: 0;
+  padding: 0;
+}
+
+#home-header {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+#home-description {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 0px;
+}
+
+#algo-boxes {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.algo-item {
+  width: 550px;
+  height: 400px;
+  overflow: hidden;
+  display: inline-block;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.algo-img {
+  width: 90%;
+  height: 90%;
 }
 
 .nav-bar {
