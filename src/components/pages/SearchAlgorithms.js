@@ -229,6 +229,7 @@ class SearchAlgorithms extends Component {
             speed={this.state.speed}
           />
           <Grid
+            {...this.props}
             searchArray={searchArray}
             low={this.state.low}
             high={this.state.high}
@@ -237,6 +238,7 @@ class SearchAlgorithms extends Component {
             targetFound={this.state.targetFound}
           />
         </section>
+        {this.props.search.low}
       </div>
     );
   }
