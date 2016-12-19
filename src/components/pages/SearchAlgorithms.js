@@ -217,6 +217,7 @@ class SearchAlgorithms extends Component {
         </section>
         <section className="grid-section">
           <SearchButtons
+            {...this.props}
             startSequentialSearch={this.startSequentialSearch}
             startBinarySearch={this.startBinarySearch}
             clickSlowButton={this.clickSlowButton}
