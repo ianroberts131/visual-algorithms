@@ -30,49 +30,31 @@ const searchState = {
   isRunning: false
 }
 
-//function binarySearch() {
-//  binaryTimeout = setTimeout(() => {
-//    low = this.state.low;
-//    high = this.state.high;
-//    iterations ++;
-//    mid = Math.floor((low + high) / 2);
-//    this.setState({ 
-//      low: low,
-//      high: high,
-//      target: mid,
-//      testItem: mid,
-//      index: mid,
-//      iterations: iterations
-//    });
-//
-//    if (searchArray[this.state.testItem] !== this.state.searchNumber && this.state.isRunning === true) {
-//      if (this.state.searchNumber < searchArray[this.state.testItem]) {
-//          high = mid;
-//      } else {
-//          low = mid;
-//      }
-//      mid = Math.floor((low + high) / 2);
-//      this.setState({ high: high, low: low, testItem: mid });
-//      this.binarySearch();
-//    } else {
-//      this.setState({ target: mid, targetFound: true, isRunning: false});
-//    }
-//  }, this.state.intervalSpeed);
-//
-//}
-
 function search(state = searchState, action) {
   switch(action.type) {
     case 'START_BINARY' :
+      console.log("The low index is:", action.low);
+      console.log("This high index is:", action.high);
+      console.log("The middle index is:", action.mid);
+      console.log("The target item is:", action.searchNumber);
+      console.log("The current item is:", action.searchArray[action.testItem]);
+      console.log("# of Iterations:", action.iterations);
+      console.log("Is it running?", action.isRunning);
+      console.log("Target Found?", action.targetFound);
+      
       return {
         ...state,
         low: action.low,
         high: action.high,
+        mid: action.mid,
         iterations: action.iterations,
         target: action.target,
         testItem: action.testItem,
-        index: action.index
+        index: action.index,
+        isRunning: action.isRunning,
+        targetFound: action.targetFound
       }
+      break;
       
     default:
       return state;

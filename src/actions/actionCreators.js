@@ -29,21 +29,18 @@
 //
 //}
 
-function binarySearch(low, high, searchNumber, isRunning, searchArray) {
-  var low = low;
-  var high = high;
-  var iterations = iterations + 1;
-  var searchNumber = searchNumber;
-  var isRunning = isRunning;
-  var searchArray = searchArray;
+function binarySearch(searchArray, searchNumber, low, high, iterations, isRunning) {
+  iterations += 1;
+  isRunning = true;
   
   var mid = Math.floor((low + high) / 2);
   
   var testItem = mid;
   
-  if (searchArray[testItem] === searchNumber && isRunning) {
+  if (searchArray[testItem] !== searchNumber && isRunning) {
     searchNumber < searchArray[testItem] ? high = mid : low = mid;
     mid = Math.floor((low + high) / 2);
+    testItem = mid;
   } else {
     var targetFound = true;
     var target = mid;
@@ -68,17 +65,12 @@ function binarySearch(low, high, searchNumber, isRunning, searchArray) {
 
 
 // Binary Search Action Creator
-export function startBinary(dispatch, searchArray, searchNumber, low, high) {
-  var iterations = 0;
-  var low = low;
-  var high = high;
-  var searchNumber = searchNumber
-  var searchArray = searchArray;
-  var isRunning = true;
-  
-  setTimeout(() => {
-    dispatch(binarySearch(low, high, searchNumber, isRunning, searchArray))
-  }, 1000)
+export function startBinary(searchArray, searchNumber, low, high, iterations, isRunning, speed) {
+  return dispatch => {
+    setTimeout(() => {
+      dispatch(binarySearch(searchArray, searchNumber, low, high, iterations, isRunning))
+    }, 1000)
+  }
 }
 
 // change speed

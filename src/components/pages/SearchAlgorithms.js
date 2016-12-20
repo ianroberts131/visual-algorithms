@@ -239,7 +239,6 @@ class SearchAlgorithms extends Component {
             targetFound={this.state.targetFound}
           />
         </section>
-        {this.props.search.low}
       </div>
     );
   }

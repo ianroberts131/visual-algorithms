@@ -37,7 +37,7 @@ import React from 'react';
 
 class Grid extends React.Component {
   render() {
-    const { searchArray, low, high, testItem, targetFound, target } = this.props;
+    const { searchArray, low, high, testItem, targetFound, target } = this.props.search;
     return (
       <div className="grid-container">
         <div className="grid">
