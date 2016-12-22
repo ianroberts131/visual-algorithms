@@ -5,7 +5,8 @@ import Main from './pages/Main';
 
 function mapStateToProps(state) {
   return {
-    search: state.search
+    search: state.search,
+    speed: state.speed
   }
 }
 

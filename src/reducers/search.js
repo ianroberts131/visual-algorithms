@@ -22,28 +22,32 @@ const searchState = {
   targetFound: false,
   iterations: 0,
   searchNumber: searchArray[Math.floor((Math.random() * 400) + 1)],
-  speed: "regular",
-  regularActive: true,
-  slowActive: false,
-  fastActive: false,
-  intervalSpeed: 1000,
   isRunning: false
+
 }
 
 function search(state = searchState, action) {
   switch(action.type) {
-    case 'START_BINARY' :
-      console.log("The low index is:", action.low);
-      console.log("This high index is:", action.high);
-      console.log("The middle index is:", action.mid);
-      console.log("The target item is:", action.searchNumber);
-      console.log("The current item is:", action.searchArray[action.testItem]);
-      console.log("# of Iterations:", action.iterations);
-      console.log("Is it running?", action.isRunning);
-      console.log("Target Found?", action.targetFound);
-      
+    case 'START_BINARY_SEARCH' :
       return {
         ...state,
+        searchArray: searchArray,
+        searchAlgorithm: binarySearch,
+        index: "",
+        low: 0,
+        high: searchArray.length - 1,
+        testItem: "",
+        target: "",
+        targetFound: false,
+        iterations: 0,
+        searchNumber: searchArray[Math.floor((Math.random() * 400 ) + 1)],
+        isRunning: true
+      }
+      
+    case 'BINARY_SEARCH' :      
+      return {
+        ...state,
+        searchAlgorithm: binarySearch,
         low: action.low,
         high: action.high,
         mid: action.mid,
@@ -52,9 +56,8 @@ function search(state = searchState, action) {
         testItem: action.testItem,
         index: action.index,
         isRunning: action.isRunning,
-        targetFound: action.targetFound
+        targetFound: action.targetFound,
       }
-      break;
       
     default:
       return state;

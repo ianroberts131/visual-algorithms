@@ -30,11 +30,7 @@ class SearchAlgorithms extends Component {
     this.sequentialSearch = this.sequentialSearch.bind(this);
     this.binarySearch = this.binarySearch.bind(this);
     this.clearSearch = this.clearSearch.bind(this);
-    this.startBinarySearch = this.startBinarySearch.bind(this);
     this.startSequentialSearch = this.startSequentialSearch.bind(this);
-    this.clickSlowButton = this.clickSlowButton.bind(this);
-    this.clickRegularButton = this.clickRegularButton.bind(this);
-    this.clickFastButton = this.clickFastButton.bind(this);
     this.state = { 
       index: "",
       low: 0,
@@ -130,73 +126,13 @@ class SearchAlgorithms extends Component {
     clearTimeout(sequentialTimeout);
   }
   
-  startBinarySearch() {
-    this.clearSearch();
-    this.setState({ isRunning: true, searchAlgorithm: binarySearch });
-    this.binarySearch();
-  }
-  
   startSequentialSearch() {
     this.clearSearch();
     this.setState({ isRunning: true, searchAlgorithm: sequentialSearch });
     this.sequentialSearch();
   }
-  
-  clickRegularButton() {
-    if (this.state.regularActive === false) {
-      this.setState({ 
-        speed: "regular",
-        regularActive: true,
-        slowActive: false,
-        fastActive: false,
-        intervalSpeed: 1000
-      });
-    }
-  }
-  
- clickSlowButton() {
-    if (this.state.slowActive === false) {
-      this.setState({ 
-        speed: "slow",
-        slowActive: true,
-        regularActive: false,
-        fastActive: false,
-        intervalSpeed: 2000
-      });
-    }
-  }
-  
-  clickFastButton() {
-    if (this.state.fastActive === false) {
-      this.setState({ 
-        speed: "fast",
-        fastActive: true,
-        regularActive: false,
-        slowActive: false,
-        intervalSpeed: 200
-      });
-    }
-  }
    
   render() {
-    var regularSpeedClass = classNames({
-      'button-size': true,
-      'speed-button': true,
-      'active-btn': this.state.regularActive
-    });
-    
-    var slowSpeedClass = classNames({
-      'button-size': true,
-      'speed-button': true,
-      'active-btn': this.state.slowActive
-    });
-    
-    var fastSpeedClass = classNames({
-      'button-size': true,
-      'speed-button': true,
-      'active-btn': this.state.fastActive
-    });
-    
     
     return (
       <div>
@@ -219,15 +155,7 @@ class SearchAlgorithms extends Component {
           <SearchButtons
             {...this.props}
             startSequentialSearch={this.startSequentialSearch}
-            startBinarySearch={this.startBinarySearch}
-            clickSlowButton={this.clickSlowButton}
-            clickRegularButton={this.clickRegularButton}
-            clickFastButton={this.clickFastButton}
-            slowSpeedClass={slowSpeedClass}
-            regularSpeedClass={regularSpeedClass}
-            fastSpeedClass={fastSpeedClass}
             searchAlgorithm={this.state.searchAlgorithm}
-            speed={this.state.speed}
           />
           <Grid
             {...this.props}
