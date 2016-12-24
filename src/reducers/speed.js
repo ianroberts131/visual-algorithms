@@ -1,5 +1,5 @@
 const speedState = {
-  speed: "regular",
+  speedString: "regular",
   regularActive: true,
   slowActive: false,
   fastActive: false,
@@ -10,11 +10,9 @@ const speedState = {
 function speed(state = speedState, action) {
   switch(action.speed) {
     case 'slow' :
-      console.log("It is slow!");
-      console.log(action.speed);
       return {
         ...state,
-        speed: "slow",
+        speedString: "slow",
         regularActive: false,
         slowActive: true,
         fastActive: false,
@@ -23,7 +21,7 @@ function speed(state = speedState, action) {
     case 'regular' :
       return {
         ...state,
-        speed: "regular",
+        speedString: "regular",
         regularActive: true,
         slowActive: false,
         fastActive: false,
@@ -32,7 +30,7 @@ function speed(state = speedState, action) {
     case 'fast' :
       return {
         ...state,
-        speed: "fast",
+        speedString: "fast",
         regularActive: false,
         slowActive: false,
         fastActive: true,

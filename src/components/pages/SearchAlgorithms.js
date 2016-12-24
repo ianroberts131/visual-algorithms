@@ -5,8 +5,6 @@ import Sidebar from '../Sidebar';
 
 import '../../css/App.css';
 
-var classNames = require('classnames');
-
 class SearchAlgorithms extends Component {
   
   render() {

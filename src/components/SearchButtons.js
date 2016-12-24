@@ -9,7 +9,7 @@ class SearchButtons extends React.Component {
     
     const { searchArray, searchNumber, low, high, iterations, isRunning, targetFound, searchAlgorithm } = this.props.search;
     
-    const { intervalSpeed, speed, regularActive, slowActive, fastActive } = this.props.speed;
+    const { intervalSpeed, speedString, regularActive, slowActive, fastActive } = this.props.speed;
     
     var regularSpeedClass = classNames({
       'button-size': true,
@@ -39,7 +39,6 @@ class SearchButtons extends React.Component {
     }
     
     if (targetFound === false && isRunning && searchAlgorithm.name === 'Binary Search') {
-      
       binaryTimeout = setTimeout (() => {
       this.props.binarySearch(searchArray, searchNumber, low, high, iterations);
       }, intervalSpeed);
@@ -47,21 +46,21 @@ class SearchButtons extends React.Component {
      
     return (
       <div className="buttons">
-        <Link to={`/search/sequential-search/${speed}`}>
+        <Link to={`/search/sequential-search/${speedString}`}>
           <button className='button-size sequential-search-button' onClick={ () => this.props.startSequentialSearch(binaryTimeout, sequentialTimeout) }>Sequential Search</button>
         </Link>
-        <Link to={`/search/binary-search/${speed}`}>
+        <Link to={`/search/binary-search/${speedString}`}>
           <button className='button-size binary-search-button' onClick={ () => this.props.startBinarySearch(binaryTimeout, sequentialTimeout) }>Binary Search</button>
         </Link>
         <div className="speed-buttons">
           <Link to={`/search/${searchAlgorithm.url}/slow`}>
-            <button className={ slowSpeedClass } onClick={ () => this.props.changeSpeed('slow') }>Slow</button>
+            <button className={ slowSpeedClass } onClick={ () => this.props.changeSpeed('slow', binaryTimeout, sequentialTimeout) }>Slow</button>
           </Link>
           <Link to={`/search/${searchAlgorithm.url}/regular`}>
-            <button className={ regularSpeedClass } onClick={ () => this.props.changeSpeed('regular') }>Regular</button>
+            <button className={ regularSpeedClass } onClick={ () => this.props.changeSpeed('regular', binaryTimeout, sequentialTimeout) }>Regular</button>
           </Link>
           <Link to={`/search/${searchAlgorithm.url}/fast`}>
-            <button className={ fastSpeedClass } onClick={ () => this.props.changeSpeed('fast') }>Fast</button>
+            <button className={ fastSpeedClass } onClick={ () => this.props.changeSpeed('fast', binaryTimeout, sequentialTimeout) }>Fast</button>
           </Link>
         </div>
       </div>

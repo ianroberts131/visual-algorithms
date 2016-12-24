@@ -1,5 +1,3 @@
-import { randomlyGenerateArray } from '../helpers';
-
 export function startBinarySearch(binaryTimeout, sequentialTimeout) {
   clearTimeout(binaryTimeout);
   clearTimeout(sequentialTimeout);
@@ -84,7 +82,9 @@ export function binarySearch(searchArray, searchNumber, low, high, iterations) {
     }
 }
 
-export function changeSpeed(speed) {
+export function changeSpeed(speed, binaryTimeout, sequentialTimeout) {
+  clearTimeout(binaryTimeout);
+  clearTimeout(sequentialTimeout);
   return {
     type: 'CHANGE_SPEED',
     speed
