@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './grid.css';
+
 class Grid extends React.Component {
   render() {
     const { searchArray, low, high, testItem, targetFound, target } = this.props.search;

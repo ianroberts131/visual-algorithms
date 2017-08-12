@@ -1,49 +1,51 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+import './searchButtons.css';
+
 var classNames = require('classnames');
 
 class SearchButtons extends React.Component {
 
   render() {
-    
+
     const { searchArray, searchNumber, low, high, iterations, isRunning, targetFound, searchAlgorithm } = this.props.search;
-    
+
     const { intervalSpeed, speedString, regularActive, slowActive, fastActive } = this.props.speed;
-    
+
     var regularSpeedClass = classNames({
       'button-size': true,
       'speed-button': true,
       'active-btn': regularActive
     });
-    
+
     var slowSpeedClass = classNames({
       'button-size': true,
       'speed-button': true,
       'active-btn': slowActive
     });
-    
+
     var fastSpeedClass = classNames({
       'button-size': true,
       'speed-button': true,
       'active-btn': fastActive
-    }); 
-    
+    });
+
     var sequentialTimeout;
     var binaryTimeout;
-    
+
     if (targetFound === false && isRunning && searchAlgorithm.name === 'Sequential Search') {
       sequentialTimeout = setTimeout (() => {
       this.props.sequentialSearch(searchArray, searchNumber, low, high, iterations);
       }, intervalSpeed);
     }
-    
+
     if (targetFound === false && isRunning && searchAlgorithm.name === 'Binary Search') {
       binaryTimeout = setTimeout (() => {
       this.props.binarySearch(searchArray, searchNumber, low, high, iterations);
       }, intervalSpeed);
     }
-     
+
     return (
       <div className="buttons">
         <Link to={`/search/sequential-search/${speedString}`}>

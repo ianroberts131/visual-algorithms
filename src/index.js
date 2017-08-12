@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
-import Home from './components/pages/Home';
-import SearchAlgorithms from './components/pages/SearchAlgorithms';
-import './css/index.css';
+import App from './components/app/App';
+import Home from './pages/Home';
+import SearchAlgorithms from './pages/SearchAlgorithms';
 
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { Router, Route, IndexRoute } from 'react-router';
 import { Provider } from 'react-redux';
 import store, { history } from './store';
 

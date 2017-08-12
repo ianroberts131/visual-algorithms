@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-import Grid from '../Grid';
-import SearchButtons from '../SearchButtons';
-import Sidebar from '../Sidebar';
-
-import '../../css/App.css';
+import Grid from '../components/search/grid/Grid';
+import SearchButtons from '../components/search/searchButtons/SearchButtons';
+import Sidebar from '../components/search/sideBar/Sidebar';
 
 class SearchAlgorithms extends Component {
-  
+
   render() {
-    
+
     return (
       <div>
         <Sidebar {...this.props} />
@@ -22,4 +20,3 @@ class SearchAlgorithms extends Component {
 }
 
 export default SearchAlgorithms;
-

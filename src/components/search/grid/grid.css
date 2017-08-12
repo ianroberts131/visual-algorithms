@@ -1,0 +1,53 @@
+.grid-section {
+  position: relative;
+  float: right;
+  width: 70%;
+  height: 100vh;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.grid-container {
+  display: block;
+  overflow: auto;
+  background-color: white;
+  width: 93%;
+  margin: 0 auto;
+  margin-top: 10px;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border: 2px solid #d9d9d9;
+}
+
+.grid {
+  display: inline-block;
+  text-align: center;
+}
+
+.grid-item {
+  display: inline-block;
+  width: 4.7%;
+  height: 27px;
+  color: white;
+  margin: 1px;
+  text-align: center;
+  font-size: 17px;
+}
+
+.in-remaining-elements {
+  background-color: blue;
+}
+
+.not-in-remaining-elements {
+  background-color: #d9d9d9;
+}
+
+.high-or-low-element {
+  background-color: red;
+}
+
+.target-element {
+  background-color: #00cc00;
+}

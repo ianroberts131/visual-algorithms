@@ -1,4 +1,4 @@
-#Visual Algorithms
+# Visual Algorithms
 
 A demo of this project can be found [here](http://visual-algorithms.surge.sh/).
 

@@ -1,56 +1,3 @@
-.home {
-  margin: 0;
-  padding: 0;
-}
-
-#home-header {
-  text-align: center;
-  margin-bottom: 5px;
-}
-
-.link {
-  text-decoration: none;
-  color: inherit;
-}
-
-#home-description {
-  text-align: center;
-  margin-bottom: 30px;
-  margin-top: 0px;
-}
-
-#algo-boxes {
-  text-align: center;
-}
-
-.algo-item {
-  width: 550px;
-  height: 400px;
-  overflow: hidden;
-  display: inline-block;
-}
-
-.algo-img {
-  width: 90%;
-  height: 90%;
-}
-
-.nav-bar {
-  width: 100%;
-  height: 60px;
-  background-color: #b3b3b3;
-}
-
-#nav-title {
-  font-size: 25px;
-  line-height: 60px;
-  color: white;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 20px;
-}
-
-
 .side-bar-section {
   position: relative;
   float: left;
@@ -83,7 +30,7 @@
 .iteration-info-container {
   width: 100%;
   border: 2px solid #d9d9d9;
-  margin-top: 10px; 
+  margin-top: 10px;
   margin-left: 20px;
   background-color: white;
   font-size: 20px;
@@ -161,47 +108,4 @@ button:hover {
 .active-btn {
   background-color: green;
   color: white;
-}
-
-.grid-container {
-  display: block;
-  overflow: auto;
-  background-color: white;
-  width: 93%;
-  margin: 0 auto;
-  margin-top: 10px;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  border: 2px solid #d9d9d9;
-}
-
-.grid {
-  display: inline-block;
-  text-align: center;
-}
-
-.grid-item {
-  display: inline-block;
-  width: 4.7%;
-  height: 27px;
-  color: white;
-  margin: 1px;
-  text-align: center;
-  font-size: 17px;
-}
-
-.in-remaining-elements {
-  background-color: blue;
-}
-
-.not-in-remaining-elements {
-  background-color: #d9d9d9;
-}
-
-.high-or-low-element {
-  background-color: red;
-}
-
-.target-element {
-  background-color: #00cc00;
 }

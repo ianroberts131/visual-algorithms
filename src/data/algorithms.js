@@ -7,5 +7,5 @@ export var binarySearch = {
 export var sequentialSearch = {
   name: "Sequential Search",
   url: "sequential-search",
-  description: "A search algorithm that finds the position of a target value within a sorted array. It sequentially checks each element of the list for the target value until a match is found or until all the elements have been searched."
+  description: "A search algorithm that finds the position of a target value within an array (sorted or unsorted). It sequentially checks each element of the list for the target value until a match is found or until all the elements have been searched."
 }

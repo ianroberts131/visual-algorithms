@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './sideBar.css';
+
 class Sidebar extends React.Component {
   render() {
     const { searchAlgorithm, searchNumber, iterations, low, high, index } = this.props.search;

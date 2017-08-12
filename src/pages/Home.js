@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import '../../css/App.css';
 
 class Home extends Component {
   render() {
@@ -12,12 +11,12 @@ class Home extends Component {
           <div className='algo-item'>
             <Link className="link" to="/search">
               <h3>Searching Algorithms</h3>
-              <img className='algo-img' src={require('../../images/search-img.jpg')} alt="Searching Algorithm"></img>
+              <img className='algo-img' src={require('../images/search-img.jpg')} alt="Searching Algorithm"></img>
             </Link>
           </div>
           <div className='algo-item'>
             <h3>Sorting Algorithms (Coming Soon)</h3>
-            <img className='algo-img' src={require('../../images/sort-img.jpg')} alt="Sorting Algorithm"></img>
+            <img className='algo-img' src={require('../images/sort-img.jpg')} alt="Sorting Algorithm"></img>
           </div>
         </div>
       </div>
