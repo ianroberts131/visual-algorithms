@@ -4,7 +4,7 @@
 // 2. copy of current state
 
 import { randomlyGenerateArray } from '../helpers';
-import { binarySearch, sequentialSearch } from '../data/algorithms';
+import { binarySearch, linearSearch } from '../data/algorithms';
 
 
 // create an array for the grid
@@ -43,8 +43,8 @@ function search(state = searchState, action) {
         searchNumber: searchArray[Math.floor((Math.random() * 400 ) + 1)],
         isRunning: true
       }
-      
-    case 'BINARY_SEARCH' :      
+
+    case 'BINARY_SEARCH' :
       return {
         ...state,
         searchAlgorithm: binarySearch,
@@ -58,12 +58,12 @@ function search(state = searchState, action) {
         isRunning: action.isRunning,
         targetFound: action.targetFound,
       }
-      
-      case 'START_SEQUENTIAL_SEARCH' :
+
+      case 'START_LINEAR_SEARCH' :
       return {
         ...state,
         searchArray: searchArray,
-        searchAlgorithm: sequentialSearch,
+        searchAlgorithm: linearSearch,
         index: "",
         low: 0,
         high: searchArray.length - 1,
@@ -74,11 +74,11 @@ function search(state = searchState, action) {
         searchNumber: searchArray[Math.floor((Math.random() * 400 ) + 1)],
         isRunning: true
       }
-      
-    case 'SEQUENTIAL_SEARCH' :      
+
+    case 'LINEAR_SEARCH' :
       return {
         ...state,
-        searchAlgorithm: sequentialSearch,
+        searchAlgorithm: linearSearch,
         low: action.low,
         high: action.high,
         mid: action.mid,
@@ -89,11 +89,10 @@ function search(state = searchState, action) {
         isRunning: action.isRunning,
         targetFound: action.targetFound,
       }
-      
+
     default:
       return state;
   }
 }
 
 export default search;
-

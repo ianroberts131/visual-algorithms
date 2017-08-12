@@ -1,25 +1,25 @@
-export function startBinarySearch(binaryTimeout, sequentialTimeout) {
+export function startBinarySearch(binaryTimeout, linearTimeout) {
   clearTimeout(binaryTimeout);
-  clearTimeout(sequentialTimeout);
+  clearTimeout(linearTimeout);
   return {
     type: 'START_BINARY_SEARCH'
   }
 }
 
-export function startSequentialSearch(binaryTimeout, sequentialTimeout) {
+export function startLinearSearch(binaryTimeout, linearTimeout) {
   clearTimeout(binaryTimeout);
-  clearTimeout(sequentialTimeout);
+  clearTimeout(linearTimeout);
   return {
-    type: 'START_SEQUENTIAL_SEARCH'
+    type: 'START_LINEAR_SEARCH'
   }
 }
 
-export function sequentialSearch(searchArray, searchNumber, low, high, iterations) {
+export function linearSearch(searchArray, searchNumber, low, high, iterations) {
   var testItem = iterations;
   iterations += 1;
   var isRunning = true;
   var targetFound = false;
-  
+
   if (searchArray[testItem] !== searchNumber && isRunning) {
     low ++;
     testItem ++
@@ -30,7 +30,7 @@ export function sequentialSearch(searchArray, searchNumber, low, high, iteration
     isRunning = false
   }
   return {
-    type: 'SEQUENTIAL_SEARCH',
+    type: 'LINEAR_SEARCH',
     searchArray: searchArray,
     searchNumber: searchNumber,
     low: low,
@@ -82,17 +82,11 @@ export function binarySearch(searchArray, searchNumber, low, high, iterations) {
     }
 }
 
-export function changeSpeed(speed, binaryTimeout, sequentialTimeout) {
+export function changeSpeed(speed, binaryTimeout, linearTimeout) {
   clearTimeout(binaryTimeout);
-  clearTimeout(sequentialTimeout);
+  clearTimeout(linearTimeout);
   return {
     type: 'CHANGE_SPEED',
     speed
   }
 }
-
-
-
-
-
-
