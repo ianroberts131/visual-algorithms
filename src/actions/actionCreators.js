@@ -23,6 +23,7 @@ export function selectionSort(sortArray, sortedGroupIndex, currentlyChecking, cu
     }
   }
   if (sortedGroupIndex === sortArray.length - 1) {
+    console.log(sortArray.inspect);
     isRunning = false;
   }
   return {

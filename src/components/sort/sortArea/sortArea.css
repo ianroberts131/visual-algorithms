@@ -20,3 +20,11 @@
 .sorted {
   background-color: #d9d9d9;
 }
+
+.current-low {
+  background-color: #00cc00;
+}
+
+.checking {
+  background-color: red;
+}
