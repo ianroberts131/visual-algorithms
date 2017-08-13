@@ -8,7 +8,7 @@ import { binarySearch, linearSearch } from '../data/algorithms';
 
 
 // create an array for the grid
-var searchArray = randomlyGenerateArray(400);
+var searchArray = randomlyGenerateArray(400, 1000);
 
 // create a search object, which will house all the state data within the search algorithms page
 const searchState = {

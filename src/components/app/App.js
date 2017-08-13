@@ -7,6 +7,7 @@ import './App.css';
 function mapStateToProps(state) {
   return {
     search: state.search,
+    sort: state.sort,
     speed: state.speed
   }
 }

@@ -1,3 +1,41 @@
+export function startSelectionSort() {
+  return {
+    type: 'START_SELECTION_SORT'
+  }
+}
+
+export function selectionSort(sortArray, sortedGroupIndex, currentlyChecking, currentLow, iterations) {
+  iterations += 1;
+  var isRunning = true;
+  var lowItem = sortArray[currentLow];
+  if (currentlyChecking > sortArray.length - 1) {
+    sortArray[currentLow] = sortArray[sortedGroupIndex];
+    sortArray[sortedGroupIndex] = lowItem;
+    sortedGroupIndex += 1;
+    currentLow = sortedGroupIndex;
+    currentlyChecking = sortedGroupIndex + 1;
+  } else {
+    if (sortArray[currentlyChecking] < lowItem) {
+      currentLow = currentlyChecking;
+      currentlyChecking += 1;
+    } else {
+      currentlyChecking += 1;
+    }
+  }
+  if (sortedGroupIndex === sortArray.length - 1) {
+    isRunning = false;
+  }
+  return {
+    type: 'SELECTION_SORT',
+    sortArray: sortArray,
+    sortedGroupIndex: sortedGroupIndex,
+    currentlyChecking: currentlyChecking,
+    currentLow: currentLow,
+    iterations: iterations,
+    isRunning: isRunning
+  }
+}
+
 export function startBinarySearch(binaryTimeout, linearTimeout) {
   clearTimeout(binaryTimeout);
   clearTimeout(linearTimeout);

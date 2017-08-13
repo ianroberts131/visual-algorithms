@@ -9,3 +9,9 @@ export var linearSearch = {
   url: "linear-search",
   description: "A search algorithm that finds the position of a target value within an array (sorted or unsorted). It sequentially checks each element of the list for the target value until a match is found or until all the elements have been searched."
 }
+
+export var selectionSort = {
+  name: "Selection Sort",
+  url: "selection-sort",
+  description: "A sorting algorithm that goes through each element in the portion of the collection that isn't sorted, finds the smallest term, and swaps it with the first element in the unsorted portion."
+}
