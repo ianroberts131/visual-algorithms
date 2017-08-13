@@ -15,7 +15,7 @@ const sortState = {
   iterations: 0,
   sortedGroupIndex: 0,
   currentLow: 0,
-  testItem: "",
+  currentlyChecking: 0,
   isRunning: false
 }
 
@@ -29,6 +29,7 @@ function sort(state = sortState, action) {
         sortAlgorithm: selectionSort,
         sortedGroupIndex: 0,
         currentLow: 0,
+        currentlyChecking: 0,
         isRunning: true
       }
 
@@ -39,7 +40,7 @@ function sort(state = sortState, action) {
       iterations: action.iterations,
       sortedGroupIndex: action.sortedGroupIndex,
       currentLow: action.currentLow,
-      testItem: action.testItem,
+      currentlyChecking: action.currentlyChecking,
       isRunning: action.isRunning
     }
 

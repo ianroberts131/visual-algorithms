@@ -1,4 +1,5 @@
-export function startSelectionSort() {
+export function startSelectionSort(selectionSortTimeout) {
+  clearTimeout(selectionSortTimeout);
   return {
     type: 'START_SELECTION_SORT'
   }
