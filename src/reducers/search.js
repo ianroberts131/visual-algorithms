@@ -31,7 +31,7 @@ function search(state = searchState, action) {
     case 'START_BINARY_SEARCH' :
       return {
         ...state,
-        searchArray: searchArray,
+        searchArray: randomlyGenerateArray(400, 1000),
         searchAlgorithm: binarySearch,
         index: "",
         low: 0,
@@ -62,7 +62,7 @@ function search(state = searchState, action) {
       case 'START_LINEAR_SEARCH' :
       return {
         ...state,
-        searchArray: searchArray,
+        searchArray: randomlyGenerateArray(400, 1000),
         searchAlgorithm: linearSearch,
         index: "",
         low: 0,

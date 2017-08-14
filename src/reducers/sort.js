@@ -16,21 +16,22 @@ const sortState = {
   sortedGroupIndex: 0,
   currentLow: 0,
   currentlyChecking: 0,
-  isRunning: false
+  isRunning: false,
+  isSorted: false
 }
 
 function sort(state = sortState, action) {
   switch(action.type) {
     case 'START_SELECTION_SORT' :
-      console.log("I'm in selection sort!!");
       return {
         ...state,
-        sortArray: sortArray,
+        sortArray: randomlyGenerateArray(10, 100, false),
         sortAlgorithm: selectionSort,
         sortedGroupIndex: 0,
         currentLow: 0,
         currentlyChecking: 0,
-        isRunning: true
+        isRunning: true,
+        isSorted: false
       }
 
     case 'SELECTION_SORT' :
@@ -41,7 +42,8 @@ function sort(state = sortState, action) {
       sortedGroupIndex: action.sortedGroupIndex,
       currentLow: action.currentLow,
       currentlyChecking: action.currentlyChecking,
-      isRunning: action.isRunning
+      isRunning: action.isRunning,
+      isSorted: action.isSorted
     }
 
     default:

@@ -5,7 +5,7 @@ export function startSelectionSort(selectionSortTimeout) {
   }
 }
 
-export function selectionSort(sortArray, sortedGroupIndex, currentlyChecking, currentLow, iterations) {
+export function selectionSort(sortArray, sortedGroupIndex, currentlyChecking, currentLow, iterations, isSorted = false) {
   iterations += 1;
   var isRunning = true;
   var lowItem = sortArray[currentLow];
@@ -24,8 +24,8 @@ export function selectionSort(sortArray, sortedGroupIndex, currentlyChecking, cu
     }
   }
   if (sortedGroupIndex === sortArray.length - 1) {
-    console.log(sortArray.inspect);
     isRunning = false;
+    isSorted = true;
   }
   return {
     type: 'SELECTION_SORT',
@@ -34,7 +34,8 @@ export function selectionSort(sortArray, sortedGroupIndex, currentlyChecking, cu
     currentlyChecking: currentlyChecking,
     currentLow: currentLow,
     iterations: iterations,
-    isRunning: isRunning
+    isRunning: isRunning,
+    isSorted: isSorted
   }
 }
 
