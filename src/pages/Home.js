@@ -16,7 +16,7 @@ class Home extends Component {
           </div>
           <div className='algo-item'>
             <Link className="link" to="/sort">
-              <h3>Sorting Algorithms (Coming Soon)</h3>
+              <h3>Sorting Algorithms</h3>
               <img className='algo-img' src={require('../images/sort-img.jpg')} alt="Sorting Algorithm"></img>
             </Link>
           </div>

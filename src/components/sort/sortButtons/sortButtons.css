@@ -1,0 +1,40 @@
+.sort-buttons {
+  background-color: white;
+  width: 100%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  margin: 0 auto;
+  margin-top: 20px;
+  border: 2px solid #d9d9d9;
+}
+
+.sort-button-size {
+  height: 40px;
+  font-size: 15px;
+  padding: 1%;
+}
+
+.sort-button {
+  background-color: #0066ff;
+  color: white;
+  border-radius: 5px;
+  margin-left: 10px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.sort-speed-buttons {
+  float: right;
+  margin-right: 10px;
+}
+
+.sort-speed-button {
+  background-color: white;
+  width: 75px;
+  border: 1px solid #d9d9d9;
+}
+
+.active-sort-btn {
+  background-color: green;
+  color: white;
+}
