@@ -29,9 +29,11 @@ const searchState = {
 function search(state = searchState, action) {
   switch(action.type) {
     case 'START_BINARY_SEARCH' :
+      var newSearchArray = randomlyGenerateArray(400, 1000)
+      var newSearchNumber = newSearchArray[Math.floor((Math.random() * 400 ) + 1)];
       return {
         ...state,
-        searchArray: randomlyGenerateArray(400, 1000),
+        searchArray: newSearchArray,
         searchAlgorithm: binarySearch,
         index: "",
         low: 0,
@@ -40,7 +42,7 @@ function search(state = searchState, action) {
         target: "",
         targetFound: false,
         iterations: 0,
-        searchNumber: searchArray[Math.floor((Math.random() * 400 ) + 1)],
+        searchNumber: newSearchNumber,
         isRunning: true
       }
 
@@ -60,20 +62,22 @@ function search(state = searchState, action) {
       }
 
       case 'START_LINEAR_SEARCH' :
-      return {
-        ...state,
-        searchArray: randomlyGenerateArray(400, 1000),
-        searchAlgorithm: linearSearch,
-        index: "",
-        low: 0,
-        high: searchArray.length - 1,
-        testItem: "",
-        target: "",
-        targetFound: false,
-        iterations: 0,
-        searchNumber: searchArray[Math.floor((Math.random() * 400 ) + 1)],
-        isRunning: true
-      }
+        var newSearchArray = randomlyGenerateArray(400, 1000)
+        var newSearchNumber = newSearchArray[Math.floor((Math.random() * 400 ) + 1)];
+        return {
+          ...state,
+          searchArray: newSearchArray,
+          searchAlgorithm: linearSearch,
+          index: "",
+          low: 0,
+          high: searchArray.length - 1,
+          testItem: "",
+          target: "",
+          targetFound: false,
+          iterations: 0,
+          searchNumber: newSearchNumber,
+          isRunning: true
+        }
 
     case 'LINEAR_SEARCH' :
       return {
