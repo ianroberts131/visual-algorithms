@@ -35,7 +35,7 @@ class SortButtons extends React.Component {
     if (isRunning && sortAlgorithm.name === 'Selection Sort') {
       selectionSortTimeout = setTimeout (()=> {
         this.props.selectionSort(sortArray, sortedGroupIndex, currentlyChecking, currentLow, iterations)
-      }, 500);
+      }, intervalSpeed);
     }
 
     return (
@@ -46,9 +46,9 @@ class SortButtons extends React.Component {
         <button className="sort-button sort-button-size">Merge Sort</button>
         <button className="sort-button sort-button-size">Quick Sort</button>
         <div className="sort-speed-buttons">
-          <button className={ slowSpeedClass }>Slow</button>
-          <button className={ regularSpeedClass }>Regular</button>
-          <button className={ fastSpeedClass }>Fast</button>
+          <button className={ slowSpeedClass } onClick={ () => this.props.changeSpeed('slow', selectionSortTimeout) }>Slow</button>
+          <button className={ regularSpeedClass } onClick={ () => this.props.changeSpeed('regular', selectionSortTimeout) }>Regular</button>
+          <button className={ fastSpeedClass } onClick={ () => this.props.changeSpeed('fast', selectionSortTimeout) }>Fast</button>
         </div>
       </div>
     );

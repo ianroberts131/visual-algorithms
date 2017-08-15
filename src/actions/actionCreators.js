@@ -123,9 +123,12 @@ export function binarySearch(searchArray, searchNumber, low, high, iterations) {
     }
 }
 
-export function changeSpeed(speed, binaryTimeout, linearTimeout) {
-  clearTimeout(binaryTimeout);
-  clearTimeout(linearTimeout);
+export function changeSpeed(speed, ...timeouts) {
+  // unkown number of timeouts cleared, since different for search/sort algorithm pages
+  // pass timeouts spread, then iterate over each and clear
+  for (var i = 0; i < timeouts.length; i++) {
+    clearTimeout(timeouts[i]);
+  }
   return {
     type: 'CHANGE_SPEED',
     speed
