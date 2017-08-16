@@ -13,5 +13,5 @@ export var linearSearch = {
 export var selectionSort = {
   name: "Selection Sort",
   url: "selection-sort",
-  description: "A sorting algorithm that goes through each element in the portion of the collection that isn't sorted, finds the smallest term, and swaps it with the first element in the unsorted portion."
+  description: "An in-place sorting algorithm that divides a collection into two parts: a sublist of sorted elements and a sublist of unsorted elements. Initially, the sorted sublist is empty. The algorithm proceeds to find the smallest element in the unsorted sublist, and swaps it with the leftmost unsorted element."
 }

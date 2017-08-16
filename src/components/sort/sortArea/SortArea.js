@@ -4,7 +4,7 @@ import './sortArea.css';
 
 class SortArea extends React.Component {
   render() {
-    const { sortArray, sortedGroupIndex, currentlyChecking, currentLow, isRunning, isSorted } = this.props.sort;
+    const { sortArray, sortedGroupIndex, currentlyChecking, currentLow, isSorted } = this.props.sort;
     return (
       <div>
         <div className="sort-box-area">

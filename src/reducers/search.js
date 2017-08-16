@@ -27,10 +27,10 @@ const searchState = {
 }
 
 function search(state = searchState, action) {
+  var newSearchArray = randomlyGenerateArray(400, 1000);
+  var newSearchNumber = newSearchArray[Math.floor((Math.random() * 400 ) + 1)];
   switch(action.type) {
     case 'START_BINARY_SEARCH' :
-      var newSearchArray = randomlyGenerateArray(400, 1000)
-      var newSearchNumber = newSearchArray[Math.floor((Math.random() * 400 ) + 1)];
       return {
         ...state,
         searchArray: newSearchArray,
@@ -62,8 +62,6 @@ function search(state = searchState, action) {
       }
 
       case 'START_LINEAR_SEARCH' :
-        var newSearchArray = randomlyGenerateArray(400, 1000)
-        var newSearchNumber = newSearchArray[Math.floor((Math.random() * 400 ) + 1)];
         return {
           ...state,
           searchArray: newSearchArray,

@@ -1,0 +1,62 @@
+.sort-algorithm-info-section {
+  overflow: hidden;
+  width: 100%;
+}
+
+.sort-algorithm-info {
+  width: 37.5%;
+  float: left;
+  height: 225px;
+  border: 2px solid #d9d9d9;
+  margin-left: 10%;
+  margin-top: 20px;
+  background-color: white;
+}
+
+.header {
+  font-size: 25px;
+}
+
+#sort-algorithm-name, #complexity-title, #iterations-title {
+  margin: 0px;
+  padding-bottom: 10px;
+  padding-left: 2%;
+}
+
+#sort-algorithm-description {
+  margin: 2px;
+  font-size: 16px;
+  padding: 2%;
+}
+
+.sort-algorithm-details {
+  width: 22.5%;
+  height: 225px;
+  border: 2px solid #d9d9d9;
+  float: left;
+  margin-top: 20px;
+  background-color: white;
+  margin-left: 2.5%;
+}
+
+.complexity-detail {
+  padding-left: 2%;
+  margin: 0;
+  font-size: 18px;
+}
+
+.iterations-section {
+  width: 12.5%;
+  height: 225px;
+  border: 2px solid #d9d9d9;
+  float: left;
+  margin-top: 20px;
+  background-color: white;
+  margin-left: 2.5%;
+  text-align: center;
+}
+
+#iterations {
+  font-size: 48px;
+  margin-top: 12px;
+}

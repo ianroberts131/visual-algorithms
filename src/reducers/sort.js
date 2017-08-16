@@ -31,20 +31,21 @@ function sort(state = sortState, action) {
         currentLow: 0,
         currentlyChecking: 0,
         isRunning: true,
+        iterations: 0,
         isSorted: false
       }
 
     case 'SELECTION_SORT' :
-    return {
-      ...state,
-      sortAlgorithm: selectionSort,
-      iterations: action.iterations,
-      sortedGroupIndex: action.sortedGroupIndex,
-      currentLow: action.currentLow,
-      currentlyChecking: action.currentlyChecking,
-      isRunning: action.isRunning,
-      isSorted: action.isSorted
-    }
+      return {
+        ...state,
+        sortAlgorithm: selectionSort,
+        iterations: action.iterations,
+        sortedGroupIndex: action.sortedGroupIndex,
+        currentLow: action.currentLow,
+        currentlyChecking: action.currentlyChecking,
+        isRunning: action.isRunning,
+        isSorted: action.isSorted
+      }
 
     default:
       return state;
