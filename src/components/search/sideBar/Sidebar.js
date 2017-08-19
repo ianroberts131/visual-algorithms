@@ -9,7 +9,7 @@ class Sidebar extends React.Component {
       <section className="side-bar-section">
           <div className="algorithm-info">
             <p id="algorithm-name"><strong>Algorithm: </strong>{ searchAlgorithm.name }</p>
-            <p id="description">Description: { searchAlgorithm.description }</p>
+            <p id="description">{ searchAlgorithm.description }</p>
           </div>
           <div className="iteration-info-container">
             <div className="iteration-info">

@@ -9,7 +9,7 @@ class SortInformation extends React.Component {
       <section className="sort-algorithm-info-section">
         <div className="sort-algorithm-info">
           <p id="sort-algorithm-name" className="header"><strong>Algorithm: </strong>{ sortAlgorithm.name }</p>
-          <p id="sort-algorithm-description">Description: { sortAlgorithm.description }</p>
+          <p id="sort-algorithm-description">{ sortAlgorithm.description }</p>
         </div>
         <div className="sort-algorithm-details">
           <p id="complexity-title" className="header">Complexity Analysis</p>

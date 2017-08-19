@@ -1,0 +1,37 @@
+.bubble-sort-box-area {
+  margin-top: 2.5%;
+  text-align: center;
+}
+
+.bubble-sort-box {
+  display: inline-block;
+  width: 9%;
+  height: 100px;
+  line-height: 100px;
+  color: white;
+  margin: 1px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.bubble-counter-box-wrapper {
+  width: 100%;
+  text-align: center;
+  margin-top: 2.5%;
+}
+
+.bubble-counter-text {
+  font-size: 30px;
+}
+
+.bubble-unsorted {
+  background-color: blue;
+}
+
+.bubble-sorted {
+  background-color: #00cc00;
+}
+
+.bubble-checking {
+  background-color: red;
+}
