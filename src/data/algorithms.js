@@ -13,5 +13,17 @@ export var linearSearch = {
 export var selectionSort = {
   name: "Selection Sort",
   url: "selection-sort",
-  description: "An in-place sorting algorithm that divides a collection into two parts: a sublist of sorted elements and a sublist of unsorted elements. Initially, the sorted sublist is empty. The algorithm proceeds to find the smallest element in the unsorted sublist, and swaps it with the leftmost unsorted element."
+  description: "An in-place sorting algorithm that divides a collection into two parts: a sublist of sorted elements and a sublist of unsorted elements. Initially, the sorted sublist is empty. The algorithm proceeds to find the smallest element in the unsorted sublist, and swaps it with the leftmost unsorted element.",
+  worstCase: "O(n2)",
+  bestCase: "O(n2)",
+  averageCase: "O(n2)"
+}
+
+export var insertionSort = {
+  name: "Insertion Sort",
+  url: "insertion-sort",
+  description: "An in-place sorting algorithm...blah blah blah",
+  worstCase: "O(n2)",
+  bestCase: "O(n)",
+  averageCase: "O(n2)"
 }

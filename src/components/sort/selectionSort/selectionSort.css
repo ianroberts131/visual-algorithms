@@ -1,0 +1,31 @@
+.selection-sort-box-area {
+  margin-top: 2.5%;
+  text-align: center;
+}
+
+.selection-sort-box {
+  display: inline-block;
+  width: 9%;
+  height: 100px;
+  line-height: 100px;
+  color: white;
+  margin: 1px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.selection-unsorted {
+  background-color: blue;
+}
+
+.selection-sorted {
+  background-color: #00cc00;
+}
+
+.selection-current-low {
+  background-color: orange;
+}
+
+.selection-checking {
+  background-color: red;
+}

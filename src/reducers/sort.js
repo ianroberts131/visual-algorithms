@@ -4,7 +4,7 @@
 // 2. copy of current state
 
 import { randomlyGenerateArray } from '../helpers';
-import { selectionSort } from '../data/algorithms';
+import { selectionSort, insertionSort } from '../data/algorithms';
 
 // create an array for the search area
 var sortArray = randomlyGenerateArray(10, 100, false);
@@ -16,6 +16,8 @@ const sortState = {
   sortedGroupIndex: 0,
   currentLow: 0,
   currentlyChecking: 0,
+  insertionIndex: 1,
+  insertionKey: sortArray[1],
   isRunning: false,
   isSorted: false
 }
@@ -46,6 +48,33 @@ function sort(state = sortState, action) {
         isRunning: action.isRunning,
         isSorted: action.isSorted
       }
+
+      case 'START_INSERTION_SORT' :
+      var insertionArray = randomlyGenerateArray(10, 100, false);
+        return {
+          ...state,
+          sortArray: insertionArray,
+          sortAlgorithm: insertionSort,
+          currentlyChecking: 0,
+          insertionIndex: 1,
+          insertionKey: insertionArray[1],
+          isRunning: true,
+          iterations: 0,
+          isSorted: false
+        }
+
+      case 'INSERTION_SORT' :
+        return {
+          ...state,
+          sortAlgorithm: insertionSort,
+          iterations: action.iterations,
+          currentLow: action.currentLow,
+          currentlyChecking: action.currentlyChecking,
+          insertionIndex: action.insertionIndex,
+          insertionKey: action.insertionKey,
+          isRunning: action.isRunning,
+          isSorted: action.isSorted
+        }
 
     default:
       return state;

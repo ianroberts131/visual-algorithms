@@ -8,7 +8,7 @@ var classNames = require('classnames');
 class SortButtons extends React.Component {
   render() {
 
-    const { sortArray, sortedGroupIndex, currentlyChecking, currentLow, iterations, isRunning, sortAlgorithm } = this.props.sort;
+    const { sortArray, sortedGroupIndex, currentlyChecking, currentLow, iterations, isRunning, insertionIndex, insertionKey, sortAlgorithm } = this.props.sort;
 
     const { intervalSpeed, speedString, regularActive, slowActive, fastActive } = this.props.speed;
 
@@ -31,6 +31,7 @@ class SortButtons extends React.Component {
     });
 
     var selectionSortTimeout;
+    var insertionSortTimeout;
 
     if (isRunning && sortAlgorithm.name === 'Selection Sort') {
       selectionSortTimeout = setTimeout (()=> {
@@ -38,10 +39,16 @@ class SortButtons extends React.Component {
       }, intervalSpeed);
     }
 
+    if (isRunning && sortAlgorithm.name === 'Insertion Sort') {
+      insertionSortTimeout = setTimeout (()=> {
+        this.props.insertionSort(sortArray, insertionIndex, insertionKey, currentlyChecking, iterations);
+      }, intervalSpeed);
+    }
+
     return (
       <div className="sort-buttons">
-        <button className="sort-button sort-button-size" onClick={ () => this.props.startSelectionSort(selectionSortTimeout) }>Selection Sort</button>
-        <button className="sort-button sort-button-size">Insertion Sort</button>
+        <button className="sort-button sort-button-size" onClick={ () => this.props.startSelectionSort(selectionSortTimeout, insertionSortTimeout) }>Selection Sort</button>
+        <button className="sort-button sort-button-size" onClick={ () => this.props.startInsertionSort(selectionSortTimeout, insertionSortTimeout) }>Insertion Sort</button>
         <button className="sort-button sort-button-size">Bubble Sort</button>
         <button className="sort-button sort-button-size">Merge Sort</button>
         <button className="sort-button sort-button-size">Quick Sort</button>

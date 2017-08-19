@@ -1,0 +1,44 @@
+.insertion-sort-box-area {
+  margin-top: 2.5%;
+  text-align: center;
+}
+
+.insertion-sort-box {
+  display: inline-block;
+  width: 9%;
+  height: 100px;
+  line-height: 100px;
+  color: white;
+  margin: 1px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.insertion-box-wrapper {
+  width: 100%;
+  text-align: center;
+}
+
+.insertion-box {
+  display: inline-block;
+  margin-top: 2.5%;
+  width: 9%;
+  height: 100px;
+  line-height: 100px;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  background-color: red;
+}
+
+.insertion-unsorted {
+  background-color: blue;
+}
+
+.insertion-sorted {
+  background-color: #00cc00;
+}
+
+.insertion-checking {
+  background-color: orange;
+}

@@ -13,9 +13,9 @@ class SortInformation extends React.Component {
         </div>
         <div className="sort-algorithm-details">
           <p id="complexity-title" className="header">Complexity Analysis</p>
-          <p className="complexity-detail">Worst Case Performance: O(n<sup>2</sup>)</p>
-          <p className="complexity-detail">Best Case Performance: O(n<sup>2</sup>)</p>
-          <p className="complexity-detail">Average Case Performance: O(n<sup>2</sup>)</p>
+          <p className="complexity-detail">Worst Case Performance: {sortAlgorithm.worstCase}</p>
+          <p className="complexity-detail">Best Case Performance: {sortAlgorithm.bestCase}</p>
+          <p className="complexity-detail">Average Case Performance: {sortAlgorithm.averageCase}</p>
         </div>
         <div className="iterations-section">
           <p id="iterations-title" className="header">Iterations</p>

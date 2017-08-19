@@ -1,5 +1,7 @@
-export function startSelectionSort(selectionSortTimeout) {
-  clearTimeout(selectionSortTimeout);
+export function startSelectionSort(...timeouts) {
+  for (var i = 0; i < timeouts.length; i++) {
+    clearTimeout(timeouts[i]);
+  }
   return {
     type: 'START_SELECTION_SORT'
   }
@@ -33,6 +35,43 @@ export function selectionSort(sortArray, sortedGroupIndex, currentlyChecking, cu
     sortedGroupIndex: sortedGroupIndex,
     currentlyChecking: currentlyChecking,
     currentLow: currentLow,
+    iterations: iterations,
+    isRunning: isRunning,
+    isSorted: isSorted
+  }
+}
+
+export function startInsertionSort(...timeouts) {
+  for (var i = 0; i < timeouts.length; i++) {
+    clearTimeout(timeouts[i]);
+  }
+  return {
+    type: 'START_INSERTION_SORT'
+  }
+}
+
+export function insertionSort(sortArray, index, key, currentlyChecking, iterations, isSorted = false) {
+  iterations += 1;
+  var isRunning = true;
+  if (index > sortArray.length - 1) {
+    isRunning = false;
+    isSorted = true;
+  } else if ((currentlyChecking >= 0) && (sortArray[currentlyChecking] > key)) {
+      sortArray[currentlyChecking + 1] = sortArray[currentlyChecking];
+      currentlyChecking -= 1;
+  } else {
+    sortArray[currentlyChecking + 1] = key;
+    index += 1;
+    currentlyChecking = index - 1;
+    key = sortArray[index];
+  }
+
+  return {
+    type: 'INSERTION_SORT',
+    sortArray: sortArray,
+    insertionIndex: index,
+    insertionKey: key,
+    currentlyChecking: currentlyChecking,
     iterations: iterations,
     isRunning: isRunning,
     isSorted: isSorted
