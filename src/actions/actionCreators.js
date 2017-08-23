@@ -87,7 +87,7 @@ export function startBubbleSort(...timeouts) {
   }
 }
 
-export function bubbleSort(sortArray, bubbleSwapsCounter, bubbleIndex, iterations, isSorted = false) {
+export function bubbleSort(sortArray, bubbleSwapsCounter, bubbleIndex, iterations, isSorted = false, bubbleSwapping = false) {
   var isRunning = true;
   if (bubbleIndex === sortArray.length - 1) {
     if (bubbleSwapsCounter === 0) {
@@ -104,6 +104,7 @@ export function bubbleSort(sortArray, bubbleSwapsCounter, bubbleIndex, iteration
       sortArray[bubbleIndex] = sortArray[bubbleIndex + 1];
       sortArray[bubbleIndex + 1] = temp;
       bubbleSwapsCounter += 1;
+      bubbleSwapping = true;
     }
     bubbleIndex += 1;
   }
@@ -113,6 +114,7 @@ export function bubbleSort(sortArray, bubbleSwapsCounter, bubbleIndex, iteration
     sortArray: sortArray,
     bubbleSwapsCounter: bubbleSwapsCounter,
     bubbleIndex: bubbleIndex,
+    bubbleSwapping: bubbleSwapping,
     iterations: iterations,
     isRunning: isRunning,
     isSorted: isSorted

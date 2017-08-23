@@ -20,6 +20,7 @@ const sortState = {
   insertionKey: sortArray[1],
   bubbleSwapsCounter: 0,
   bubbleIndex: 0,
+  bubbleSwapping: false,
   isRunning: false,
   isSorted: false
 }
@@ -85,6 +86,7 @@ function sort(state = sortState, action) {
             sortAlgorithm: bubbleSort,
             bubbleSwapsCounter: 0,
             bubbleIndex: 0,
+            bubbleSwapping: false,
             isRunning: true,
             iterations: 0,
             isSorted: false
@@ -97,6 +99,7 @@ function sort(state = sortState, action) {
             iterations: action.iterations,
             bubbleSwapsCounter: action.bubbleSwapsCounter,
             bubbleIndex: action.bubbleIndex,
+            bubbleSwapping: action.bubbleSwapping,
             isRunning: action.isRunning,
             isSorted: action.isSorted
           }

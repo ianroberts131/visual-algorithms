@@ -1,6 +1,7 @@
 .bubble-sort-box-area {
   margin-top: 2.5%;
   text-align: center;
+  overflow: hidden;
 }
 
 .bubble-sort-box {
@@ -34,4 +35,204 @@
 
 .bubble-checking {
   background-color: red;
+}
+
+.bubble-swapping-left-slow, .bubble-swapping-left-regular, .bubble-swapping-left-fast,
+.bubble-swapping-last-slow, .bubble-swapping-last-regular, .bubble-swapping-last-fast {
+  background-color: blue;
+  opacity: 1.0;
+}
+
+.bubble-swapping-right-slow, .bubble-swapping-right-regular, .bubble-swapping-right-fast {
+  background-color: red;
+  opacity: 1.0;
+}
+
+.bubble-swapping-left-slow.bubble-transition-enter {
+  transform: translate(100%, 0%);
+  -ms-transform: translate(100%, 0%);
+  -moz-transform: translate(100%, 0%);
+  -webkit-transform: translate(100%, 0%);
+  -o-transform: translate(100%, 0%);
+  opacity: 0.2;
+  background-color: blue;
+  transition: all 1.0s;
+}
+
+.bubble-swapping-left-slow.bubble-transition-enter-active {
+  transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  opacity: 1.0;
+  background-color: blue;
+}
+
+.bubble-swapping-right-slow.bubble-transition-enter {
+  transform: translate(-100%, 0);
+  -ms-transform: translate(-100%, 0%);
+  -moz-transform: translate(-100%, 0%);
+  -webkit-transform: translate(-100%, 0%);
+  -o-transform: translate(-100%, 0%);
+  opacity: 0.2;
+  background-color: red;
+  transition: all 1.0s;
+}
+
+.bubble-swapping-right-slow.bubble-transition-enter-active {
+  transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  background-color: red;
+  opacity: 1.0;
+}
+
+.bubble-swapping-last-slow.bubble-transition-enter {
+  transform: translate(-100%, 0);
+  -ms-transform: translate(-100%, 0%);
+  -moz-transform: translate(-100%, 0%);
+  -webkit-transform: translate(-100%, 0%);
+  -o-transform: translate(-100%, 0%);
+  opacity: 0.2;
+  background-color: blue;
+  transition: all 1.0s;
+}
+
+.bubble-swapping-last-slow.bubble-transition-enter-active {
+  transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  background-color: blue;
+  opacity: 1.0;
+}
+
+.bubble-swapping-left-regular.bubble-transition-enter {
+  transform: translate(100%, 0%);
+  -ms-transform: translate(100%, 0%);
+  -moz-transform: translate(100%, 0%);
+  -webkit-transform: translate(100%, 0%);
+  -o-transform: translate(100%, 0%);
+  opacity: 0.2;
+  background-color: blue;
+  transition: all 0.5s;
+}
+
+.bubble-swapping-left-regular.bubble-transition-enter-active {
+  transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  opacity: 1.0;
+  background-color: blue;
+}
+
+.bubble-swapping-right-regular.bubble-transition-enter {
+  transform: translate(-100%, 0);
+  -ms-transform: translate(-100%, 0%);
+  -moz-transform: translate(-100%, 0%);
+  -webkit-transform: translate(-100%, 0%);
+  -o-transform: translate(-100%, 0%);
+  background-color: red;
+  opacity: 0.2;
+  transition: all 0.5s;
+}
+
+.bubble-swapping-right-regular.bubble-transition-enter-active {
+  transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  background-color: red;
+  opacity: 1.0;
+}
+
+.bubble-swapping-last-regular.bubble-transition-enter {
+  transform: translate(-100%, 0);
+  -ms-transform: translate(-100%, 0%);
+  -moz-transform: translate(-100%, 0%);
+  -webkit-transform: translate(-100%, 0%);
+  -o-transform: translate(-100%, 0%);
+  background-color: blue;
+  opacity: 0.2;
+  transition: all 0.5s;
+}
+
+.bubble-swapping-last-regular.bubble-transition-enter-active {
+  transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  background-color: blue;
+  opacity: 1.0;
+}
+
+.bubble-swapping-left-fast.bubble-transition-enter {
+  transform: translate(100%, 0%);
+  -ms-transform: translate(100%, 0%);
+  -moz-transform: translate(100%, 0%);
+  -webkit-transform: translate(100%, 0%);
+  -o-transform: translate(100%, 0%);
+  opacity: 0.2;
+  background-color: blue;
+  transition: all 0.25s;
+}
+
+.bubble-swapping-left-fast.bubble-transition-enter-active {
+  transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  opacity: 1.0;
+  background-color: blue;
+}
+
+.bubble-swapping-right-fast.bubble-transition-enter {
+  transform: translate(-100%, 0);
+  -ms-transform: translate(-100%, 0%);
+  -moz-transform: translate(-100%, 0%);
+  -webkit-transform: translate(-100%, 0%);
+  -o-transform: translate(-100%, 0%);
+  background-color: red;
+  opacity: 0.2;
+  transition: all 0.25s;
+}
+
+.bubble-swapping-right-fast.bubble-transition-enter-active {
+  transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  background-color: red;
+  opacity: 1.0;
+}
+
+.bubble-swapping-last-fast.bubble-transition-enter {
+  transform: translate(-100%, 0);
+  -ms-transform: translate(-100%, 0%);
+  -moz-transform: translate(-100%, 0%);
+  -webkit-transform: translate(-100%, 0%);
+  -o-transform: translate(-100%, 0%);
+  background-color: blue;
+  opacity: 0.2;
+  transition: all 0.25s;
+}
+
+.bubble-swapping-last-fast.bubble-transition-enter-active {
+  transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  background-color: blue;
+  opacity: 1.0;
 }

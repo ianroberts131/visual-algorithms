@@ -34,7 +34,7 @@ function speed(state = speedState, action) {
         regularActive: false,
         slowActive: false,
         fastActive: true,
-        intervalSpeed: 200
+        intervalSpeed: 500
       }
     default :
       return state;
