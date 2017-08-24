@@ -7,6 +7,7 @@ class BubbleSort extends React.Component {
   render() {
     const { sortArray, bubbleIndex, isSorted, bubbleSwapsCounter, bubbleSwapping, sortAlgorithm } = this.props.sort;
     const { intervalSpeed, speedString } = this.props.speed;
+
     return (
       <div>
         <CSSTransitionGroup
@@ -22,20 +23,20 @@ class BubbleSort extends React.Component {
             var currentNumber = sortArray[bubbleIndex];
             if (!isSorted) {
               if (isCurrentIndex && !bubbleSwapping) {
-                return <div key={`${number}${index}`} className="bubble-sort-box bubble-checking">{ number }</div>
+                return <div key={ `${number}${index}` } className="bubble-sort-box bubble-checking">{ number }</div>
               } else if (isComparisonIndex) {
-                return <div key={`${number}${index}`} className="bubble-sort-box bubble-checking">{ number }</div>
+                  return <div key={ `${number}${index}` } className="bubble-sort-box bubble-checking">{ number }</div>
               } else if (isCurrentIndex && bubbleSwapping ) {
-                return <div key={`${number}${index}`} className={`bubble-sort-box bubble-swapping-right-${speedString}`}>{ number }</div>
+                  return <div key={ `${number}${index}` } className={`bubble-sort-box bubble-swapping-right-${speedString}`}>{ number }</div>
               } else if ((index === bubbleIndex - 1) && bubbleSwapping) {
-                return <div key={`${number}${index}`} className={`bubble-sort-box bubble-swapping-left-${speedString}`}>{ number }</div>
+                  return <div key={ `${number}${index}` } className={`bubble-sort-box bubble-swapping-left-${speedString}`}>{ number }</div>
               } else if (isLastIndex && bubbleSwapping) {
-                return <div key={`${number}${index}`} className={`bubble-sort-box bubble-swapping-last-${speedString}`}>{ number }</div>
+                  return <div key={ `${number}${index}` } className={`bubble-sort-box bubble-swapping-last-${speedString}`}>{ number }</div>
               } else {
-                return <div key={`${number}${index}`} className="bubble-sort-box bubble-unsorted">{ number }</div>
+                  return <div key={ `${number}${index}` } className="bubble-sort-box bubble-unsorted">{ number }</div>
               }
             } else {
-              return <div key={`${number}${index}`} className="bubble-sort-box bubble-sorted">{ number }</div>
+                return <div key={ `${number}${index}` } className="bubble-sort-box bubble-sorted">{ number }</div>
             }
           })}
         </CSSTransitionGroup>

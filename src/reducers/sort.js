@@ -16,6 +16,7 @@ const sortState = {
   sortedGroupIndex: 0,
   currentLow: 0,
   currentlyChecking: 0,
+  selectionSwapping: false,
   insertionIndex: 1,
   insertionKey: sortArray[1],
   bubbleSwapsCounter: 0,
@@ -35,6 +36,8 @@ function sort(state = sortState, action) {
         sortedGroupIndex: 0,
         currentLow: 0,
         currentlyChecking: 0,
+        selectionSwapping: false,
+        swappedElement: 0,
         isRunning: true,
         iterations: 0,
         isSorted: false
@@ -48,6 +51,8 @@ function sort(state = sortState, action) {
         sortedGroupIndex: action.sortedGroupIndex,
         currentLow: action.currentLow,
         currentlyChecking: action.currentlyChecking,
+        selectionSwapping: action.selectionSwapping,
+        swappedElement: action.swappedElement,
         isRunning: action.isRunning,
         isSorted: action.isSorted
       }
