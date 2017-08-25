@@ -4,7 +4,7 @@ import './insertionSort.css';
 
 class InsertionSort extends React.Component {
   render() {
-    const { sortArray, sortedGroupIndex, currentlyChecking, currentLow, isSorted, sortAlgorithm, insertionKey, insertionIndex } = this.props.sort;
+    const { sortArray, sortedGroupIndex, currentlyChecking, currentLow, isSorted, insertionKey, insertionIndex } = this.props.sort;
     return (
     <div>
       <div className="insertion-sort-box-area">

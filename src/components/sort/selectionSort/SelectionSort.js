@@ -5,7 +5,7 @@ import './selectionSort.css';
 
 class SelectionSort extends React.Component {
   render() {
-    const { sortArray, sortedGroupIndex, currentlyChecking, currentLow, selectionSwapping, swappedElement, isSorted, sortAlgorithm } = this.props.sort;
+    const { sortArray, sortedGroupIndex, currentlyChecking, currentLow, selectionSwapping, swappedElement, isSorted, } = this.props.sort;
     const { intervalSpeed, speedString } = this.props.speed;
 
     return (

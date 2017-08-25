@@ -1,14 +1,54 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .nav-bar {
+  display: block;
   width: 100%;
   height: 60px;
   background-color: #b3b3b3;
 }
 
 #nav-title {
+  float: left;
   font-size: 25px;
+  height: 60px;
   line-height: 60px;
   color: white;
   margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 20px;
+}
+
+.tabs {
+  float: left;
+  overflow: hidden;
+  margin-left: 60px;
+  width: 300px;
+  height: 60px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.tabs button:hover {
+  background-color: white;
+}
+
+.tab {
+  height: 60px;
+  width: 100px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  border: none;
+}
+
+.tab-selected {
+  background-color: #707070;
+  color: white;
+}
+
+.tab-selected:hover {
+  color: black;
 }

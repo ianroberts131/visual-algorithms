@@ -23,7 +23,7 @@ const sortState = {
   bubbleIndex: 0,
   bubbleSwapping: false,
   isRunning: false,
-  isSorted: false
+  isSorted: false,
 }
 
 function sort(state = sortState, action) {
