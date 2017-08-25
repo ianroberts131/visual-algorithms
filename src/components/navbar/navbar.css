@@ -32,10 +32,13 @@ body {
 }
 
 .tabs button:hover {
-  background-color: white;
+  background-color: #909090;
+  color: white;
 }
 
 .tab {
+  background-color: #707070;
+  color: white;
   height: 60px;
   width: 100px;
   margin-top: 0;
@@ -45,10 +48,7 @@ body {
 }
 
 .tab-selected {
-  background-color: #707070;
-  color: white;
-}
-
-.tab-selected:hover {
+  background-color: white;
   color: black;
+  border: 1px solid #00ffff;
 }
