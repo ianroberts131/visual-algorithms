@@ -171,6 +171,11 @@
   background-color: #00cc00;
 }
 
+.no-display.insertion-compare-enter, .no-display.insertion-compare-enter-active {
+  background-color: white;
+  opacity: 0;
+}
+
 .slide-down-slow.insertion-compare-enter {
   transform: translate(0, -150%);
   -ms-transform: translate(0, -150%);

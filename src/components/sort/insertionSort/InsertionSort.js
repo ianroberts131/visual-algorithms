@@ -40,7 +40,7 @@ class InsertionSort extends React.Component {
       <CSSTransitionGroup
         transitionName="insertion-compare"
         transitionLeave={false}
-        transitionEnterTimeout={ intervalSpeed }
+        transitionEnterTimeout={ intervalSpeed * 0.9 }
         className="comparison-sort-box-area"
         component="div">
         { !isSorted && compareArray.map((number, index) => {
@@ -51,7 +51,7 @@ class InsertionSort extends React.Component {
               return <div key={ `${number}${index}-compare-left` } className={ `insertion-sort-box insertion-box slide-left-${speedString}` }> { number }</div>
             }
           } else {
-            return <div key={ `${number}${index}-compare` } className="insertion-sort-box no-display"></div>
+            return <div key={ `${number}${index}-compare-none` } className="insertion-sort-box no-display"></div>
           }
         })}
       </CSSTransitionGroup>
