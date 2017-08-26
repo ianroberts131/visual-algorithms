@@ -3,6 +3,10 @@
   text-align: center;
 }
 
+.comparison-sort-box-area {
+  text-align: center;
+}
+
 .insertion-sort-box {
   display: inline-block;
   width: 9%;
@@ -41,4 +45,242 @@
 
 .insertion-checking {
   background-color: orange;
+}
+
+.no-display {
+  background: white;
+  opacity: 0;
+}
+
+.insertion-slide-up-slow, .insertion-slide-up-regular,
+.insertion-slide-up-fast {
+  background-color: #00cc00;
+}
+
+.insertion-slide-right-slow.insertion-transition-enter {
+  transform: translate(-100%, 0);
+  -ms-transform: translate(-100%, 0%);
+  -moz-transform: translate(-100%, 0%);
+  -webkit-transform: translate(-100%, 0%);
+  -o-transform: translate(-100%, 0%);
+  background-color: orange;
+  transition: all 1.0s;
+}
+
+.insertion-slide-right-slow.insertion-transition-enter-active {
+  transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  background-color: #00cc00;
+}
+
+.insertion-slide-right-regular.insertion-transition-enter {
+  transform: translate(-100%, 0);
+  -ms-transform: translate(-100%, 0%);
+  -moz-transform: translate(-100%, 0%);
+  -webkit-transform: translate(-100%, 0%);
+  -o-transform: translate(-100%, 0%);
+  background-color: orange;
+  transition: all 0.5s;
+}
+
+.insertion-slide-right-regular.insertion-transition-enter-active {
+  transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  background-color: #00cc00;
+}
+
+.insertion-slide-right-fast.insertion-transition-enter {
+  transform: translate(-100%, 0);
+  -ms-transform: translate(-100%, 0%);
+  -moz-transform: translate(-100%, 0%);
+  -webkit-transform: translate(-100%, 0%);
+  -o-transform: translate(-100%, 0%);
+  background-color: orange;
+  transition: all 0.25s;
+}
+
+.insertion-slide-right-fast.insertion-transition-enter-active {
+  transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  background-color: #00cc00;
+}
+
+.insertion-slide-up-slow.insertion-transition-enter {
+  transform: translate(0, 150%);
+  -ms-transform: translate(0, 150%);
+  -moz-transform: translate(0, 150%);
+  -webkit-transform: translate(0, 150%);
+  -o-transform: translate(0, 150%);
+  background-color: red;
+  transition: all 1.0s;
+}
+
+.insertion-slide-up-slow.insertion-transition-enter-active {
+  transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  background-color: #00cc00;
+}
+
+.insertion-slide-up-regular.insertion-transition-enter {
+  transform: translate(0, 150%);
+  -ms-transform: translate(0, 150%);
+  -moz-transform: translate(0, 150%);
+  -webkit-transform: translate(0, 150%);
+  -o-transform: translate(0, 150%);
+  background-color: red;
+  transition: all 0.5s;
+}
+
+.insertion-slide-up-regular.insertion-transition-enter-active {
+  transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  background-color: #00cc00;
+}
+
+.insertion-slide-up-fast.insertion-transition-enter {
+  transform: translate(0, 150%);
+  -ms-transform: translate(0, 150%);
+  -moz-transform: translate(0, 150%);
+  -webkit-transform: translate(0, 150%);
+  -o-transform: translate(0, 150%);
+  background-color: red;
+  transition: all 0.25s;
+}
+
+.insertion-slide-up-fast.insertion-transition-enter-active {
+  transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  background-color: #00cc00;
+}
+
+.slide-down-slow.insertion-compare-enter {
+  transform: translate(0, -150%);
+  -ms-transform: translate(0, -150%);
+  -moz-transform: translate(0, -150%);
+  -webkit-transform: translate(0, -150%);
+  -o-transform: translate(0, -150%);
+  background-color: red;
+  transition: all 1.0s;
+}
+
+.slide-down-slow.insertion-compare-enter-active {
+  transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  background-color: red;
+}
+
+.slide-down-regular.insertion-compare-enter {
+  transform: translate(0, -150%);
+  -ms-transform: translate(0, -150%);
+  -moz-transform: translate(0, -150%);
+  -webkit-transform: translate(0, -150%);
+  -o-transform: translate(0, -150%);
+  background-color: red;
+  transition: all 0.5s;
+}
+
+.slide-down-regular.insertion-compare-enter-active {
+  transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  background-color: red;
+}
+
+.slide-down-fast.insertion-compare-enter {
+  transform: translate(0, -150%);
+  -ms-transform: translate(0, -150%);
+  -moz-transform: translate(0, -150%);
+  -webkit-transform: translate(0, -150%);
+  -o-transform: translate(0, -150%);
+  background-color: red;
+  transition: all 0.25s;
+}
+
+.slide-down-fast.insertion-compare-enter-active {
+  transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  background-color: red;
+}
+
+.slide-left-slow.insertion-compare-enter {
+  transform: translate(100%, 0);
+  -ms-transform: translate(100%, 0);
+  -moz-transform: translate(100%, 0);
+  -webkit-transform: translate(100%, 0);
+  -o-transform: translate(100%, 0);
+  background-color: red;
+  transition: all 1.0s;
+}
+
+.slide-left-slow.insertion-compare-enter-active {
+  transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  background-color: red;
+}
+
+.slide-left-regular.insertion-compare-enter {
+  transform: translate(100%, 0);
+  -ms-transform: translate(100%, 0);
+  -moz-transform: translate(100%, 0);
+  -webkit-transform: translate(100%, 0);
+  -o-transform: translate(100%, 0);
+  background-color: red;
+  transition: all 0.5s;
+}
+
+.slide-left-regular.insertion-compare-enter-active {
+  transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  background-color: red;
+}
+
+.slide-left-fast.insertion-compare-enter {
+  transform: translate(100%, 0);
+  -ms-transform: translate(100%, 0);
+  -moz-transform: translate(100%, 0);
+  -webkit-transform: translate(100%, 0);
+  -o-transform: translate(100%, 0);
+  background-color: red;
+  transition: all 0.25s;
+}
+
+.slide-left-fast.insertion-compare-enter-active {
+  transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  background-color: red;
 }

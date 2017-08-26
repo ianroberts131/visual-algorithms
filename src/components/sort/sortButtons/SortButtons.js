@@ -12,7 +12,7 @@ class SortButtons extends React.Component {
             iterations, isRunning, insertionIndex, insertionKey, bubbleSwapsCounter,
             bubbleIndex, sortAlgorithm } = this.props.sort;
 
-    const { intervalSpeed, speedString, regularActive, slowActive, fastActive } = this.props.speed;
+    const { intervalSpeed, regularActive, slowActive, fastActive } = this.props.speed;
 
     var regularSpeedClass = classNames({
       'sort-button-size': true,

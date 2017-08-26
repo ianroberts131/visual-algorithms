@@ -18,7 +18,7 @@ export function selectionSort(sortArray, sortedGroupIndex, currentlyChecking, cu
   }
   if (currentlyChecking > sortArray.length - 1) {
     // If the lowest element isn't currently in position, initiate the swap animation
-    if (currentLow != sortedGroupIndex) {
+    if (currentLow !== sortedGroupIndex) {
       selectionSwapping = true;
       swappedElement = currentLow;
     }
@@ -58,20 +58,24 @@ export function startInsertionSort(...timeouts) {
   }
 }
 
-export function insertionSort(sortArray, index, key, currentlyChecking, iterations, isSorted = false) {
+export function insertionSort(sortArray, index, key, currentlyChecking, iterations, isSorted = false, slideRight = false, verticalSlide = false) {
   iterations += 1;
   var isRunning = true;
+  var replacedIndex = 0;
   if (index > sortArray.length - 1) {
     isRunning = false;
     isSorted = true;
   } else if ((currentlyChecking >= 0) && (sortArray[currentlyChecking] > key)) {
       sortArray[currentlyChecking + 1] = sortArray[currentlyChecking];
       currentlyChecking -= 1;
+      slideRight = true;
   } else {
+    replacedIndex = currentlyChecking + 1;
     sortArray[currentlyChecking + 1] = key;
     index += 1;
     currentlyChecking = index - 1;
     key = sortArray[index];
+    verticalSlide = true;
   }
 
   return {
@@ -80,6 +84,9 @@ export function insertionSort(sortArray, index, key, currentlyChecking, iteratio
     insertionIndex: index,
     insertionKey: key,
     currentlyChecking: currentlyChecking,
+    insertionSlideRight: slideRight,
+    insertionVerticalSlide: verticalSlide,
+    insertionReplacedIndex: replacedIndex,
     iterations: iterations,
     isRunning: isRunning,
     isSorted: isSorted

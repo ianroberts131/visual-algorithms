@@ -19,6 +19,9 @@ const sortState = {
   selectionSwapping: false,
   insertionIndex: 1,
   insertionKey: sortArray[1],
+  insertionSlideRight: false,
+  insertionSlideUp: false,
+  insertionSlideDown: false,
   bubbleSwapsCounter: 0,
   bubbleIndex: 0,
   bubbleSwapping: false,
@@ -66,6 +69,9 @@ function sort(state = sortState, action) {
           currentlyChecking: 0,
           insertionIndex: 1,
           insertionKey: insertionArray[1],
+          insertionSlideRight: false,
+          insertionVerticalSlide: false,
+          insertionReplacedIndex: 0,
           isRunning: true,
           iterations: 0,
           isSorted: false
@@ -79,6 +85,9 @@ function sort(state = sortState, action) {
           currentlyChecking: action.currentlyChecking,
           insertionIndex: action.insertionIndex,
           insertionKey: action.insertionKey,
+          insertionSlideRight: action.insertionSlideRight,
+          insertionVerticalSlide: action.insertionVerticalSlide,
+          insertionReplacedIndex: action.insertionReplacedIndex,
           isRunning: action.isRunning,
           isSorted: action.isSorted
         }
