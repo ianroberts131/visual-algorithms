@@ -55,13 +55,6 @@ class InsertionSort extends React.Component {
           }
         })}
       </CSSTransitionGroup>
-      { /*
-      { !isSorted &&
-          <div className="insertion-box-wrapper">
-            <div className="insertion-box">{ insertionKey }</div>
-          </div>
-      }
-      */}
     </div>
     )
   }
