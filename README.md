@@ -22,7 +22,7 @@ The speed can be changed at any time while the algorithm is running.
 
 The main purpose of this repository is to continue to expand Visual Algorithms and to make the current animations better/more useful. We are grateful for all contributions.
 
-For details on how you can contribute, please read our contributing guide.
+For details on how you can contribute, please read our [contributing guide](https://github.com/ianroberts131/visual-algorithms/blob/master/CONTRIBUTING.md).
 
 ## License
 Copyright (c) 2017 Ian Roberts. Licensed under the MIT license.
