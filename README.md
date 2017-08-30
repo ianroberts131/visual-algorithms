@@ -10,13 +10,17 @@ The site is built using [React](https://facebook.github.io/react/) and [Redux](h
 
 There are currently 2 pages - 1 for search algorithms and 1 for sort algorithms.
 
+Select the type of algorithms you would like to see from the homepage:
+
+![select page](/images/visual-algos-demo-3.gif)
+
 Select the speed of the algorithm in the upper right-hand corner, and then choose which algorithm you would like to see:
 
-![fast binary search](/images/fast-binary-search.gif)
+![fast bubble sort](/images/visual-algos-demo-1.gif)
 
 The speed can be changed at any time while the algorithm is running.
 
-![change speeds](/images/change-speeds.gif)
+![change speeds](/images/visual-algos-demo-2.gif)
 
 ## Contributing
 
