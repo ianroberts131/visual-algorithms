@@ -12,18 +12,18 @@ Thank you for your interest in contributing to [Visual Algorithms](http://visual
    Be sure to use the HTTPS link.
 4. Open a terminal on your system and move to the directory where the repository should be located.
 5. Run `git clone <paste link here>`. You should now have a local copy of the forked repository.
-6. `cd` into the repository
+6. `cd` into the repository.
 7. Run `git remote add upstream https://github.com/ianroberts131/visual-algorithms.git`. This will allow you to keep your forked copy up-to-date with any changes that are made.
 
    Run `git remote -v` to check if both the repositories are listed.
-8. Now you can make changes to your local repository, commit them, and submit a pull request
+8. Now you can make changes to your local repository, commit them, and submit a pull request.
 
 ## Finding an Issue
 
 To work on a known issue, take a look through the existing [issues](https://github.com/ianroberts131/visual-algorithms/issues) and find 1 that seems interesting and matches your skill level. Each issue is tagged in the following way:
 1. Type (either 'Feature' or a 'Bug'). A 'Feature' is something completely new to be added to Visual Algorithms. A 'Bug' is some unwanted action with the site as is that needs to be corrected.
-2. Priority (Low, Medium, or High)
-3. Other (beginner friendly, help wanted, etc.)
+2. Priority (Low, Medium, or High).
+3. Other (beginner friendly, help wanted, etc.).
 
 
 Once you find an issue that seems interesting, please write a comment stating that you plan to work on that issue, and confirm that nobody else is currently working on it. The last thing we want is for you to waste time on work that ultimately won't be used. Once confirmed, you will be listed as the assignee for that issue.
@@ -34,16 +34,16 @@ If you want to work on an issue that isn't listed, please create a new issue by 
 Take a look at [this guide](https://github.com/asmeurer/git-workflow) for instructions on proper git workflow and how to submit a pull request.
 
 ## Style Guide
-- Two spaces for indentation
-- Prefer { this } to {this} when writing JSX
-- a === b, not a===b
-- Try to generally follow the conventions you see in the source code already
+- Two spaces for indentation.
+- Prefer { this } to {this} when writing JSX.
+- a === b, not a===b.
+- Try to generally follow the conventions you see in the source code already.
 
 ## File Structure
 Files are generally organized into 4 separate folders:
-- Components: Houses all of the individual React components
-- Pages: Each page you see has its own file within this folder
-- Actions: All Redux action creators are stored here
-- Reducers: Where state is managed - each piece of state has its own file here
+- Components: Houses all of the individual React components.
+- Pages: Each page you see has its own file within this folder.
+- Actions: All Redux action creators are stored here.
+- Reducers: Where state is managed - each piece of state has its own file here.
 
 We like to keep associated css files in the same folder as the accompanying component, since it makes it easier to see what the css is actually styling.
