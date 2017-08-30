@@ -10,7 +10,7 @@ The site is built using [React](https://facebook.github.io/react/) and [Redux](h
 
 There are currently 2 pages - 1 for search algorithms and 1 for sort algorithms.
 
-Select the type of algorithms you would like to see from the homepage:
+Select the category of algorithms you would like to see from the homepage:
 
 ![select page](/images/visual-algos-demo-3.gif)
 
