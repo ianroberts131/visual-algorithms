@@ -2,6 +2,7 @@ import React from 'react';
 import SelectionSort from '../selectionSort/SelectionSort';
 import InsertionSort from '../insertionSort/InsertionSort';
 import BubbleSort from '../bubbleSort/BubbleSort';
+import MergeSort from '../mergeSort/MergeSort';
 
 import './sortArea.css';
 
@@ -18,6 +19,9 @@ class SortArea extends React.Component {
         }
         { sortAlgorithm.name === "Bubble Sort" &&
           <BubbleSort {...this.props} />
+        }
+        { sortAlgorithm.name === "Merge Sort" &&
+          <MergeSort {...this.props} />
         }
       </div>
     )

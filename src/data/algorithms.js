@@ -36,3 +36,12 @@ export var bubbleSort = {
   bestCase: "O(n)",
   averageCase: "O(n<sup>2</sup>)"
 }
+
+export var mergeSort = {
+  name: "Merge Sort",
+  url: "merge-sort",
+  description: "A divide and conquer sorting algorithm....",
+  worstCase: "O(n<sup>2</sup>)",
+  bestCase: "O(n)",
+  averageCase: "O(n<sup>2</sup>)"
+}

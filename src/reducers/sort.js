@@ -4,10 +4,11 @@
 // 2. copy of current state
 
 import { randomlyGenerateArray } from '../helpers';
-import { selectionSort, insertionSort, bubbleSort } from '../data/algorithms';
+import { selectionSort, insertionSort, bubbleSort, mergeSort } from '../data/algorithms';
 
 // create an array for the search area
 var sortArray = randomlyGenerateArray(10, 100, false);
+var mergeArray = randomlyGenerateArray(8, 100, false);
 
 const sortState = {
   sortArray: sortArray,
@@ -25,6 +26,25 @@ const sortState = {
   bubbleSwapsCounter: 0,
   bubbleIndex: 0,
   bubbleSwapping: false,
+  mergeArray: mergeArray,
+  mergeArrayMain: mergeArray,
+  mergeArrayMain: [],
+  mergeArrayLeft1: [],
+  mergeArrayLeft2: [],
+  mergeArrayLeft3: [],
+  mergeArrayLeft4: "",
+  mergeArrayLeft5: "",
+  mergeArrayLeft6: "",
+  mergeArrayLeft7: "",
+  mergeArrayRight1: [],
+  mergeArrayRight2: [],
+  mergeArrayRight3: [],
+  mergeArrayRight4: "",
+  mergeArrayRight5: "",
+  mergeArrayRight6: "",
+  mergeArrayRight7: "",
+  mergePrior: 0,
+  mergePriorSorted: false,
   isRunning: false,
   isSorted: false,
 }
@@ -117,6 +137,60 @@ function sort(state = sortState, action) {
             isRunning: action.isRunning,
             isSorted: action.isSorted
           }
+
+          case 'START_MERGE_SORT' :
+          var newMergeArray = randomlyGenerateArray(8, 100, false);
+            return {
+              ...state,
+              sortArray: newMergeArray,
+              mergeArrayMain: newMergeArray,
+              mergeArrayLeft1: [-1, -1, -1, -1],
+              mergeArrayLeft2: [-1, -1],
+              mergeArrayLeft3: [-1, -1],
+              mergeArrayLeft4: -1,
+              mergeArrayLeft5: -1,
+              mergeArrayLeft6: -1,
+              mergeArrayLeft7: -1,
+              mergeArrayRight1: [-1, -1, -1, -1],
+              mergeArrayRight2: [-1, -1],
+              mergeArrayRight3: [-1, -1],
+              mergeArrayRight4: -1,
+              mergeArrayRight5: -1,
+              mergeArrayRight6: -1,
+              mergeArrayRight7: -1,
+              mergePrior: 0,
+              mergePriorSorted: false,
+              sortAlgorithm: mergeSort,
+              isRunning: true,
+              iterations: 0,
+              isSorted: false
+            }
+
+          case 'MERGE_SORT' :
+            return {
+              ...state,
+              sortAlgorithm: mergeSort,
+              iterations: action.iterations,
+              isRunning: action.isRunning,
+              isSorted: action.isSorted,
+              mergeArrayMain: action.mergeArrayMain,
+              mergeArrayLeft1: action.mergeArrayLeft1,
+              mergeArrayLeft2: action.mergeArrayLeft2,
+              mergeArrayLeft3: action.mergeArrayLeft3,
+              mergeArrayLeft4: action.mergeArrayLeft4,
+              mergeArrayLeft5: action.mergeArrayLeft5,
+              mergeArrayLeft6: action.mergeArrayLeft6,
+              mergeArrayLeft7: action.mergeArrayLeft7,
+              mergeArrayRight1: action.mergeArrayRight1,
+              mergeArrayRight2: action.mergeArrayRight2,
+              mergeArrayRight3: action.mergeArrayRight3,
+              mergeArrayRight4: action.mergeArrayRight4,
+              mergeArrayRight5: action.mergeArrayRight5,
+              mergeArrayRight6: action.mergeArrayRight6,
+              mergeArrayRight7: action.mergeArrayRight7,
+              mergePrior: action.mergePrior,
+              mergePriorSorted: action.mergePriorSorted,
+            }
 
     default:
       return state;

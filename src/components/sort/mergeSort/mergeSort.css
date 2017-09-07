@@ -1,0 +1,114 @@
+.merge-sort-box-area {
+  margin-top: 1%;
+  text-align: center;
+}
+
+.merge-sort-box {
+  display: inline-block;
+  width: 5em;
+  height: 50px;
+  line-height: 50px;
+  color: white;
+  margin: 1px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.merge-unsorted {
+  background-color: blue;
+}
+
+.level-1-0 {
+  float: left;
+  width: 35%;
+  margin-left: 15%;
+  margin-top: 2%;
+}
+
+.level-1-1 {
+  float: left;
+  width: 35%;
+  margin-right: 15%;
+  margin-top: 2%;
+}
+
+.level-2-0 {
+  float: left;
+  width: 15%;
+  margin-left: 17.5%;
+  margin-top: 2%;
+}
+
+.level-2-1 {
+  float: left;
+  width: 15%;
+  margin-left: 0%;
+  margin-top: 2%;
+}
+
+.level-2-2 {
+  float: left;
+  width: 15%;
+  margin-left: 5%;
+  margin-top: 2%;
+}
+
+.level-2-3 {
+  float: left;
+  width: 15%;
+  margin-left: 0%;
+  margin-right: 10%;
+  margin-top: 2%;
+}
+
+.level-3-0 {
+  float: left;
+  margin-top: 2%;
+  width: 7.5%;
+  margin-left: 17.5%;
+}
+
+.level-3-1 {
+  float: left;
+  margin-top: 2%;
+  width: 7.5%;
+  margin-left: 0%;
+}
+
+.level-3-2 {
+  float: left;
+  margin-top: 2%;
+  width: 7.5%;
+}
+
+.level-3-3 {
+  float: left;
+  margin-top: 2%;
+  width: 7.5%;
+  margin-left: 0%;
+}
+
+.level-3-4 {
+  float: left;
+  margin-top: 2%;
+  margin-left: 5%;
+  width: 7.5%;
+}
+
+.level-3-5 {
+  float: left;
+  margin-top: 2%;
+  width: 7.5%;
+}
+
+.level-3-6 {
+  float: left;
+  margin-top: 2%;
+  width: 7.5%;
+}
+
+.level-3-7 {
+  float: left;
+  margin-top: 2%;
+  width: 7.5%;
+}
