@@ -40,8 +40,8 @@ export var bubbleSort = {
 export var mergeSort = {
   name: "Merge Sort",
   url: "merge-sort",
-  description: "A divide and conquer sorting algorithm....",
-  worstCase: "O(n<sup>2</sup>)",
-  bestCase: "O(n)",
-  averageCase: "O(n<sup>2</sup>)"
+  description: "A divide and conquer sorting algorithm that first breaks a collection of n items into n subcollections of one item each. Then, it repeatedly merges the subcollections to produce new sorted subcollections until there is only 1 remaining. This is the final sorted collection.",
+  worstCase: "O(n lg n)",
+  bestCase: "O(n lg n)",
+  averageCase: "O(n lg n)"
 }

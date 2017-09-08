@@ -11,62 +11,62 @@ class MergeSort extends React.Component {
       <div>
         <div className="merge-sort-box-area">
           { mergeArrayMain.map((number, index) => {
-              return <div key={ index } className="merge-sort-box merge-unsorted">{ number }</div>
+              return <div key={ index } className={number > -1 ? "merge-sort-box merge-unsorted" : "merge-sort-box merge-hidden"}>{ number }</div>
           })}
         </div>
         <div className="merge-sort-box-area level-1-0">
           { mergeArrayLeft1.map((number, index) => {
-              return <div key={ index } className="merge-sort-box merge-unsorted">{ number }</div>
+              return <div key={ index } className={number > -1 ? "merge-sort-box merge-unsorted" : "merge-sort-box merge-hidden"}>{ number }</div>
           })}
         </div>
         <div className="merge-sort-box-area level-1-1">
           { mergeArrayRight1.map((number, index) => {
-              return <div key={ index } className="merge-sort-box merge-unsorted">{ number }</div>
+              return <div key={ index } className={number > -1 ? "merge-sort-box merge-unsorted" : "merge-sort-box merge-hidden"}>{ number }</div>
           })}
         </div>
         <div className="merge-sort-box-area level-2-0">
           { mergeArrayLeft2.map((number, index) => {
-              return <div key={ index } className="merge-sort-box merge-unsorted">{ number }</div>
+              return <div key={ index } className={number > -1 ? "merge-sort-box merge-unsorted" : "merge-sort-box merge-hidden"}>{ number }</div>
           })}
         </div>
         <div className="merge-sort-box-area level-2-1">
           { mergeArrayLeft3.map((number, index) => {
-              return <div key={ index } className="merge-sort-box merge-unsorted">{ number }</div>
+              return <div key={ index } className={number > -1 ? "merge-sort-box merge-unsorted" : "merge-sort-box merge-hidden"}>{ number }</div>
           })}
         </div>
         <div className="merge-sort-box-area level-2-2">
           { mergeArrayRight2.map((number, index) => {
-              return <div key={ index } className="merge-sort-box merge-unsorted">{ number }</div>
+              return <div key={ index } className={number > -1 ? "merge-sort-box merge-unsorted" : "merge-sort-box merge-hidden"}>{ number }</div>
           })}
         </div>
         <div className="merge-sort-box-area level-2-3">
           { mergeArrayRight3.map((number, index) => {
-              return <div key={ index } className="merge-sort-box merge-unsorted">{ number }</div>
+              return <div key={ index } className={number > -1 ? "merge-sort-box merge-unsorted" : "merge-sort-box merge-hidden"}>{ number }</div>
           })}
         </div>
         <div className="merge-sort-box-area level-3-0">
-          <div className="merge-sort-box merge-unsorted">{ mergeArrayLeft4 }</div>
+          <div className={mergeArrayLeft4 > -1 ? "merge-sort-box merge-unsorted" : "merge-sort-box merge-hidden"}>{ mergeArrayLeft4 }</div>
         </div>
         <div className="merge-sort-box-area level-3-1">
-          <div className="merge-sort-box merge-unsorted">{ mergeArrayLeft5 }</div>
+          <div className={mergeArrayLeft5 > -1 ? "merge-sort-box merge-unsorted" : "merge-sort-box merge-hidden"}>{ mergeArrayLeft5 }</div>
         </div>
         <div className="merge-sort-box-area level-3-2">
-          <div className="merge-sort-box merge-unsorted">{ mergeArrayLeft6 }</div>
+          <div className={mergeArrayLeft6 > -1 ? "merge-sort-box merge-unsorted" : "merge-sort-box merge-hidden"}>{ mergeArrayLeft6 }</div>
         </div>
         <div className="merge-sort-box-area level-3-3">
-          <div className="merge-sort-box merge-unsorted">{ mergeArrayLeft7 }</div>
+          <div className={mergeArrayLeft7 > -1 ? "merge-sort-box merge-unsorted" : "merge-sort-box merge-hidden"}>{ mergeArrayLeft7 }</div>
         </div>
         <div className="merge-sort-box-area level-3-4">
-          <div className="merge-sort-box merge-unsorted">{ mergeArrayRight4 }</div>
+          <div className={mergeArrayRight4 > -1 ? "merge-sort-box merge-unsorted" : "merge-sort-box merge-hidden"}>{ mergeArrayRight4 }</div>
         </div>
         <div className="merge-sort-box-area level-3-5">
-          <div className="merge-sort-box merge-unsorted">{ mergeArrayRight5 }</div>
+          <div className={mergeArrayRight5 > -1 ? "merge-sort-box merge-unsorted" : "merge-sort-box merge-hidden"}>{ mergeArrayRight5 }</div>
         </div>
         <div className="merge-sort-box-area level-3-6">
-          <div className="merge-sort-box merge-unsorted">{ mergeArrayRight6 }</div>
+          <div className={mergeArrayRight6 > -1 ? "merge-sort-box merge-unsorted" : "merge-sort-box merge-hidden"}>{ mergeArrayRight6 }</div>
         </div>
         <div className="merge-sort-box-area level-3-7">
-          <div className="merge-sort-box merge-unsorted">{ mergeArrayRight7 }</div>
+          <div className={mergeArrayRight7 > -1 ? "merge-sort-box merge-unsorted" : "merge-sort-box merge-hidden"}>{ mergeArrayRight7 }</div>
         </div>
       </div>
     )

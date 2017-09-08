@@ -18,6 +18,11 @@
   background-color: blue;
 }
 
+.merge-hidden {
+  background-color: #f9f9f9;
+  color: #f9f9f9;
+}
+
 .level-1-0 {
   float: left;
   width: 35%;
