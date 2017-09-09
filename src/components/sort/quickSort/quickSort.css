@@ -1,0 +1,44 @@
+.quick-sort-box-area {
+  margin-top: 2.5%;
+  text-align: center;
+}
+
+.quick-sort-box {
+  display: inline-block;
+  width: 9%;
+  height: 100px;
+  line-height: 100px;
+  color: white;
+  margin: 1px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.quick-sorted {
+  background-color: #00cc00;
+}
+
+.quick-not-checking {
+  background-color: grey;
+}
+
+.quick-unsorted {
+  background-color: blue;
+}
+
+.quick-pivot {
+  background-color: red;
+  border: 5px solid black;
+}
+
+.quick-checking {
+  background-color: red;
+}
+
+.quick-high-side {
+  background-color: #800080;
+}
+
+.quick-low-side {
+  background-color: orange;
+}

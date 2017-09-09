@@ -45,3 +45,12 @@ export var mergeSort = {
   bestCase: "O(n lg n)",
   averageCase: "O(n lg n)"
 }
+
+export var quickSort = {
+  name: "Quick Sort",
+  url: "quick-sort",
+  description: "A divide and conquer sorting algorithm...",
+  worstCase: "O(n<sup>2</sup>)",
+  bestCase: "O(n lg n)",
+  averageCase: "O(n lg n)"
+}

@@ -4,7 +4,7 @@
 // 2. copy of current state
 
 import { randomlyGenerateArray } from '../helpers';
-import { selectionSort, insertionSort, bubbleSort, mergeSort } from '../data/algorithms';
+import { selectionSort, insertionSort, bubbleSort, mergeSort, quickSort } from '../data/algorithms';
 
 // create an array for the search area
 var sortArray = randomlyGenerateArray(10, 100, false);
@@ -45,6 +45,11 @@ const sortState = {
   mergeArrayRight7: "",
   mergePrior: 0,
   mergePriorSorted: false,
+  quickPivotIndex: 9,
+  quickLowIndex: 0,
+  quickHighIndex: 0,
+  quickPairsToSort: [],
+  quickPriorPivots: [],
   isRunning: false,
   isSorted: false,
 }
@@ -191,6 +196,38 @@ function sort(state = sortState, action) {
               mergePrior: action.mergePrior,
               mergePriorSorted: action.mergePriorSorted,
             }
+
+            case 'START_QUICK_SORT' :
+              var quickSortArray = randomlyGenerateArray(10, 100, false);
+              return {
+                ...state,
+                sortArray: quickSortArray,
+                sortAlgorithm: quickSort,
+                currentlyChecking: 0,
+                quickPivotIndex: 9,
+                quickLowIndex: 0,
+                quickHighIndex: 0,
+                quickPairsToSort: [],
+                quickPriorPivots: [],
+                isRunning: true,
+                iterations: 0,
+                isSorted: false
+              }
+
+            case 'QUICK_SORT' :
+              return {
+                ...state,
+                sortAlgorithm: quickSort,
+                currentlyChecking: action.currentlyChecking,
+                quickPivotIndex: action.quickPivotIndex,
+                quickLowIndex: action.quickLowIndex,
+                quickHighIndex: action.quickHighIndex,
+                quickPairsToSort: action.quickPairsToSort,
+                quickPriorPivots: action.quickPriorPivots,
+                iterations: action.iterations,
+                isRunning: action.isRunning,
+                isSorted: action.isSorted
+              }
 
     default:
       return state;
