@@ -67,9 +67,9 @@ class SortButtons extends React.Component {
         <button className="sort-button sort-button-size" onClick={ () => this.props.startMergeSort(selectionSortTimeout, insertionSortTimeout, bubbleSortTimeout, mergeSortTimeout) }>Merge Sort</button>
         <button className="sort-button sort-button-size">Quick Sort</button>
         <div className="sort-speed-buttons">
-          <button className={ slowSpeedClass } onClick={ () => this.props.changeSpeed('slow', selectionSortTimeout, insertionSortTimeout, bubbleSortTimeout) }>Slow</button>
-          <button className={ regularSpeedClass } onClick={ () => this.props.changeSpeed('regular', selectionSortTimeout, insertionSortTimeout, bubbleSortTimeout) }>Regular</button>
-          <button className={ fastSpeedClass } onClick={ () => this.props.changeSpeed('fast', selectionSortTimeout, insertionSortTimeout, bubbleSortTimeout) }>Fast</button>
+          <button className={ slowSpeedClass } onClick={ () => this.props.changeSpeed('slow', selectionSortTimeout, insertionSortTimeout, bubbleSortTimeout, mergeSortTimeout) }>Slow</button>
+          <button className={ regularSpeedClass } onClick={ () => this.props.changeSpeed('regular', selectionSortTimeout, insertionSortTimeout, bubbleSortTimeout, mergeSortTimeout) }>Regular</button>
+          <button className={ fastSpeedClass } onClick={ () => this.props.changeSpeed('fast', selectionSortTimeout, insertionSortTimeout, bubbleSortTimeout, mergeSortTimeout) }>Fast</button>
         </div>
       </div>
     );
