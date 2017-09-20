@@ -28,17 +28,19 @@ class QuickSort extends React.Component {
             var distance = `${quickSwappedIndices[1] - quickSwappedIndices[0]}`;
             if (!isSorted) {
               if (leftSwapped && isLowSide) {
-                return <div key={ `${number}${index}` } className={ `quick-sort-box left-swapped-low left-${distance}` }>{ number }</div>
+                return <div key={ `${number}${index}` } className={ `quick-sort-box left-swapped-low ${speedString} left-${distance}` }>{ number }</div>
               } else if (leftSwapped && isPriorPivot) {
-                  return <div key={ `${number}${index}` } className={ `quick-sort-box left-swapped-pivot left-${distance}` }>{ number }</div>
+                  return <div key={ `${number}${index}` } className={ `quick-sort-box left-swapped-prior-pivot ${speedString} left-${distance}` }>{ number }</div>
               } else if (leftSwapped && notInSortArea) {
-                  return <div key={ `${number}${index}` } className={ `quick-sort-box left-swapped-unsorted left-${distance}` }>{ number }</div>
+                  return <div key={ `${number}${index}` } className={ `quick-sort-box left-swapped-unsorted ${speedString} left-${distance}` }>{ number }</div>
               } else if (rightSwapped && isHighSide) {
-                  return <div key={ `${number}${index}` } className={ `quick-sort-box right-swapped-high right-${distance}` }>{ number }</div>
+                  return <div key={ `${number}${index}` } className={ `quick-sort-box right-swapped-high ${speedString} right-${distance}` }>{ number }</div>
               } else if (rightSwapped && isPriorPivot) {
-                  return <div key={ `${number}${index}` } className={ `quick-sort-box right-swapped-pivot right-${distance}` }>{ number }</div>
+                  return <div key={ `${number}${index}` } className={ `quick-sort-box right-swapped-prior-pivot ${speedString} right-${distance}` }>{ number }</div>
               } else if (rightSwapped && notInSortArea) {
-                  return <div key={ `${number}${index}` } className={ `quick-sort-box right-swapped-unsorted right-${distance}` }>{ number }</div>
+                  return <div key={ `${number}${index}` } className={ `quick-sort-box right-swapped-unsorted ${speedString} right-${distance}` }>{ number }</div>
+              } else if (rightSwapped && isPivot) {
+                  return <div key={ `${number}${index}` } className={ `quick-sort-box right-swapped-pivot ${speedString} right-${distance}` }>{ number }</div>
               } else if (isPriorPivot || isSortedElement) {
                   return <div key={ `${number}${index}` } className="quick-sort-box quick-sorted">{ number }</div>
               } else if (notInSortArea) {

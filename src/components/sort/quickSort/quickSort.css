@@ -14,7 +14,7 @@
   font-size: 20px;
 }
 
-.quick-sorted, .left-swapped-pivot, .right-swapped-pivot {
+.quick-sorted, .left-swapped-prior-pivot, .right-swapped-prior-pivot {
   background-color: #00cc00;
 }
 
@@ -26,9 +26,9 @@
   background-color: blue;
 }
 
-.quick-pivot {
-  background-color: red;
-  border: 5px solid black;
+.quick-pivot, .right-swapped-pivot {
+  background-color: black;
+  border: 5px solid yellow;
 }
 
 .quick-checking {
@@ -43,7 +43,7 @@
   background-color: orange;
 }
 
-.left-swapped-low, .left-swapped-pivot, .left-swapped-unsorted, .right-swapped-high, .right-swapped-pivot, .right-swapped-unsorted {
+.left-swapped-low, .left-swapped-prior-pivot, .left-swapped-unsorted, .right-swapped-high, .right-swapped-prior-pivot, .right-swapped-unsorted, .right-swapped-pivot {
   transform: translate(0,0);
   -ms-transform: translate(0, 0);
   -moz-transform: translate(0, 0);
@@ -51,19 +51,19 @@
   -o-transform: translate(0, 0);
 }
 
-.left-swapped-low.quick-transition-enter, .left-swapped-pivot.quick-transition-enter, .left-swapped-unsorted.quick-transition-enter, .right-swapped-high.quick-transition-enter, .right-swapped-pivot.quick-transition-enter, .right-swapped-unsorted.quick-transition-enter {
+.slow.quick-transition-enter {
   transition: all 1.0s ease-in;
 }
 
-.left-swapped-low.quick-transition-enter-active, .left-swapped-pivot.quick-transition-enter-active, .left-swapped-unsorted.quick-transition-enter-active {
-  transform: translate(0,0);
-  -ms-transform: translate(0, 0);
-  -moz-transform: translate(0, 0);
-  -webkit-transform: translate(0, 0);
-  -o-transform: translate(0, 0);
+.regular.quick-transition-enter {
+  transition: all 0.5s ease-in;
 }
 
-.right-swapped-high.quick-transition-enter-active, .right-swapped-pivot.quick-transition-enter-active, .right-swapped-unsorted.quick-transition-enter-active {
+.fast.quick-transition-enter {
+  transition: all 0.25s ease-in;
+}
+
+.left-swapped-low.quick-transition-enter-active, .left-swapped-prior-pivot.quick-transition-enter-active, .left-swapped-unsorted.quick-transition-enter-active, .right-swapped-high.quick-transition-enter-active, .right-swapped-prior-pivot.quick-transition-enter-active, .right-swapped-unsorted.quick-transition-enter-active, .right-swapped-pivot.quick-transition-enter-active {
   transform: translate(0,0);
   -ms-transform: translate(0, 0);
   -moz-transform: translate(0, 0);
