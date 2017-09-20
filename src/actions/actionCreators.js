@@ -381,7 +381,7 @@ export function startQuickSort(...timeouts) {
   }
 }
 
-export function quickSort(sortArray, currentlyChecking, quickPivotIndex, quickLowIndex, quickHighIndex, quickPairsToSort, quickPriorPivots, iterations, isSorted = false) {
+export function quickSort(sortArray, currentlyChecking, quickPivotIndex, quickLowIndex, quickHighIndex, quickPairsToSort, quickPriorPivots, iterations, isSorted = false, quickSwapping = false, quickSwappedIndices = []) {
   var isRunning = true;
   iterations += 1;
   if (currentlyChecking < quickPivotIndex) {
@@ -389,6 +389,12 @@ export function quickSort(sortArray, currentlyChecking, quickPivotIndex, quickLo
       var temp = sortArray[quickHighIndex];
       sortArray[quickHighIndex] = sortArray[currentlyChecking];
       sortArray[currentlyChecking] = temp;
+
+      if (quickHighIndex != currentlyChecking) {
+        quickSwapping = true;
+        quickSwappedIndices = [quickHighIndex, currentlyChecking];
+      }
+
       quickHighIndex += 1;
     }
     currentlyChecking += 1
@@ -398,6 +404,8 @@ export function quickSort(sortArray, currentlyChecking, quickPivotIndex, quickLo
     var temp = sortArray[quickHighIndex];
     sortArray[quickHighIndex] = sortArray[quickPivotIndex];
     sortArray[quickPivotIndex] = temp;
+    quickSwapping = true;
+    quickSwappedIndices = [quickHighIndex, quickPivotIndex];
     // If the 'right side' has more than 1 element, add it to future arrays to sort
     if (quickPivotIndex - quickHighIndex > 1) {
       quickPairsToSort.unshift([quickHighIndex + 1, quickPivotIndex]);
@@ -427,6 +435,8 @@ export function quickSort(sortArray, currentlyChecking, quickPivotIndex, quickLo
     quickHighIndex: quickHighIndex,
     quickPairsToSort: quickPairsToSort,
     quickPriorPivots: quickPriorPivots,
+    quickSwapping: quickSwapping,
+    quickSwappedIndices: quickSwappedIndices,
     iterations: iterations,
     isRunning: isRunning,
     isSorted: isSorted

@@ -50,6 +50,8 @@ const sortState = {
   quickHighIndex: 0,
   quickPairsToSort: [],
   quickPriorPivots: [],
+  quickSwapping: false,
+  quickSwappedIndices: [],
   isRunning: false,
   isSorted: false,
 }
@@ -209,6 +211,8 @@ function sort(state = sortState, action) {
                 quickHighIndex: 0,
                 quickPairsToSort: [],
                 quickPriorPivots: [],
+                quickSwapping: false,
+                quickSwappedIndices: [],
                 isRunning: true,
                 iterations: 0,
                 isSorted: false
@@ -224,6 +228,8 @@ function sort(state = sortState, action) {
                 quickHighIndex: action.quickHighIndex,
                 quickPairsToSort: action.quickPairsToSort,
                 quickPriorPivots: action.quickPriorPivots,
+                quickSwapping: action.quickSwapping,
+                quickSwappedIndices: action.quickSwappedIndices,
                 iterations: action.iterations,
                 isRunning: action.isRunning,
                 isSorted: action.isSorted
