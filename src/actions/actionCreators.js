@@ -59,18 +59,19 @@ export function startInsertionSort(...timeouts) {
 }
 
 export function insertionSort(sortArray, index, key, currentlyChecking, iterations, isSorted = false, slideRight = false, verticalSlide = false) {
-  iterations += 1;
   var isRunning = true;
   var replacedIndex = 0;
-  
+
   if (index > sortArray.length - 1) {
     isRunning = false;
     isSorted = true;
   } else if ((currentlyChecking >= 0) && (sortArray[currentlyChecking] > key)) {
+      iterations += 1;
       sortArray[currentlyChecking + 1] = sortArray[currentlyChecking];
       currentlyChecking -= 1;
       slideRight = true;
   } else {
+      iterations += 1;
       replacedIndex = currentlyChecking + 1;
       sortArray[currentlyChecking + 1] = key;
       index += 1;

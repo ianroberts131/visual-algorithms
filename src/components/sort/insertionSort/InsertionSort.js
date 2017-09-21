@@ -19,7 +19,7 @@ class InsertionSort extends React.Component {
         component="div">
         { sortArray.map((number, index) => {
           var inSortedGroup = index <= insertionIndex && index >= 0;
-          var isCurrentlyChecking = index === currentlyChecking;
+          var isCurrentlyChecking = (index === currentlyChecking && index < sortArray.length - 1);
           if (!isSorted) {
             if (index === (currentlyChecking + 2) && insertionSlideRight && index > 0) {
               return <div key={ `${number}${index}` } className={ `insertion-sort-box insertion-slide-right-${speedString}` }>{ number }</div>
