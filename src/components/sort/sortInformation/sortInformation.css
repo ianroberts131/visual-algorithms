@@ -6,10 +6,10 @@
 .sort-algorithm-info {
   width: 37.5%;
   float: left;
-  height: 225px;
+  height: 240px;
   border: 2px solid #d9d9d9;
   margin-left: 10%;
-  margin-top: 20px;
+  margin-top: 10px;
   background-color: white;
 }
 
@@ -19,22 +19,23 @@
 
 #sort-algorithm-name, #complexity-title, #iterations-title {
   margin: 0px;
-  padding-bottom: 10px;
+  padding-bottom: 2px;
   padding-left: 2%;
 }
 
 #sort-algorithm-description {
   margin: 2px;
   font-size: 16px;
-  padding: 2%;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
 .sort-algorithm-details {
   width: 22.5%;
-  height: 225px;
+  height: 240px;
   border: 2px solid #d9d9d9;
   float: left;
-  margin-top: 20px;
+  margin-top: 10px;
   background-color: white;
   margin-left: 2.5%;
 }
@@ -47,10 +48,10 @@
 
 .iterations-section {
   width: 12.5%;
-  height: 225px;
+  height: 240px;
   border: 2px solid #d9d9d9;
   float: left;
-  margin-top: 20px;
+  margin-top: 10px;
   background-color: white;
   margin-left: 2.5%;
   text-align: center;
@@ -58,5 +59,5 @@
 
 #iterations {
   font-size: 48px;
-  margin-top: 12px;
+  margin-top: 20px;
 }

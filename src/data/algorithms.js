@@ -49,7 +49,7 @@ export var mergeSort = {
 export var quickSort = {
   name: "Quick Sort",
   url: "quick-sort",
-  description: "A divide and conquer sorting algorithm...",
+  description: "A divide and conquer sorting algorithm that works recursively. First, a 'pivot' is selected from the array (below, the last element of the array is chosen). Then, items are partitioned into two groups: those larger than the pivot and those smaller than the pivot. Once this partition process is completed, the pivot is swapped with the first item in the 'larger' side, and is thus in place. This process is repeated on the partitioned sub-arrays until the original array is sorted.",
   worstCase: "O(n<sup>2</sup>)",
   bestCase: "O(n lg n)",
   averageCase: "O(n lg n)"

@@ -71,7 +71,7 @@
   -o-transform: translate(0, 0);
 }
 
-.left-0, .right-0 {
+.quick-left-0, .quick-right-0 {
   transform: translate(0,0);
   -ms-transform: translate(0, 0);
   -moz-transform: translate(0, 0);
@@ -79,7 +79,7 @@
   -o-transform: translate(0, 0);
 }
 
-.left-1 {
+.quick-left-1 {
   transform: translate(100%,150px);
   -ms-transform: translate(100%,150px);
   -moz-transform: translate(100%,150px);
@@ -87,7 +87,7 @@
   -o-transform: translate(100%,150px);
 }
 
-.right-1 {
+.quick-right-1 {
   transform: translate(-100%,150px);
   -ms-transform: translate(-100%,150px);
   -moz-transform: translate(-100%,150px);
@@ -95,7 +95,7 @@
   -o-transform: translate(-100%,150px);
 }
 
-.left-2 {
+.quick-left-2 {
   transform: translate(200%,150px);
   -ms-transform: translate(200%,150px);
   -moz-transform: translate(200%,150px);
@@ -103,7 +103,7 @@
   -o-transform: translate(200%,150px);
 }
 
-.right-2 {
+.quick-right-2 {
   transform: translate(-200%,150px);
   -ms-transform: translate(-200%,150px);
   -moz-transform: translate(-200%,150px);
@@ -111,7 +111,7 @@
   -o-transform: translate(-200%,150px);
 }
 
-.left-3 {
+.quick-left-3 {
   transform: translate(300%,150px);
   -ms-transform: translate(300%,150px);
   -moz-transform: translate(300%,150px);
@@ -119,7 +119,7 @@
   -o-transform: translate(300%,150px);
 }
 
-.right-3 {
+.quick-right-3 {
   transform: translate(-300%,150px);
   -ms-transform: translate(-300%,150px);
   -moz-transform: translate(-300%,150px);
@@ -127,7 +127,7 @@
   -o-transform: translate(-300%,150px);
 }
 
-.left-4 {
+.quick-left-4 {
   transform: translate(400%,150px);
   -ms-transform: translate(400%,150px);
   -moz-transform: translate(400%,150px);
@@ -135,7 +135,7 @@
   -o-transform: translate(400%,150px);
 }
 
-.right-4 {
+.quick-right-4 {
   transform: translate(-400%,150px);
   -ms-transform: translate(-400%,150px);
   -moz-transform: translate(-400%,150px);
@@ -143,7 +143,7 @@
   -o-transform: translate(-400%,150px);
 }
 
-.left-5 {
+.quick-left-5 {
   transform: translate(500%,150px);
   -ms-transform: translate(500%,150px);
   -moz-transform: translate(500%,150px);
@@ -151,7 +151,7 @@
   -o-transform: translate(500%,150px);
 }
 
-.right-5 {
+.quick-right-5 {
   transform: translate(-500%,150px);
   -ms-transform: translate(-500%,150px);
   -moz-transform: translate(-500%,150px);
@@ -159,7 +159,7 @@
   -o-transform: translate(-500%,150px);
 }
 
-.left-6 {
+.quick-left-6 {
   transform: translate(600%,150px);
   -ms-transform: translate(600%,150px);
   -moz-transform: translate(600%,150px);
@@ -167,7 +167,7 @@
   -o-transform: translate(600%,150px);
 }
 
-.right-6 {
+.quick-right-6 {
   transform: translate(-600%,150px);
   -ms-transform: translate(-600%,150px);
   -moz-transform: translate(-600%,150px);
@@ -175,7 +175,7 @@
   -o-transform: translate(-600%,150px);
 }
 
-.left-7 {
+.quick-left-7 {
   transform: translate(700%,150px);
   -ms-transform: translate(700%,150px);
   -moz-transform: translate(700%,150px);
@@ -183,7 +183,7 @@
   -o-transform: translate(700%,150px);
 }
 
-.right-7 {
+.quick-right-7 {
   transform: translate(-700%,150px);
   -ms-transform: translate(-700%,150px);
   -moz-transform: translate(-700%,150px);
@@ -191,7 +191,7 @@
   -o-transform: translate(-700%,150px);
 }
 
-.left-8 {
+.quick-left-8 {
   transform: translate(800%,150px);
   -ms-transform: translate(800%,150px);
   -moz-transform: translate(800%,150px);
@@ -199,7 +199,7 @@
   -o-transform: translate(800%,150px);
 }
 
-.right-8 {
+.quick-right-8 {
   transform: translate(-800%,150px);
   -ms-transform: translate(-800%,150px);
   -moz-transform: translate(-800%,150px);
@@ -207,7 +207,7 @@
   -o-transform: translate(-800%,150px);
 }
 
-.left-9 {
+.quick-left-9 {
   transform: translate(900%,150px);
   -ms-transform: translate(900%,150px);
   -moz-transform: translate(900%,150px);
@@ -215,7 +215,7 @@
   -o-transform: translate(900%,150px);
 }
 
-.right-9 {
+.quick-right-9 {
   transform: translate(-900%,150px);
   -ms-transform: translate(-900%,150px);
   -moz-transform: translate(-900%,150px);
@@ -223,7 +223,7 @@
   -o-transform: translate(-900%,150px);
 }
 
-.left-10 {
+.quick-left-10 {
   transform: translate(1000%,150px);
   -ms-transform: translate(1000%,150px);
   -moz-transform: translate(1000%,150px);
@@ -231,7 +231,7 @@
   -o-transform: translate(1000%,150px);
 }
 
-.right-10 {
+.quick-right-10 {
   transform: translate(-1000%,150px);
   -ms-transform: translate(-1000%,150px);
   -moz-transform: translate(-1000%,150px);
