@@ -39,7 +39,7 @@
   background-color: blue;
 }
 
-.insertion-sorted {
+.insertion-sorted, .insertion-slide-right-slow, .insertion-slide-right-regular, .insertion-slide-right-fast {
   background-color: #00cc00;
 }
 

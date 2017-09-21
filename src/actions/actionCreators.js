@@ -62,6 +62,7 @@ export function insertionSort(sortArray, index, key, currentlyChecking, iteratio
   iterations += 1;
   var isRunning = true;
   var replacedIndex = 0;
+  
   if (index > sortArray.length - 1) {
     isRunning = false;
     isSorted = true;
@@ -70,12 +71,12 @@ export function insertionSort(sortArray, index, key, currentlyChecking, iteratio
       currentlyChecking -= 1;
       slideRight = true;
   } else {
-    replacedIndex = currentlyChecking + 1;
-    sortArray[currentlyChecking + 1] = key;
-    index += 1;
-    currentlyChecking = index - 1;
-    key = sortArray[index];
-    verticalSlide = true;
+      replacedIndex = currentlyChecking + 1;
+      sortArray[currentlyChecking + 1] = key;
+      index += 1;
+      currentlyChecking = index - 1;
+      key = sortArray[index];
+      verticalSlide = true;
   }
 
   return {

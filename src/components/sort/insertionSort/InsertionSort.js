@@ -14,7 +14,7 @@ class InsertionSort extends React.Component {
       <CSSTransitionGroup
         transitionName="insertion-transition"
         transitionLeave={false}
-        transitionEnterTimeout={ intervalSpeed }
+        transitionEnterTimeout={ intervalSpeed * 0.96 }
         className="insertion-sort-box-area"
         component="div">
         { sortArray.map((number, index) => {
@@ -23,8 +23,10 @@ class InsertionSort extends React.Component {
           if (!isSorted) {
             if (index === (currentlyChecking + 2) && insertionSlideRight && index > 0) {
               return <div key={ `${number}${index}` } className={ `insertion-sort-box insertion-slide-right-${speedString}` }>{ number }</div>
+            } else if (index === (currentlyChecking + 1)) {
+                return <div key={ `${number}${index}` } className="insertion-sort-box insertion-hidden">{ number }</div>
             } else if (insertionVerticalSlide && (index === insertionReplacedIndex)) {
-              return <div key={ `${number}${index}` } className={ `insertion-sort-box insertion-slide-up-${speedString}` }>{ number }</div>
+                return <div key={ `${number}${index}${insertionKey}` } className={ `insertion-sort-box insertion-slide-up-${speedString}` }>{ number }</div>
             } else if (inSortedGroup && !isCurrentlyChecking) {
                 return <div key={ `${number}${index}` } className="insertion-sort-box insertion-sorted">{ number }</div>
             } else if (isCurrentlyChecking) {
