@@ -25,12 +25,14 @@ class SelectionSort extends React.Component {
           if (!isSorted) {
             if (inSortedGroup) {
               if (isSwapped && (index === sortedGroupIndex - 1)) {
-                return <div key={ `${number}${index}` } className={ `selection-sort-box selection-sorted-swapped-${speedString} right-${distance}` }>{ number }</div>
+                return <div key={ `${number}${index}` } className={ `selection-sort-box selection-sorted-swapped ${speedString} right-${distance}` }>{ number }</div>
               } else {
                   return <div key={ `${number}${index}` } className="selection-sort-box selection-sorted">{ number }</div>
               }
+            } else if (isSwapped && isCurrentLow && index === swappedElement) {
+                return <div key={ `${number}${index}` } className={ `selection-sort-box selection-checking-swapped ${speedString} left-${distance}` }>{ number }</div>
             } else if (isSwapped && index === swappedElement) {
-                return <div key={ `${number}${index}` } className={ `selection-sort-box selection-unsorted-swapped-${speedString} left-${distance}` }>{ number }</div>
+                return <div key={ `${number}${index}` } className={ `selection-sort-box selection-unsorted-swapped ${speedString} left-${distance}` }>{ number }</div>
             } else if (isCurrentlyChecking) {
                 return <div key={ `${number}${index}` } className="selection-sort-box selection-checking">{ number }</div>
             } else if (isCurrentLow) {
@@ -43,6 +45,20 @@ class SelectionSort extends React.Component {
         }
         })}
       </CSSTransitionGroup>
+      <div className="selection-label-area">
+        { !isSorted && sortArray.map((number, index) => {
+          if (index === currentLow) {
+            return (
+              <div key={index} className="label-box">
+                <div>{ '\u21D1' }</div>
+                <div>Current Low</div>
+              </div>
+            )
+          } else {
+            return <div key={index} className="label-box selection-label-hidden"></div>
+          }
+        })}
+      </div>
     </div>
     )
   }

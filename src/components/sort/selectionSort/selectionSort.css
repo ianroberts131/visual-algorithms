@@ -3,6 +3,10 @@
   text-align: center;
 }
 
+.selection-label-area {
+  text-align: center;
+}
+
 .selection-sort-box {
   display: inline-block;
   width: 9%;
@@ -12,6 +16,20 @@
   margin: 1px;
   text-align: center;
   font-size: 20px;
+}
+
+.label-box {
+  display: inline-block;
+  width: 9%;
+  height: 100px;
+  color: black;
+  margin: 1px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.selection-label-hidden {
+  visibility: hidden;
 }
 
 .selection-unsorted {
@@ -30,13 +48,11 @@
   background-color: red;
 }
 
-.selection-sorted-swapped-slow, .selection-sorted-swapped-regular,
-.selection-sorted-swapped-fast, {
+.selection-sorted-swapped {
   background-color: #00cc00;
 }
 
-.selection-unsorted-swapped-slow, .selection-unsorted-swapped-fast,
-.selection-unsorted-swapped-fast {
+.selection-unsorted-swapped {
   background-color: blue;
 }
 
@@ -208,12 +224,23 @@
   -o-transform: translate(-1000%,150px);
 }
 
-.selection-sorted-swapped-slow.selection-transition-enter {
-  background-color: #00cc00;
+.slow.selection-transition-enter {
   transition: all 1.0s ease-in;
 }
 
-.selection-sorted-swapped-slow.selection-transition-enter-active {
+.regular.selection-transition-enter {
+  transition: all 0.5s ease-in;
+}
+
+.fast.selection-transition-enter {
+  transition: all 0.25s ease-in;
+}
+
+.selection-sorted-swapped.selection-transition-enter {
+  background-color: #00cc00;
+}
+
+.selection-sorted-swapped.selection-transition-enter-active {
   background-color: #00cc00;
   transform: translate(0,0);
   -ms-transform: translate(0, 0);
@@ -227,35 +254,11 @@
   transition: all 0.5s;
 }
 
-.selection-sorted-swapped-regular.selection-transition-enter-active {
-  background-color: #00cc00;
-  transform: translate(0,0);
-  -ms-transform: translate(0, 0);
-  -moz-transform: translate(0, 0);
-  -webkit-transform: translate(0, 0);
-  -o-transform: translate(0, 0);
-}
-
-.selection-sorted-swapped-fast.selection-transition-enter {
-  background-color: #00cc00;
-  transition: all 0.25s;
-}
-
-.selection-sorted-swapped-fast.selection-transition-enter-active {
-  background-color: #00cc00;
-  transform: translate(0,0);
-  -ms-transform: translate(0, 0);
-  -moz-transform: translate(0, 0);
-  -webkit-transform: translate(0, 0);
-  -o-transform: translate(0, 0);
-}
-
-.selection-unsorted-swapped-slow.selection-transition-enter {
+.selection-unsorted-swapped.selection-transition-enter {
   background-color: blue;
-  transition: all 1.0s;
 }
 
-.selection-unsorted-swapped-slow.selection-transition-enter-active {
+.selection-unsorted-swapped.selection-transition-enter-active {
   background-color: blue;
   transform: translate(0,0);
   -ms-transform: translate(0, 0);
@@ -264,27 +267,12 @@
   -o-transform: translate(0, 0);
 }
 
-.selection-unsorted-swapped-regular.selection-transition-enter {
-  background-color: blue;
-  transition: all 0.5s;
+.selection-checking-swapped.selection-transition-enter {
+  background-color: orange;
 }
 
-.selection-unsorted-swapped-regular.selection-transition-enter-active {
-  background-color: blue;
-  transform: translate(0,0);
-  -ms-transform: translate(0, 0);
-  -moz-transform: translate(0, 0);
-  -webkit-transform: translate(0, 0);
-  -o-transform: translate(0, 0);
-}
-
-.selection-unsorted-swapped-fast.selection-transition-enter {
-  background-color: blue;
-  transition: all 0.25s;
-}
-
-.selection-unsorted-swapped-fast.selection-transition-enter-active {
-  background-color: blue;
+.selection-checking-swapped.selection-transition-enter-active {
+  background-color: orange;
   transform: translate(0,0);
   -ms-transform: translate(0, 0);
   -moz-transform: translate(0, 0);
