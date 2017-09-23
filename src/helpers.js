@@ -19,5 +19,3 @@ export function selectAlgoGroup(e) {
     document.getElementById("search-tab").classList.remove("tab-selected");
   };
 }
-
-export var selectionSortTimeout;

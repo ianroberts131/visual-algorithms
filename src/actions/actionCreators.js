@@ -1,3 +1,27 @@
+export function switchToSearchTab() {
+  return {
+    type: 'ON_SEARCH_TAB'
+  }
+}
+
+export function switchToSortTab() {
+  return {
+    type: 'ON_SORT_TAB'
+  }
+}
+
+export function searchBaseState() {
+  return {
+    type: 'SEARCH_BASE_STATE'
+  }
+}
+
+export function sortBaseState() {
+  return {
+    type: 'SORT_BASE_STATE'
+  }
+}
+
 export function startSelectionSort(...timeouts) {
   for (var i = 0; i < timeouts.length; i++) {
     clearTimeout(timeouts[i]);

@@ -6,7 +6,6 @@
 import { randomlyGenerateArray } from '../helpers';
 import { binarySearch, linearSearch } from '../data/algorithms';
 
-
 // create an array for the grid
 var searchArray = randomlyGenerateArray(400, 1000);
 
@@ -23,13 +22,28 @@ const searchState = {
   iterations: 0,
   searchNumber: searchArray[Math.floor((Math.random() * 400) + 1)],
   isRunning: false
-
 }
 
 function search(state = searchState, action) {
   var newSearchArray = randomlyGenerateArray(400, 1000);
   var newSearchNumber = newSearchArray[Math.floor((Math.random() * 400 ) + 1)];
   switch(action.type) {
+    case 'SEARCH_BASE_STATE' :
+      return {
+        ...state,
+        searchArray: searchArray,
+        searchAlgorithm: binarySearch,
+        index: "",
+        low: 0,
+        high: searchArray.length - 1,
+        testItem: "",
+        target: "",
+        targetFound: false,
+        iterations: 0,
+        searchNumber: searchArray[Math.floor((Math.random() * 400) + 1)],
+        isRunning: false
+      }
+
     case 'START_BINARY_SEARCH' :
       return {
         ...state,
