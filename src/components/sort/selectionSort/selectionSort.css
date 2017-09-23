@@ -240,13 +240,16 @@
   background-color: #00cc00;
 }
 
-.selection-sorted-swapped.selection-transition-enter-active {
-  background-color: #00cc00;
+.selection-sorted-swapped.selection-transition-enter-active, .selection-unsorted-swapped.selection-transition-enter-active, .selection-low-swapped.selection-transition-enter-active, .selection-checking-swapped.selection-transition-enter-active {
   transform: translate(0,0);
   -ms-transform: translate(0, 0);
   -moz-transform: translate(0, 0);
   -webkit-transform: translate(0, 0);
   -o-transform: translate(0, 0);
+}
+
+.selection-sorted-swapped.selection-transition-enter-active {
+  background-color: #00cc00;
 }
 
 .selection-sorted-swapped-regular.selection-transition-enter {
@@ -260,22 +263,20 @@
 
 .selection-unsorted-swapped.selection-transition-enter-active {
   background-color: blue;
-  transform: translate(0,0);
-  -ms-transform: translate(0, 0);
-  -moz-transform: translate(0, 0);
-  -webkit-transform: translate(0, 0);
-  -o-transform: translate(0, 0);
+}
+
+.selection-low-swapped.selection-transition-enter {
+  background-color: orange;
+}
+
+.selection-low-swapped.selection-transition-enter-active {
+  background-color: orange;
 }
 
 .selection-checking-swapped.selection-transition-enter {
-  background-color: orange;
+  background-color: red;
 }
 
 .selection-checking-swapped.selection-transition-enter-active {
-  background-color: orange;
-  transform: translate(0,0);
-  -ms-transform: translate(0, 0);
-  -moz-transform: translate(0, 0);
-  -webkit-transform: translate(0, 0);
-  -o-transform: translate(0, 0);
+  background-color: red;
 }
