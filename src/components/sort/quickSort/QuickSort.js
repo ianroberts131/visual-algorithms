@@ -61,6 +61,28 @@ class QuickSort extends React.Component {
             }
           })}
         </CSSTransitionGroup>
+        <div className="quick-label-area">
+          { !isSorted && sortArray.map((number, index) =>  {
+            var isPriorPivot = quickPriorPivots.indexOf(number) != -1;
+            if (index === quickPivotIndex) {
+              return (
+                <div key={ index } className="quick-label-box">
+                  <div>{ '\u21D1' }</div>
+                  <div>Pivot</div>
+                </div>
+              )
+            } else if (isPriorPivot) {
+              return (
+                <div key={ index } className="quick-label-box">
+                  <div>{ '\u21D1' }</div>
+                  <div>Prior Pivot</div>
+                </div>
+              )
+            } else {
+                return <div key={ index } className="quick-label-box quick-label-hidden"></div>
+            }
+          }) }
+        </div>
       </div>
     )
   }

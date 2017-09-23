@@ -49,13 +49,13 @@ class SelectionSort extends React.Component {
         { !isSorted && sortArray.map((number, index) => {
           if (index === currentLow) {
             return (
-              <div key={index} className="label-box">
+              <div key={ index } className="label-box">
                 <div>{ '\u21D1' }</div>
                 <div>Current Low</div>
               </div>
             )
           } else {
-            return <div key={index} className="label-box selection-label-hidden"></div>
+              return <div key={ index } className="label-box selection-label-hidden"></div>
           }
         })}
       </div>
