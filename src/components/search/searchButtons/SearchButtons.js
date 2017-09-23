@@ -48,22 +48,12 @@ class SearchButtons extends React.Component {
 
     return (
       <div className="buttons">
-        <Link to={`/search/linear-search/${speedString}`}>
-          <button className='button-size linear-search-button' onClick={ () => this.props.startLinearSearch(binaryTimeout, linearTimeout) }>Linear Search</button>
-        </Link>
-        <Link to={`/search/binary-search/${speedString}`}>
-          <button className='button-size binary-search-button' onClick={ () => this.props.startBinarySearch(binaryTimeout, linearTimeout) }>Binary Search</button>
-        </Link>
+        <button className='button-size linear-search-button' onClick={ () => this.props.startLinearSearch(binaryTimeout, linearTimeout) }>Linear Search</button>
+        <button className='button-size binary-search-button' onClick={ () => this.props.startBinarySearch(binaryTimeout, linearTimeout) }>Binary Search</button>
         <div className="speed-buttons">
-          <Link to={`/search/${searchAlgorithm.url}/slow`}>
-            <button className={ slowSpeedClass } onClick={ () => this.props.changeSpeed('slow', binaryTimeout, linearTimeout) }>Slow</button>
-          </Link>
-          <Link to={`/search/${searchAlgorithm.url}/regular`}>
-            <button className={ regularSpeedClass } onClick={ () => this.props.changeSpeed('regular', binaryTimeout, linearTimeout) }>Regular</button>
-          </Link>
-          <Link to={`/search/${searchAlgorithm.url}/fast`}>
-            <button className={ fastSpeedClass } onClick={ () => this.props.changeSpeed('fast', binaryTimeout, linearTimeout) }>Fast</button>
-          </Link>
+          <button className={ slowSpeedClass } onClick={ () => this.props.changeSpeed('slow', binaryTimeout, linearTimeout) }>Slow</button>
+          <button className={ regularSpeedClass } onClick={ () => this.props.changeSpeed('regular', binaryTimeout, linearTimeout) }>Regular</button>
+          <button className={ fastSpeedClass } onClick={ () => this.props.changeSpeed('fast', binaryTimeout, linearTimeout) }>Fast</button>
         </div>
       </div>
     )

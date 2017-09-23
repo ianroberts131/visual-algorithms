@@ -16,7 +16,6 @@ const router = (
       <Route path="/" component={ App }>
         <IndexRoute component={ Home }></IndexRoute>
         <Route path="/search" component={ SearchAlgorithms }>
-          <Route path="/search/:algorithm/:speed" component={ SearchAlgorithms }></Route>
         </Route>
         <Route path="/sort" component={ SortAlgorithms }>
         </Route>
