@@ -6,7 +6,6 @@ const speedState = {
   intervalSpeed: 1000
 }
 
-
 function speed(state = speedState, action) {
   switch(action.speed) {
     case 'slow' :

@@ -20,6 +20,7 @@ class Navbar extends Component {
                 selectAlgoGroup(e);
                 this.props.switchToSearchTab();
                 this.props.searchBaseState();
+                this.props.changeSpeed('regular');
               }
             }>Search</button>
           </Link>
@@ -28,6 +29,7 @@ class Navbar extends Component {
                 selectAlgoGroup(e);
                 this.props.switchToSortTab();
                 this.props.sortBaseState();
+                this.props.changeSpeed('regular');
               }
             }>Sort</button>
           </Link>
