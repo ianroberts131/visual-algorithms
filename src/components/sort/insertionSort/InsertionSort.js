@@ -5,7 +5,7 @@ import './insertionSort.css';
 
 class InsertionSort extends React.Component {
   render() {
-    const { sortArray, sortedGroupIndex, currentlyChecking, isSorted, insertionKey, insertionIndex, insertionSlideRight, insertionVerticalSlide, insertionReplacedIndex } = this.props.sort;
+    const { sortArray, currentlyChecking, isSorted, insertionKey, insertionIndex, insertionSlideRight, insertionVerticalSlide, insertionReplacedIndex } = this.props.sort;
     const { intervalSpeed, speedString } = this.props.speed;
 
     var compareArray = Array(10).fill(insertionKey);

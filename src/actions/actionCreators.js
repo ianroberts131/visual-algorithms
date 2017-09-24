@@ -344,33 +344,33 @@ export function mergeSort(mergeArray, mergePrior, mergePriorSorted, mergeArrayMa
             mergePriorSorted = true;
           }
       } else if (mergePrior === 1 && mergePriorSorted === true) {
-        var min;
-        var index;
-        var destinationIndex = mergeArrayMain.indexOf(-1);
-        var array1 = mergeArrayLeft1.filter(number => number > -1);
-        var array2 = mergeArrayRight1.filter(number => number > -1);
-        if (array1.length > 0 && array2.length > 0) {
-          if (array1[0] < array2[0]) {
-            min = array1[0];
-            index = mergeArrayLeft1.indexOf(min);
-            mergeArrayLeft1[index] = -1;
+          var min;
+          var index;
+          var destinationIndex = mergeArrayMain.indexOf(-1);
+          var array1 = mergeArrayLeft1.filter(number => number > -1);
+          var array2 = mergeArrayRight1.filter(number => number > -1);
+          if (array1.length > 0 && array2.length > 0) {
+            if (array1[0] < array2[0]) {
+              min = array1[0];
+              index = mergeArrayLeft1.indexOf(min);
+              mergeArrayLeft1[index] = -1;
+            } else {
+              min = array2[0];
+              index = mergeArrayRight1.indexOf(min);
+              mergeArrayRight1[index] = -1
+            }
+            mergeArrayMain[destinationIndex] = min;
           } else {
-            min = array2[0];
-            index = mergeArrayRight1.indexOf(min);
-            mergeArrayRight1[index] = -1
+            var finalArray = array1.concat(array2);
+            for (var i = 0; i < finalArray.length; i++) {
+              mergeArrayMain[destinationIndex] = finalArray[i];
+              destinationIndex += 1
+            }
+            mergeArrayLeft1.fill(-1);
+            mergeArrayRight1.fill(-1);
+            isSorted = true;
+            isRunning = false;
           }
-          mergeArrayMain[destinationIndex] = min;
-        } else {
-          var finalArray = array1.concat(array2);
-          for (var i = 0; i < finalArray.length; i++) {
-            mergeArrayMain[destinationIndex] = finalArray[i];
-            destinationIndex += 1
-          }
-          mergeArrayLeft1.fill(-1);
-          mergeArrayRight1.fill(-1);
-          isSorted = true;
-          isRunning = false;
-        }
       }
   return {
     type: 'MERGE_SORT',
@@ -407,48 +407,52 @@ export function startQuickSort(...timeouts) {
   }
 }
 
-export function quickSort(sortArray, currentlyChecking, quickPivotIndex, quickLowIndex, quickHighIndex, quickPairsToSort, quickPriorPivots, iterations, isSorted = false, quickSwapping = false, quickSwappedIndices = []) {
+export function quickSort(sortArray, currentlyChecking, quickPivotIndex, quickLowIndex, quickHighIndex, quickPairsToSort, quickPriorPivots, iterations, stopQuickSort, isSorted = false, quickSwapping = false, quickSwappedIndices = []) {
   var isRunning = true;
-  iterations += 1;
-  if (currentlyChecking < quickPivotIndex) {
-    if (sortArray[currentlyChecking] <= sortArray[quickPivotIndex]) {
-      var temp = sortArray[quickHighIndex];
-      sortArray[quickHighIndex] = sortArray[currentlyChecking];
-      sortArray[currentlyChecking] = temp;
-
-      if (quickHighIndex != currentlyChecking) {
-        quickSwapping = true;
-        quickSwappedIndices = [quickHighIndex, currentlyChecking];
-      }
-
-      quickHighIndex += 1;
-    }
-    currentlyChecking += 1
+  if (stopQuickSort === true) {
+    isRunning = false;
+    isSorted = true;
   } else {
-    quickPriorPivots.push(sortArray[quickPivotIndex]);
-    // First, swap the pivot with the high index
-    var temp = sortArray[quickHighIndex];
-    sortArray[quickHighIndex] = sortArray[quickPivotIndex];
-    sortArray[quickPivotIndex] = temp;
-    quickSwapping = true;
-    quickSwappedIndices = [quickHighIndex, quickPivotIndex];
-    // If the 'right side' has more than 1 element, add it to future arrays to sort
-    if (quickPivotIndex - quickHighIndex > 1) {
-      quickPairsToSort.unshift([quickHighIndex + 1, quickPivotIndex]);
-    }
-    // If the 'left side' has more than 1 element, add it to future arrays to sort
-    if (quickHighIndex - quickLowIndex > 1) {
-      quickPairsToSort.unshift([quickLowIndex, quickHighIndex - 1]);
-    }
-    if (quickPairsToSort.length === 0) {
-      isRunning = false;
-      isSorted = true;
+    iterations += 1;
+    if (currentlyChecking < quickPivotIndex) {
+      if (sortArray[currentlyChecking] <= sortArray[quickPivotIndex]) {
+        var temp = sortArray[quickHighIndex];
+        sortArray[quickHighIndex] = sortArray[currentlyChecking];
+        sortArray[currentlyChecking] = temp;
+
+        if (quickHighIndex != currentlyChecking) {
+          quickSwapping = true;
+          quickSwappedIndices = [quickHighIndex, currentlyChecking];
+        }
+
+        quickHighIndex += 1;
+      }
+      currentlyChecking += 1
     } else {
-      var newPair = quickPairsToSort.shift();
-      quickLowIndex = newPair[0];
-      quickHighIndex = newPair[0];
-      currentlyChecking = newPair[0];
-      quickPivotIndex = newPair[1];
+      quickPriorPivots.push(sortArray[quickPivotIndex]);
+      // First, swap the pivot with the high index
+      var temp = sortArray[quickHighIndex];
+      sortArray[quickHighIndex] = sortArray[quickPivotIndex];
+      sortArray[quickPivotIndex] = temp;
+      quickSwapping = true;
+      quickSwappedIndices = [quickHighIndex, quickPivotIndex];
+      // If the 'right side' has more than 1 element, add it to future arrays to sort
+      if (quickPivotIndex - quickHighIndex > 1) {
+        quickPairsToSort.unshift([quickHighIndex + 1, quickPivotIndex]);
+      }
+      // If the 'left side' has more than 1 element, add it to future arrays to sort
+      if (quickHighIndex - quickLowIndex > 1) {
+        quickPairsToSort.unshift([quickLowIndex, quickHighIndex - 1]);
+      }
+      if (quickPairsToSort.length === 0) {
+        stopQuickSort = true;
+      } else {
+        var newPair = quickPairsToSort.shift();
+        quickLowIndex = newPair[0];
+        quickHighIndex = newPair[0];
+        currentlyChecking = newPair[0];
+        quickPivotIndex = newPair[1];
+      }
     }
   }
 
@@ -465,7 +469,8 @@ export function quickSort(sortArray, currentlyChecking, quickPivotIndex, quickLo
     quickSwappedIndices: quickSwappedIndices,
     iterations: iterations,
     isRunning: isRunning,
-    isSorted: isSorted
+    isSorted: isSorted,
+    stopQuickSort: stopQuickSort
   }
 }
 

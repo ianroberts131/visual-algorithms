@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router';
 
 import './sortButtons.css';
 
@@ -8,7 +7,7 @@ var classNames = require('classnames');
 class SortButtons extends React.Component {
   render() {
 
-    const { sortArray, mergeArray, mergePrior, mergeArrayMain, mergePriorSorted, mergeArrayLeft1, mergeArrayLeft2, mergeArrayLeft3, mergeArrayLeft4, mergeArrayLeft5, mergeArrayLeft6, mergeArrayLeft7, mergeArrayRight1, mergeArrayRight2, mergeArrayRight3, mergeArrayRight4, mergeArrayRight5, mergeArrayRight6, mergeArrayRight7, sortedGroupIndex, currentlyChecking, currentLow, iterations, isRunning, insertionIndex, insertionKey, bubbleSwapsCounter, bubbleIndex, quickPivotIndex, quickLowIndex, quickHighIndex, quickPairsToSort, quickPriorPivots, sortAlgorithm } = this.props.sort;
+    const { sortArray, mergeArray, mergePrior, mergeArrayMain, mergePriorSorted, mergeArrayLeft1, mergeArrayLeft2, mergeArrayLeft3, mergeArrayLeft4, mergeArrayLeft5, mergeArrayLeft6, mergeArrayLeft7, mergeArrayRight1, mergeArrayRight2, mergeArrayRight3, mergeArrayRight4, mergeArrayRight5, mergeArrayRight6, mergeArrayRight7, sortedGroupIndex, currentlyChecking, currentLow, iterations, isRunning, insertionIndex, insertionKey, bubbleSwapsCounter, bubbleIndex, quickPivotIndex, quickLowIndex, quickHighIndex, quickPairsToSort, quickPriorPivots, sortAlgorithm, stopQuickSort } = this.props.sort;
 
     const { intervalSpeed, regularActive, slowActive, fastActive } = this.props.speed;
 
@@ -62,7 +61,7 @@ class SortButtons extends React.Component {
 
     if (isRunning && sortAlgorithm.name === 'Quick Sort') {
       bubbleSortTimeout = setTimeout (()=> {
-        this.props.quickSort(sortArray, currentlyChecking, quickPivotIndex, quickLowIndex, quickHighIndex, quickPairsToSort, quickPriorPivots, iterations);
+        this.props.quickSort(sortArray, currentlyChecking, quickPivotIndex, quickLowIndex, quickHighIndex, quickPairsToSort, quickPriorPivots, iterations, stopQuickSort);
       }, intervalSpeed);
     }
 

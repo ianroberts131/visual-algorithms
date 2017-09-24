@@ -5,14 +5,14 @@ import './quickSort.css';
 
 class QuickSort extends React.Component {
   render() {
-    const { sortArray, currentlyChecking, quickPivotIndex, quickLowIndex, quickHighIndex, quickPairsToSort, quickPriorPivots, isSorted, quickSwapping, quickSwappedIndices } = this.props.sort;
+    const { sortArray, currentlyChecking, quickPivotIndex, quickLowIndex, quickHighIndex, quickPriorPivots, isSorted, quickSwappedIndices, stopQuickSort } = this.props.sort;
     const { intervalSpeed, speedString } = this.props.speed;
     return (
       <div>
         <CSSTransitionGroup
           transitionName="quick-transition"
           transitionLeave={false}
-          transitionEnterTimeout={ intervalSpeed }
+          transitionEnterTimeout={ intervalSpeed * .96 }
           className="quick-sort-box-area"
           component="div">
           { sortArray.map((number, index) => {
@@ -20,8 +20,8 @@ class QuickSort extends React.Component {
             var isCurrentlyChecking = index === currentlyChecking;
             var isHighSide = (index >= quickHighIndex && index < currentlyChecking);
             var isLowSide = (index < quickHighIndex && index >= quickLowIndex);
-            var isSortedElement = (index < quickLowIndex);
-            var isPriorPivot = quickPriorPivots.indexOf(number) != -1;
+            var isSortedElement = (index < quickLowIndex || stopQuickSort);
+            var isPriorPivot = quickPriorPivots.indexOf(number) !== -1;
             var notInSortArea = ((index < quickLowIndex || index > quickPivotIndex) && !isPriorPivot);
             var leftSwapped = quickSwappedIndices[0] === index;
             var rightSwapped = quickSwappedIndices[1] === index;
@@ -39,6 +39,8 @@ class QuickSort extends React.Component {
                   return <div key={ `${number}${index}` } className={ `quick-sort-box right-swapped-prior-pivot ${speedString} quick-right-${distance}` }>{ number }</div>
               } else if (rightSwapped && notInSortArea) {
                   return <div key={ `${number}${index}` } className={ `quick-sort-box right-swapped-unsorted ${speedString} quick-right-${distance}` }>{ number }</div>
+              } else if (rightSwapped && isSortedElement) {
+                  return <div key={ `${number}${index}` } className={ `quick-sort-box right-swapped-sorted ${speedString} quick-right-${distance}` }>{ number }</div>
               } else if (rightSwapped && isPivot) {
                   return <div key={ `${number}${index}` } className={ `quick-sort-box right-swapped-pivot ${speedString} quick-right-${distance}` }>{ number }</div>
               } else if (isPriorPivot || isSortedElement) {
@@ -62,8 +64,8 @@ class QuickSort extends React.Component {
           })}
         </CSSTransitionGroup>
         <div className="quick-label-area">
-          { !isSorted && sortArray.map((number, index) =>  {
-            var isPriorPivot = quickPriorPivots.indexOf(number) != -1;
+          { !isSorted && !stopQuickSort && sortArray.map((number, index) =>  {
+            var isPriorPivot = quickPriorPivots.indexOf(number) !== -1;
             if (index === quickPivotIndex) {
               return (
                 <div key={ index } className="quick-label-box">

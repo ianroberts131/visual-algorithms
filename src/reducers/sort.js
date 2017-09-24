@@ -28,7 +28,6 @@ const sortState = {
   bubbleSwapping: false,
   mergeArray: mergeArray,
   mergeArrayMain: mergeArray,
-  mergeArrayMain: [],
   mergeArrayLeft1: [],
   mergeArrayLeft2: [],
   mergeArrayLeft3: [],
@@ -52,6 +51,7 @@ const sortState = {
   quickPriorPivots: [],
   quickSwapping: false,
   quickSwappedIndices: [],
+  stopQuickSort: false,
   isRunning: false,
   isSorted: false,
 }
@@ -78,7 +78,6 @@ function sort(state = sortState, action) {
         bubbleSwapping: false,
         mergeArray: mergeArray,
         mergeArrayMain: mergeArray,
-        mergeArrayMain: [],
         mergeArrayLeft1: [],
         mergeArrayLeft2: [],
         mergeArrayLeft3: [],
@@ -263,7 +262,8 @@ function sort(state = sortState, action) {
                 quickSwappedIndices: [],
                 isRunning: true,
                 iterations: 0,
-                isSorted: false
+                isSorted: false,
+                stopQuickSort: false
               }
 
             case 'QUICK_SORT' :
@@ -280,7 +280,8 @@ function sort(state = sortState, action) {
                 quickSwappedIndices: action.quickSwappedIndices,
                 iterations: action.iterations,
                 isRunning: action.isRunning,
-                isSorted: action.isSorted
+                isSorted: action.isSorted,
+                stopQuickSort: action.stopQuickSort
               }
 
     default:

@@ -252,11 +252,6 @@
   background-color: #00cc00;
 }
 
-.selection-sorted-swapped-regular.selection-transition-enter {
-  background-color: #00cc00;
-  transition: all 0.5s;
-}
-
 .selection-unsorted-swapped.selection-transition-enter {
   background-color: blue;
 }
