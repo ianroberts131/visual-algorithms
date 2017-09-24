@@ -1,15 +1,3 @@
-export function switchToSearchTab() {
-  return {
-    type: 'ON_SEARCH_TAB'
-  }
-}
-
-export function switchToSortTab() {
-  return {
-    type: 'ON_SORT_TAB'
-  }
-}
-
 export function searchBaseState() {
   return {
     type: 'SEARCH_BASE_STATE'

@@ -2,12 +2,20 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import './navbar.css';
 import { selectAlgoGroup } from '../../helpers'
+var classNames = require('classnames');
 
 class Navbar extends Component {
 
   render() {
+    var searchTabClass = classNames({
+      'tab-selected' : this.props.location.pathname === '/search',
+      'tab' : true
+    });
 
-    const { changeTab } = this.props.tabControl;
+    var sortTabClass = classNames({
+      'tab-selected' : this.props.location.pathname === '/sort',
+      'tab' : true
+    });
 
     return (
       <div className="nav-bar">
@@ -16,18 +24,14 @@ class Navbar extends Component {
         </h5>
         <div className="tabs">
           <Link className="link" to="/search">
-            <button className="tab" id="search-tab" onClick={ (e) => {
-                selectAlgoGroup(e);
-                this.props.switchToSearchTab();
+            <button className={ searchTabClass } id="search-tab" onClick={ (e) => {
                 this.props.searchBaseState();
                 this.props.changeSpeed('regular');
               }
             }>Search</button>
           </Link>
           <Link className="link" to="/sort">
-            <button className="tab" id="sort-tab" onClick={ (e) => {
-                selectAlgoGroup(e);
-                this.props.switchToSortTab();
+            <button className={ sortTabClass } id="sort-tab" onClick={ (e) => {
                 this.props.sortBaseState();
                 this.props.changeSpeed('regular');
               }
