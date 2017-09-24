@@ -44,6 +44,7 @@ const sortState = {
   mergeArrayRight7: "",
   mergePrior: 0,
   mergePriorSorted: false,
+  mergeFinalSort: false,
   quickPivotIndex: 9,
   quickLowIndex: 0,
   quickHighIndex: 0,
@@ -217,7 +218,8 @@ function sort(state = sortState, action) {
               sortAlgorithm: mergeSort,
               isRunning: true,
               iterations: 0,
-              isSorted: false
+              isSorted: false,
+              mergeFinalSort: false
             }
 
           case 'MERGE_SORT' :
@@ -244,6 +246,7 @@ function sort(state = sortState, action) {
               mergeArrayRight7: action.mergeArrayRight7,
               mergePrior: action.mergePrior,
               mergePriorSorted: action.mergePriorSorted,
+              mergeFinalSort: action.mergeFinalSort
             }
 
             case 'START_QUICK_SORT' :

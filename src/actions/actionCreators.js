@@ -174,7 +174,7 @@ export function startMergeSort(...timeouts) {
 export function mergeSort(mergeArray, mergePrior, mergePriorSorted, mergeArrayMain, mergeArrayLeft1, mergeArrayLeft2, mergeArrayLeft3, mergeArrayLeft4, mergeArrayLeft5, mergeArrayLeft6, mergeArrayLeft7, mergeArrayRight1, mergeArrayRight2, mergeArrayRight3, mergeArrayRight4, mergeArrayRight5, mergeArrayRight6, mergeArrayRight7,  iterations, isSorted = false) {
   iterations += 1;
   var isRunning = true;
-
+  var mergeFinalSort = false;
   // Split the main array into 2 separate arrays, creating tier 2
   if (mergePrior === 0 && mergePriorSorted === false) {
       mergeArrayLeft1 = mergeArrayMain.slice(0,4);
@@ -346,6 +346,7 @@ export function mergeSort(mergeArray, mergePrior, mergePriorSorted, mergeArrayMa
       } else if (mergePrior === 1 && mergePriorSorted === true) {
           var min;
           var index;
+          mergeFinalSort = true;
           var destinationIndex = mergeArrayMain.indexOf(-1);
           var array1 = mergeArrayLeft1.filter(number => number > -1);
           var array2 = mergeArrayRight1.filter(number => number > -1);
@@ -394,7 +395,8 @@ export function mergeSort(mergeArray, mergePrior, mergePriorSorted, mergeArrayMa
     mergePriorSorted: mergePriorSorted,
     iterations: iterations,
     isRunning: isRunning,
-    isSorted: isSorted
+    isSorted: isSorted,
+    mergeFinalSort: mergeFinalSort
   }
 }
 

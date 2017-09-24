@@ -3,24 +3,42 @@
   text-align: center;
 }
 
-.merge-sort-box {
+.merge-sort-box-level-0, .merge-sort-box-level-1, .merge-sort-box-level-2, .merge-sort-box-level-3 {
   display: inline-block;
-  width: 5em;
-  height: 50px;
-  line-height: 50px;
+  height: 70px;
+  line-height: 70px;
   color: white;
   margin: 1px;
   text-align: center;
   font-size: 15px;
 }
 
+.merge-sort-box-level-0 {
+  width: 6%;
+}
+
+.merge-sort-box-level-1 {
+  width: 17.14286%;
+}
+
+.merge-sort-box-level-2 {
+  width: 40%;
+}
+
+.merge-sort-box-level-3 {
+  width: 80%;
+}
+
 .merge-unsorted {
   background-color: blue;
 }
 
+.merge-sorted {
+  background-color: #00cc00;
+}
+
 .merge-hidden {
-  background-color: #f9f9f9;
-  color: #f9f9f9;
+  visibility: hidden;
 }
 
 .level-1-0 {
