@@ -25,15 +25,19 @@ class Navbar extends Component {
         <div className="tabs">
           <Link className="link" to="/search">
             <button className={ searchTabClass } id="search-tab" onClick={ (e) => {
-                this.props.searchBaseState();
-                this.props.changeSpeed('regular');
+                if (this.props.location.pathname !== '/search') {
+                  this.props.searchBaseState();
+                  this.props.changeSpeed('regular');
+                }
               }
             }>Search</button>
           </Link>
           <Link className="link" to="/sort">
             <button className={ sortTabClass } id="sort-tab" onClick={ (e) => {
-                this.props.sortBaseState();
-                this.props.changeSpeed('regular');
+                if (this.props.location.pathname !== '/sort') {
+                  this.props.sortBaseState();
+                  this.props.changeSpeed('regular');
+                }
               }
             }>Sort</button>
           </Link>
