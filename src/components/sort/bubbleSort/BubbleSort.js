@@ -1,5 +1,6 @@
 import React from 'react';
 import { CSSTransitionGroup } from 'react-transition-group';
+import { Col } from 'react-bootstrap';
 
 import './bubbleSort.css';
 
@@ -9,7 +10,7 @@ class BubbleSort extends React.Component {
     const { intervalSpeed, speedString } = this.props.speed;
 
     return (
-      <div>
+      <Col xs={ 12 } className="sort-algo-section">
         <CSSTransitionGroup
           transitionName="bubble-transition"
           transitionLeave={false}
@@ -22,20 +23,20 @@ class BubbleSort extends React.Component {
             var isLastIndex = (index === bubbleIndex && index === sortArray.length - 1)
             if (!isSorted) {
               if (isCurrentIndex && !bubbleSwapping) {
-                return <div key={ `${number}${index}` } className="bubble-sort-box bubble-checking">{ number }</div>
+                return <Col xs={1} key={ `${number}${index}` } className="sort-box bubble-checking no-float">{ number }</Col>
               } else if (isComparisonIndex) {
-                  return <div key={ `${number}${index}` } className="bubble-sort-box bubble-checking">{ number }</div>
+                  return <Col xs={1} key={ `${number}${index}` } className="sort-box bubble-checking no-float">{ number }</Col>
               } else if (isCurrentIndex && bubbleSwapping ) {
-                  return <div key={ `${number}${index}` } className={`bubble-sort-box bubble-swapping-right-${speedString}`}>{ number }</div>
+                  return <Col xs={1} key={ `${number}${index}` } className={`sort-box bubble-swapping-right-${speedString} no-float`}>{ number }</Col>
               } else if ((index === bubbleIndex - 1) && bubbleSwapping) {
-                  return <div key={ `${number}${index}` } className={`bubble-sort-box bubble-swapping-left-${speedString}`}>{ number }</div>
+                  return <Col xs={1} key={ `${number}${index}` } className={`sort-box bubble-swapping-left-${speedString} no-float`}>{ number }</Col>
               } else if (isLastIndex && bubbleSwapping) {
-                  return <div key={ `${number}${index}` } className={`bubble-sort-box bubble-swapping-last-${speedString}`}>{ number }</div>
+                  return <Col xs={1} key={ `${number}${index}` } className={`sort-box bubble-swapping-last-${speedString} no-float`}>{ number }</Col>
               } else {
-                  return <div key={ `${number}${index}` } className="bubble-sort-box bubble-unsorted">{ number }</div>
+                  return <Col xs={1} key={ `${number}${index}` } className="sort-box bubble-unsorted no-float">{ number }</Col>
               }
             } else {
-                return <div key={ `${number}${index}` } className="bubble-sort-box bubble-sorted">{ number }</div>
+                return <Col xs={1} key={ `${number}${index}` } className="sort-box bubble-sorted no-float">{ number }</Col>
             }
           })}
         </CSSTransitionGroup>
@@ -44,7 +45,7 @@ class BubbleSort extends React.Component {
             <p className="bubble-counter-text">Swaps Counter: { bubbleSwapsCounter }</p>
           </div>
         }
-      </div>
+      </Col>
     )
   }
 }

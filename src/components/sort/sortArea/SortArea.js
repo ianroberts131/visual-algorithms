@@ -4,6 +4,7 @@ import InsertionSort from '../insertionSort/InsertionSort';
 import BubbleSort from '../bubbleSort/BubbleSort';
 import MergeSort from '../mergeSort/MergeSort';
 import QuickSort from '../quickSort/QuickSort';
+import { Col } from 'react-bootstrap';
 
 import './sortArea.css';
 
@@ -11,7 +12,7 @@ class SortArea extends React.Component {
   render() {
     const { sortAlgorithm } = this.props.sort;
     return (
-      <div>
+      <Col xs={ 12 } className="sort-area-section">
         { sortAlgorithm.name === "Selection Sort" &&
           <SelectionSort {...this.props} />
         }
@@ -27,7 +28,7 @@ class SortArea extends React.Component {
         { sortAlgorithm.name === "Quick Sort" &&
           <QuickSort {...this.props} />
         }
-      </div>
+      </Col>
     )
   }
 }

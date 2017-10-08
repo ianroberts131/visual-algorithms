@@ -1,40 +1,111 @@
+.sort-button-row {
+  height: 12.5%;
+}
+
 .sort-buttons {
+  height: 100%;
   background-color: white;
-  width: 100%;
-  padding-top: 1%;
-  padding-bottom: 1%;
   margin: 0 auto;
-  margin-top: 20px;
   border: 2px solid #d9d9d9;
+  padding-right: 0;
+}
+
+.algo-buttons {
+  height: 100%;
+}
+
+.sort-speed-buttons {
+  height: 100%;
+  padding: 0;
+}
+
+.algo-buttons:before, .sort-speed-buttons:before, .sort-button:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
 }
 
 .sort-button-size {
-  height: 40px;
+  height: 60%;
   font-size: 15px;
   padding: 1%;
+  margin: 0 auto;
 }
 
 .sort-button {
   background-color: #0066ff;
+  width: 15%;
   color: white;
   border-radius: 5px;
-  margin-left: 10px;
+  margin-left: 0.5%;
   padding-top: 0px;
   padding-bottom: 0px;
-}
-
-.sort-speed-buttons {
-  float: right;
-  margin-right: 10px;
+  align-items: center;
 }
 
 .sort-speed-button {
   background-color: white;
-  width: 75px;
+  width: 25%;
   border: 1px solid #d9d9d9;
 }
 
 .active-sort-btn {
   background-color: green;
   color: white;
+}
+
+@media screen and (max-width: 1320px) {
+  .sort-button-size {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .sort-button-size {
+    font-size: 10px;
+    padding: 0.5%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .sort-button {
+    width: 17.75%;
+  }
+  .algo-buttons {
+    padding: 0.25%;
+  }
+  .sort-speed-button {
+    width: 30%;
+  }
+  .sort-button-size {
+    font-size: 9px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sort-button {
+    width: 20%;
+    margin: 0;
+  }
+  .algo-buttons {
+    padding: 0;
+  }
+  .sort-speed-button {
+    width: 33%;
+  }
+  .sort-button-size {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .sort-button-size {
+    font-size: 7px;
+  }
+}
+
+.btn-responsive {
+  white-space: normal !important;
+  word-wrap: break-word;
 }

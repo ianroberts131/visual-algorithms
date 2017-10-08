@@ -1,5 +1,6 @@
 import React from 'react';
 import { CSSTransitionGroup } from 'react-transition-group';
+import { Col } from 'react-bootstrap';
 
 import './selectionSort.css';
 
@@ -9,7 +10,7 @@ class SelectionSort extends React.Component {
     const { intervalSpeed, speedString } = this.props.speed;
 
     return (
-      <div>
+      <Col xs={ 12 } className="sort-algo-section">
       <CSSTransitionGroup
         transitionName="selection-transition"
         transitionLeave={false}
@@ -25,43 +26,43 @@ class SelectionSort extends React.Component {
           if (!isSorted) {
             if (inSortedGroup) {
               if (isSwapped && (index === sortedGroupIndex - 1)) {
-                return <div key={ `${number}${index}` } className={ `selection-sort-box selection-sorted-swapped ${speedString} right-${distance}` }>{ number }</div>
+                return <Col xs={1} key={ `${number}${index}` } className={ `sort-box selection-sorted-swapped ${speedString} right-${distance} no-float` }>{ number }</Col>
               } else {
-                  return <div key={ `${number}${index}` } className="selection-sort-box selection-sorted">{ number }</div>
+                  return <Col xs={1} key={ `${number}${index}` } className="sort-box selection-sorted no-float">{ number }</Col>
               }
             } else if (isSwapped && isCurrentLow && index === swappedElement) {
-                return <div key={ `${number}${index}` } className={ `selection-sort-box selection-low-swapped ${speedString} left-${distance}` }>{ number }</div>
+                return <Col xs={1} key={ `${number}${index}` } className={ `sort-box selection-low-swapped ${speedString} left-${distance} no-float` }>{ number }</Col>
             } else if (isSwapped && isCurrentlyChecking && index === swappedElement) {
-                return <div key={ `${number}${index}` } className={ `selection-sort-box selection-checking-swapped ${speedString} left-${distance}` }>{ number }</div>
+                return <Col xs={1} key={ `${number}${index}` } className={ `sort-box selection-checking-swapped ${speedString} left-${distance} no-float` }>{ number }</Col>
             } else if (isSwapped && index === swappedElement) {
-                return <div key={ `${number}${index}` } className={ `selection-sort-box selection-unsorted-swapped ${speedString} left-${distance}` }>{ number }</div>
+                return <Col xs={1} key={ `${number}${index}` } className={ `sort-box selection-unsorted-swapped ${speedString} left-${distance} no-float` }>{ number }</Col>
             } else if (isCurrentlyChecking) {
-                return <div key={ `${number}${index}` } className="selection-sort-box selection-checking">{ number }</div>
+                return <Col xs={1} key={ `${number}${index}` } className="sort-box selection-checking no-float">{ number }</Col>
             } else if (isCurrentLow) {
-                return <div key={ `${number}${index}` } className="selection-sort-box selection-current-low">{ number }</div>
+                return <Col xs={1} key={ `${number}${index}` } className="sort-box selection-current-low no-float">{ number }</Col>
             } else {
-                return <div key={ `${number}${index}` } className="selection-sort-box selection-unsorted">{ number }</div>
+                return <Col xs={1} key={ `${number}${index}` } className="sort-box selection-unsorted no-float">{ number }</Col>
             }
         } else {
-            return <div key={ `${number}${index}` } className="selection-sort-box selection-sorted">{ number }</div>
+            return <Col xs={1} key={ `${number}${index}` } className="sort-box selection-sorted no-float">{ number }</Col>
         }
         })}
       </CSSTransitionGroup>
-      <div className="selection-label-area">
+      <Col xs={ 12 } className="selection-label-area">
         { !isSorted && isRunning && sortArray.map((number, index) => {
           if (index === currentLow) {
             return (
-              <div key={ index } className="label-box">
+              <Col xs={ 1 } key={ index } className="label-box no-float">
                 <div>{ '\u21D1' }</div>
                 <div>Current Low</div>
-              </div>
+              </Col>
             )
           } else {
-              return <div key={ index } className="label-box selection-label-hidden"></div>
+              return <Col xs={ 1 } key={ index } className="label-box selection-label-hidden no-float"></Col>
           }
         })}
-      </div>
-    </div>
+      </Col>
+    </Col>
     )
   }
 }

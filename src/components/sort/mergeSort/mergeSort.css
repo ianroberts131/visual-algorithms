@@ -1,16 +1,28 @@
+.merge-sort-area {
+  height: 100%;
+}
+
 .merge-sort-box-area {
+  height: 22.5%;
   margin-top: 1%;
   text-align: center;
 }
 
 .merge-sort-box-level-0, .merge-sort-box-level-1, .merge-sort-box-level-2, .merge-sort-box-level-3 {
   display: inline-block;
-  height: 70px;
-  line-height: 70px;
+  height: 100%;
   color: white;
   margin: 1px;
   text-align: center;
   font-size: 15px;
+}
+
+/* Center number within box vertically */
+.merge-sort-box-level-0:before, .merge-sort-box-level-1:before, .merge-sort-box-level-2:before, .merge-sort-box-level-3:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
 }
 
 .merge-sort-box-level-0 {
@@ -39,6 +51,36 @@
 
 .merge-hidden {
   visibility: hidden;
+}
+
+@media screen and (max-width: 1199px) {
+  .merge-sort-box-level-0, .merge-sort-box-level-1, .merge-sort-box-level-2, .merge-sort-box-level-3 {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .merge-sort-box-level-0, .merge-sort-box-level-1, .merge-sort-box-level-2, .merge-sort-box-level-3 {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .merge-sort-box-level-0, .merge-sort-box-level-1, .merge-sort-box-level-2, .merge-sort-box-level-3 {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .merge-sort-box-level-0, .merge-sort-box-level-1, .merge-sort-box-level-2, .merge-sort-box-level-3 {
+    font-size: 9px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .merge-sort-box-level-0, .merge-sort-box-level-1, .merge-sort-box-level-2, .merge-sort-box-level-3 {
+    font-size: 8px;
+  }
 }
 
 .level-1-0 {

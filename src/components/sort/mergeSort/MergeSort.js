@@ -7,7 +7,7 @@ class MergeSort extends React.Component {
     const { mergeArrayMain, mergeArrayLeft1, mergeArrayLeft2, mergeArrayLeft3, mergeArrayLeft4, mergeArrayLeft5, mergeArrayLeft6, mergeArrayLeft7, mergeArrayRight1, mergeArrayRight2, mergeArrayRight3, mergeArrayRight4, mergeArrayRight5, mergeArrayRight6, mergeArrayRight7, mergeFinalSort } = this.props.sort;
     const { intervalSpeed, speedString } = this.props.speed;
     return (
-      <div>
+      <div className="merge-sort-area">
         <div className="merge-sort-box-area">
           { mergeArrayMain.map((number, index) => {
               var classVar = mergeFinalSort ? "sorted" : "unsorted";

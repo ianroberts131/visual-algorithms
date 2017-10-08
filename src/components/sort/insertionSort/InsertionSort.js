@@ -1,5 +1,6 @@
 import React from 'react';
 import { CSSTransitionGroup } from 'react-transition-group';
+import { Col } from 'react-bootstrap';
 
 import './insertionSort.css';
 
@@ -10,7 +11,7 @@ class InsertionSort extends React.Component {
 
     var compareArray = Array(10).fill(insertionKey);
     return (
-    <div>
+    <Col xs={ 12 } className="sort-algo-section">
       <CSSTransitionGroup
         transitionName="insertion-transition"
         transitionLeave={false}
@@ -22,20 +23,20 @@ class InsertionSort extends React.Component {
           var isCurrentlyChecking = (index === currentlyChecking && index < sortArray.length - 1);
           if (!isSorted) {
             if (index === (currentlyChecking + 2) && insertionSlideRight && index > 0) {
-              return <div key={ `${number}${index}` } className={ `insertion-sort-box insertion-slide-right-${speedString}` }>{ number }</div>
+              return <Col xs={1} key={ `${number}${index}` } className={ `sort-box insertion-slide-right-${speedString} no-float` }>{ number }</Col>
             } else if (index === (currentlyChecking + 1)) {
-                return <div key={ `${number}${index}` } className="insertion-sort-box insertion-hidden">{ number }</div>
+                return <Col xs={1} key={ `${number}${index}` } className="sort-box insertion-hidden no-float">{ number }</Col>
             } else if (insertionVerticalSlide && (index === insertionReplacedIndex)) {
-                return <div key={ `${number}${index}${insertionKey}` } className={ `insertion-sort-box insertion-slide-up-${speedString}` }>{ number }</div>
+                return <Col xs={1} key={ `${number}${index}${insertionKey}` } className={ `sort-box insertion-slide-up-${speedString} no-float` }>{ number }</Col>
             } else if (inSortedGroup && !isCurrentlyChecking) {
-                return <div key={ `${number}${index}` } className="insertion-sort-box insertion-sorted">{ number }</div>
+                return <Col xs={1} key={ `${number}${index}` } className="sort-box insertion-sorted no-float">{ number }</Col>
             } else if (isCurrentlyChecking) {
-                return <div key={ `${number}${index}` } className="insertion-sort-box insertion-checking">{ number }</div>
+                return <Col xs={1} key={ `${number}${index}` } className="sort-box insertion-checking no-float">{ number }</Col>
             } else {
-                return <div key={ `${number}${index}` } className="insertion-sort-box insertion-unsorted">{ number }</div>
+                return <Col xs={1} key={ `${number}${index}` } className="sort-box insertion-unsorted no-float">{ number }</Col>
             }
           } else {
-              return <div key={ `${number}${index}` } className="insertion-sort-box insertion-sorted">{ number }</div>
+              return <Col xs={1} key={ `${number}${index}` } className="sort-box insertion-sorted no-float">{ number }</Col>
           }
         })}
       </CSSTransitionGroup>
@@ -48,16 +49,16 @@ class InsertionSort extends React.Component {
         { !isSorted && compareArray.map((number, index) => {
           if ((index === currentlyChecking + 1) && (number > 0)) {
             if (index === insertionIndex) {
-              return <div key={ `${number}${index}-compare` } className={ `insertion-sort-box insertion-box slide-down-${speedString}` }> { number }</div>
+              return <Col xs={1} key={ `${number}${index}-compare` } className={ `sort-box insertion-box slide-down-${speedString} no-float` }> { number }</Col>
             } else {
-              return <div key={ `${number}${index}-compare-left` } className={ `insertion-sort-box insertion-box slide-left-${speedString}` }> { number }</div>
+              return <Col xs={1} key={ `${number}${index}-compare-left` } className={ `sort-box insertion-box slide-left-${speedString} no-float` }> { number }</Col>
             }
           } else {
-            return <div key={ `${number}${index}-compare-none` } className="insertion-sort-box no-display"></div>
+            return <Col xs={1} key={ `${number}${index}-compare-none` } className="sort-box no-display no-float"></Col>
           }
         })}
       </CSSTransitionGroup>
-    </div>
+    </Col>
     )
   }
 }

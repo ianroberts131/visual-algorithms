@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import { Col } from 'react-bootstrap';
+
 import './navbar.css';
 import { selectAlgoGroup } from '../../helpers'
+
 var classNames = require('classnames');
 
 class Navbar extends Component {
@@ -18,7 +21,7 @@ class Navbar extends Component {
     });
 
     return (
-      <div className="nav-bar">
+      <Col sm={ 12 } className="nav-bar">
         <h5 id="nav-title">
           <Link className="link" to="/">Visual Algorithms</Link>
         </h5>
@@ -42,7 +45,7 @@ class Navbar extends Component {
             }>Sort</button>
           </Link>
         </div>
-      </div>
+      </Col>
     )
   }
 }

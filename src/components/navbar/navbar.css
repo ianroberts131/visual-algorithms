@@ -4,29 +4,33 @@ body {
 }
 
 .nav-bar {
-  display: block;
-  width: 100%;
-  height: 60px;
   background-color: #b3b3b3;
+  height: 100%;
 }
 
 #nav-title {
   float: left;
   font-size: 25px;
-  height: 60px;
-  line-height: 60px;
+  height: 100%;
   color: white;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 20px;
+  margin-left: 1%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#nav-title:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
 }
 
 .tabs {
   float: left;
   overflow: hidden;
-  margin-left: 60px;
-  width: 300px;
-  height: 60px;
+  margin-left: 5%;
+  width: 15%;
+  height: 100%;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -39,8 +43,8 @@ body {
 .tab {
   background-color: #A0A0A0;
   color: white;
-  height: 60px;
-  width: 100px;
+  height: 100%;
+  width: 50%;
   margin-top: 0;
   margin-bottom: 0;
   padding: 0;
@@ -52,4 +56,49 @@ body {
   background-color: white;
   color: black;
   border: 1px solid #00ffff;
+}
+
+@media screen and (max-width: 1199px) {
+  .tabs {
+    width: 20%;
+  }
+  .tab {
+    font-size: 15px;
+  }
+  #nav-title {
+    font-size: 22.5px;
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .tabs {
+    width: 25%;
+  }
+  .tab {
+    font-size: 14px;
+  }
+  #nav-title {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .tabs {
+    width: 30%;
+  }
+  .tab {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .tabs {
+    width: 35%;
+  }
+  .tab {
+    font-size: 12px;
+  }
+  #nav-title {
+    font-size: 17.5px;
+  }
 }

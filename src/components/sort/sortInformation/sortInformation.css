@@ -1,20 +1,16 @@
-.sort-algorithm-info-section {
-  overflow: hidden;
-  width: 100%;
+.sort-info-section {
+  height: 37.5%;
 }
 
 .sort-algorithm-info {
-  width: 37.5%;
-  float: left;
-  height: 240px;
+  height: 90%;
   border: 2px solid #d9d9d9;
-  margin-left: 10%;
-  margin-top: 10px;
+  margin-top: 0.5%;
   background-color: white;
 }
 
 .header {
-  font-size: 25px;
+  font-size: 30px;
 }
 
 #sort-algorithm-name, #complexity-title, #iterations-title {
@@ -25,39 +21,145 @@
 
 #sort-algorithm-description {
   margin: 2px;
-  font-size: 16px;
+  font-size: 18px;
   padding-left: 2%;
   padding-right: 2%;
 }
 
 .sort-algorithm-details {
-  width: 22.5%;
-  height: 240px;
+  height: 90%;
   border: 2px solid #d9d9d9;
-  float: left;
-  margin-top: 10px;
+  margin-top: 0.5%;
   background-color: white;
-  margin-left: 2.5%;
 }
 
 .complexity-detail {
   padding-left: 2%;
   margin: 0;
-  font-size: 18px;
+  font-size: 19px;
 }
 
 .iterations-section {
-  width: 12.5%;
-  height: 240px;
+  height: 90%;
   border: 2px solid #d9d9d9;
-  float: left;
-  margin-top: 10px;
+  margin-top: 0.5%;
   background-color: white;
-  margin-left: 2.5%;
   text-align: center;
 }
 
 #iterations {
-  font-size: 48px;
+  font-size: 55px;
   margin-top: 20px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1525px) {
+  #sort-algorithm-description {
+    font-size: 15px;
+  }
+  .header {
+    font-size: 23px;
+  }
+  .complexity-detail {
+    font-size: 18px;
+  }
+  #iterations {
+    font-size: 42px;
+  }
+}
+
+@media screen and (max-width: 1320px) {
+  #sort-algorithm-description {
+    font-size: 16px;
+  }
+  .header {
+    font-size: 25px;
+  }
+  .complexity-detail {
+    font-size: 16px;
+  }
+  #iterations {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 1255px) {
+  #sort-algorithm-description {
+    font-size: 15px;
+  }
+  .header {
+    font-size: 22px;
+  }
+  .complexity-detail {
+    font-size: 15px;
+  }
+  #iterations {
+    font-size: 36px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .sort-info-section, .sort-algorithm-info {
+    height: 50%;
+  }
+  .sort-algorithm-details, .iterations-section {
+    height: 40%;
+  }
+  #iterations {
+    font-size: 40px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 775px) {
+  #sort-algorithm-description {
+    font-size: 13px;
+  }
+  .header {
+    font-size: 18px;
+  }
+  .complexity-detail {
+    font-size: 15px;
+  }
+  #iterations {
+    font-size: 36px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  #sort-algorithm-description {
+    font-size: 12px;
+  }
+  .header {
+    font-size: 15px;
+  }
+  .complexity-detail {
+    font-size: 13px;
+  }
+  #iterations {
+    font-size: 30px;
+    margin-top: 5px;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .sort-algorithm-info {
+    height: 65%;
+  }
+  .sort-algorithm-details, .iterations-section {
+    height: 35%;
+  }
+  #sort-algorithm-description {
+    font-size: 10px;
+  }
+  .header {
+    font-size: 12px;
+  }
+  .complexity-detail {
+    font-size: 10px;
+  }
+  #iterations {
+    font-size: 24px;
+  }
 }
