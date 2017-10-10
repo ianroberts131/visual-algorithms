@@ -1,47 +1,105 @@
-.grid-section {
-  position: relative;
-  float: right;
-  width: 70%;
-  height: 100vh;
+.search-button-row {
+  height: 11%;
 }
 
 .buttons {
+  height: 100%;
   background-color: white;
-  width: 93%;
-  padding-top: 1%;
-  padding-bottom: 1%;
   margin: 0 auto;
-  margin-top: 20px;
   border: 2px solid #d9d9d9;
 }
 
+.search-algo-buttons {
+  height: 100%;
+}
+
+.search-algo-buttons:before, .speed-buttons:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
 .button-size {
-  height: 40px;
+  height: 75%;
   font-size: 15px;
   padding: 1%;
 }
 
 .linear-search-button, .binary-search-button {
   background-color: #0066ff;
+  width: 30%;
   color: white;
   border-radius: 5px;
-  margin-left: 10px;
+  margin-left: 0.5%;
   padding-top: 0px;
   padding-bottom: 0px;
 }
 
 .speed-buttons {
+  height: 100%;
   float: right;
-  margin-right: 10px;
 }
 
 .speed-button {
   background-color: white;
-  width: 75px;
+  width: 25%;
   border: 1px solid #d9d9d9;
 }
 
 .active-btn {
   background-color: green;
   color: white;
+}
+
+@media screen and (max-width: 1320px) {
+  .button-size {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .button-size {
+    font-size: 10px;
+    padding: 0.5%;
+  }
+  .linear-search-button, .binary-search-button {
+    width: 35%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .search-button-row {
+    height: 10%;
+  }
+  .button-size {
+    font-size: 9px;
+  }
+  .linear-search-button, .binary-search-button {
+    width: 40%;
+  }
+  .speed-button {
+    width: 33%
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .search-button-row {
+    height: 9%;
+  }
+  .button-size {
+    font-size: 8px;
+  }
+  .linear-search-button, .binary-search-button {
+    width: 49%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .search-button-row {
+    height: 8%;
+  }
+  .button-size {
+    font-size: 6px;
+  }
 }

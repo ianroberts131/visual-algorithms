@@ -1,5 +1,5 @@
 .sort-info-section {
-  height: 37.5%;
+  height: 35%;
 }
 
 .sort-algorithm-info {
@@ -61,7 +61,7 @@
     font-size: 23px;
   }
   .complexity-detail {
-    font-size: 18px;
+    font-size: 16px;
   }
   #iterations {
     font-size: 42px;
@@ -73,10 +73,10 @@
     font-size: 16px;
   }
   .header {
-    font-size: 25px;
+    font-size: 21px;
   }
   .complexity-detail {
-    font-size: 16px;
+    font-size: 15px;
   }
   #iterations {
     font-size: 40px;
@@ -88,7 +88,7 @@
     font-size: 15px;
   }
   .header {
-    font-size: 22px;
+    font-size: 20px;
   }
   .complexity-detail {
     font-size: 15px;
@@ -99,11 +99,15 @@
 }
 
 @media screen and (max-width: 1199px) {
-  .sort-info-section, .sort-algorithm-info {
-    height: 50%;
+  .sort-info-section {
+    height: 40%;
+  }
+  .sort-algorithm-info {
+    height: auto;
   }
   .sort-algorithm-details, .iterations-section {
     height: 40%;
+    margin-top: 5%;
   }
   #iterations {
     font-size: 40px;
@@ -112,6 +116,9 @@
 }
 
 @media screen and (max-width: 775px) {
+  .sort-info-section {
+    height: 35%;
+  }
   #sort-algorithm-description {
     font-size: 13px;
   }
@@ -128,6 +135,9 @@
 }
 
 @media screen and (max-width: 575px) {
+  .sort-info-section {
+    height: 32.5%;
+  }
   #sort-algorithm-description {
     font-size: 12px;
   }
@@ -144,8 +154,8 @@
 }
 
 @media screen and (max-width: 475px) {
-  .sort-algorithm-info {
-    height: 65%;
+  .sort-info-section {
+    height: 40%;
   }
   .sort-algorithm-details, .iterations-section {
     height: 35%;
@@ -161,5 +171,11 @@
   }
   #iterations {
     font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .sort-info-section {
+    height: 50%;
   }
 }

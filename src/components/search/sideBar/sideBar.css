@@ -1,47 +1,38 @@
 .side-bar-section {
   position: relative;
   float: left;
-  width: 30%;
-  height: 100vh;
+  height: 100%;
+  margin-top: 2%;
 }
 
 .algorithm-info {
-  width: 100%;
   border: 2px solid #d9d9d9;
-  margin-left: 20px;
-  margin-top: 20px;
   background-color: white;
 }
 
 #algorithm-name {
   font-size: 25px;
   margin: 0px;
-  padding-bottom: 10px;
+  padding-bottom: 2%;
   padding-left: 2%;
 }
 
 #description {
-  margin: 2px;
+  margin: 1%;
   font-size: 16px;
   padding-left: 2%;
   padding-bottom: 2%;
 }
 
 .iteration-info-container {
-  width: 100%;
   border: 2px solid #d9d9d9;
-  margin-top: 10px;
-  margin-left: 20px;
   background-color: white;
   font-size: 20px;
 }
 
 .iteration-info-item {
   margin: 0;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 2%;
-  padding-right: 2%;
+  padding: 2%;
   border-bottom: 1px solid #d9d9d9;
 }
 
@@ -49,63 +40,100 @@
   float: right;
 }
 
-.grid-section {
-  position: relative;
-  float: right;
-  width: 70%;
-  height: 100vh;
+@media screen and (max-width: 1199px) {
+  #algorithm-name {
+    font-size: 20px;
+  }
+  #description {
+    font-size: 14px
+  }
+  .iteration-info-container {
+    font-size: 18px
+  }
 }
 
-button:hover {
-  cursor: pointer;
+@media screen and (max-width: 875px) {
+  #algorithm-name {
+    font-size: 17px;
+  }
+  #description {
+    font-size: 12px
+  }
+  .iteration-info-container {
+    font-size: 15px
+  }
 }
 
-.buttons {
-  background-color: white;
-  width: 93%;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  margin: 0 auto;
-  margin-top: 20px;
-  border: 2px solid #d9d9d9;
+@media screen and (max-width: 768px) {
+  .side-bar-section {
+    position: relative;
+    height: 25%;
+    margin-top: 2%;
+  }
+  .algorithm-info {
+    height: 100%;
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+  #algorithm-name {
+    font-size: 16px;
+    padding-left: 0.5%;
+    padding-bottom: 0.5%;
+  }
+  #description {
+    font-size: 11px;
+    padding-left: 1%;
+    padding-bottom: 1%;
+  }
+  .iteration-info-container {
+    height: 100%;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-size: 11px;
+  }
+  .iteration-info:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+  .iteration-info-item {
+    padding: 1%;
+  }
 }
 
-.button-size {
-  height: 40px;
-  font-size: 15px;
-  padding: 1%;
+@media screen and (max-width: 575px) {
+  #algorithm-name {
+    font-size: 13px;
+  }
+  #description {
+    font-size: 10px
+  }
+  .iteration-info-container {
+    font-size: 10px
+  }
 }
 
-.linear-search-button {
-  background-color: #0066ff;
-  color: white;
-  border-radius: 5px;
-  margin-left: 10px;
-  padding-top: 0px;
-  padding-bottom: 0px;
+@media screen and (max-width: 475px) {
+  #algorithm-name {
+    font-size: 11px;
+  }
+  #description {
+    font-size: 9px
+  }
+  .iteration-info-container {
+    font-size: 9px
+  }
 }
 
-.binary-search-button {
-  background-color: #0066ff;
-  color: white;
-  border-radius: 5px;
-  margin-left: 10px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
-
-.speed-buttons {
-  float: right;
-  margin-right: 10px;
-}
-
-.speed-button {
-  background-color: white;
-  width: 75px;
-  border: 1px solid #d9d9d9;
-}
-
-.active-btn {
-  background-color: green;
-  color: white;
+@media screen and (max-width: 400px) {
+  #algorithm-name {
+    font-size: 8px;
+  }
+  #description {
+    font-size: 7px;
+  }
+  .iteration-info-container {
+    font-size: 8px
+  }
 }

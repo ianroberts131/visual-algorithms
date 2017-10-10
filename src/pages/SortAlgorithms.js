@@ -11,7 +11,7 @@ class SortAlgorithms extends Component {
       <Row className="sort-algo-row">
         <SortButtons {...this.props} />
         <SortInformation {...this.props} />
-        <Col sm={ 12 } className="sort-section">
+        <Col xs={ 12 } className="sort-section">
           <SortArea {...this.props} />
         </Col>
       </Row>

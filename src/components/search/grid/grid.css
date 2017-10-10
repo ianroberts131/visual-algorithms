@@ -1,8 +1,7 @@
 .grid-section {
+  height: 100%;
   position: relative;
   float: right;
-  width: 70%;
-  height: 100vh;
 }
 
 button:hover {
@@ -10,30 +9,37 @@ button:hover {
 }
 
 .grid-container {
-  display: block;
   overflow: auto;
+  height: 100%;
   background-color: white;
-  width: 93%;
-  margin: 0 auto;
-  margin-top: 10px;
-  padding-top: 1%;
-  padding-bottom: 1%;
+  margin-top: 1%;
+  padding: 1%;
   border: 2px solid #d9d9d9;
 }
 
 .grid {
   display: inline-block;
   text-align: center;
+  height: 80%;
+  padding: 0;
 }
 
 .grid-item {
   display: inline-block;
-  width: 4.7%;
-  height: 27px;
+  width: 6.4%;
+  height: 6.4%;
   color: white;
-  margin: 1px;
+  margin: 0.1%;
   text-align: center;
   font-size: 17px;
+}
+
+/* Center number within box vertically */
+.grid-item:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
 }
 
 .in-remaining-elements {
@@ -50,4 +56,50 @@ button:hover {
 
 .target-element {
   background-color: #00cc00;
+}
+
+@media screen and (max-width: 1199px) {
+  .grid-item {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 825px) {
+  .grid-item {
+    padding: 0;
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .grid-item {
+    font-size: 10px;
+  }
+  .grid-section {
+    height: 75%;
+  }
+  .grid {
+    height: 100%;
+  }
+  .search-area {
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .grid-item {
+    font-size: 9px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .grid-item {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .grid-item {
+    font-size: 7px;
+  }
 }

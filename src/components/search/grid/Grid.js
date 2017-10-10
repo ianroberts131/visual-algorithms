@@ -1,4 +1,5 @@
 import React from 'react';
+import { Row, Col } from 'react-bootstrap';
 
 import './grid.css';
 
@@ -6,8 +7,8 @@ class Grid extends React.Component {
   render() {
     const { searchArray, low, high, testItem, targetFound, target } = this.props.search;
     return (
-      <div className="grid-container">
-        <div className="grid">
+      <Row className="grid-container">
+        <Col xs={ 12 } className="grid">
           { searchArray.map((number, index) => {
             var inSearchArea = index >= low && index <= high;
             var isTestItem = index === testItem && targetFound === false;
@@ -31,8 +32,8 @@ class Grid extends React.Component {
                 }
             }
           })}
-        </div>
-      </div>
+        </Col>
+      </Row>
     )
   }
 }

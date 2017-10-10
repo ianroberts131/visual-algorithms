@@ -7,7 +7,7 @@ import { randomlyGenerateArray } from '../helpers';
 import { binarySearch, linearSearch } from '../data/algorithms';
 
 // create an array for the grid
-var searchArray = randomlyGenerateArray(400, 1000);
+var searchArray = randomlyGenerateArray(225, 999);
 
 // create a search object, which will house all the state data within the search algorithms page
 const searchState = {
@@ -20,13 +20,13 @@ const searchState = {
   target: "",
   targetFound: false,
   iterations: 0,
-  searchNumber: searchArray[Math.floor((Math.random() * 400) + 1)],
+  searchNumber: searchArray[Math.floor((Math.random() * 225) + 1)],
   isRunning: false
 }
 
 function search(state = searchState, action) {
-  var newSearchArray = randomlyGenerateArray(400, 1000);
-  var newSearchNumber = newSearchArray[Math.floor((Math.random() * 400 ) + 1)];
+  var newSearchArray = randomlyGenerateArray(225, 999);
+  var newSearchNumber = newSearchArray[Math.floor((Math.random() * 225 ) + 1)];
   switch(action.type) {
     case 'SEARCH_BASE_STATE' :
       return {
@@ -40,7 +40,7 @@ function search(state = searchState, action) {
         target: "",
         targetFound: false,
         iterations: 0,
-        searchNumber: searchArray[Math.floor((Math.random() * 400) + 1)],
+        searchNumber: searchArray[Math.floor((Math.random() * 225) + 1)],
         isRunning: false
       }
 
