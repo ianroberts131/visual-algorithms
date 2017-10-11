@@ -6,6 +6,7 @@
   height: 22.5%;
   margin-top: 1%;
   text-align: center;
+  padding: 0;
 }
 
 .merge-sort-box-level-0, .merge-sort-box-level-1, .merge-sort-box-level-2, .merge-sort-box-level-3 {
@@ -15,6 +16,8 @@
   margin: 1px;
   text-align: center;
   font-size: 15px;
+  float: none;
+  padding: 0;
 }
 
 /* Center number within box vertically */
@@ -26,19 +29,19 @@
 }
 
 .merge-sort-box-level-0 {
-  width: 6%;
+  width: 12%;
 }
 
 .merge-sort-box-level-1 {
-  width: 17.14286%;
+  width: 24%;
 }
 
 .merge-sort-box-level-2 {
-  width: 40%;
+  width: 48%;
 }
 
 .merge-sort-box-level-3 {
-  width: 80%;
+  width: 96%;
 }
 
 .merge-unsorted {
@@ -85,95 +88,84 @@
 
 .level-1-0 {
   float: left;
-  width: 35%;
-  margin-left: 15%;
   margin-top: 2%;
+  margin-left: 12.5%;
 }
 
 .level-1-1 {
   float: left;
-  width: 35%;
-  margin-right: 15%;
   margin-top: 2%;
+  margin-left: 8.333%;
 }
 
 .level-2-0 {
   float: left;
-  width: 15%;
-  margin-left: 17.5%;
   margin-top: 2%;
+  margin-left: 9.375%;
 }
 
 .level-2-1 {
   float: left;
-  width: 15%;
-  margin-left: 0%;
   margin-top: 2%;
+  margin-left: 6.25%;
 }
 
 .level-2-2 {
   float: left;
-  width: 15%;
-  margin-left: 5%;
   margin-top: 2%;
+  margin-left: 2.0833%;
 }
 
 .level-2-3 {
   float: left;
-  width: 15%;
-  margin-left: 0%;
-  margin-right: 10%;
   margin-top: 2%;
+  margin-left: 6.25%;
 }
 
 .level-3-0 {
   float: left;
   margin-top: 2%;
-  width: 7.5%;
-  margin-left: 17.5%;
+  margin-left: 7.2917%;
 }
 
 .level-3-1 {
   float: left;
   margin-top: 2%;
-  width: 7.5%;
-  margin-left: 0%;
+  margin-left: 4.1667%;
 }
 
 .level-3-2 {
   float: left;
   margin-top: 2%;
-  width: 7.5%;
+  margin-left: 1.0417%;
 }
 
 .level-3-3 {
   float: left;
   margin-top: 2%;
-  width: 7.5%;
-  margin-left: 0%;
+  margin-left: 4.1667%;
 }
 
 .level-3-4 {
   float: left;
   margin-top: 2%;
-  margin-left: 5%;
-  width: 7.5%;
+  margin-left: 0;
 }
 
 .level-3-5 {
   float: left;
   margin-top: 2%;
-  width: 7.5%;
+  margin-left: 4.1667%;
 }
 
 .level-3-6 {
   float: left;
   margin-top: 2%;
-  width: 7.5%;
+  margin-left: 1.0417%;
 }
 
 .level-3-7 {
   float: left;
   margin-top: 2%;
-  width: 7.5%;
+  margin-left: 4.1667%;
 }
