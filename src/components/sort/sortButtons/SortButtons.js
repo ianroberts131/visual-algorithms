@@ -69,14 +69,14 @@ class SortButtons extends React.Component {
     return (
       <Row className="sort-button-row">
         <Col xs={ 12 } className="sort-buttons">
-          <Col xs={ 7 } sm={ 8 } className="algo-buttons">
+          <Col xs={ 8 } className="algo-buttons pull-left">
             <button className="sort-button sort-button-size btn-responsive" onClick={ () => this.props.startSelectionSort(selectionSortTimeout, insertionSortTimeout, bubbleSortTimeout, mergeSortTimeout, quickSortTimeout) }>Selection Sort</button>
             <button className="sort-button sort-button-size btn-responsive" onClick={ () => this.props.startInsertionSort(selectionSortTimeout, insertionSortTimeout, bubbleSortTimeout, mergeSortTimeout, quickSortTimeout) }>Insertion Sort</button>
             <button className="sort-button sort-button-size btn-responsive" onClick={ () => this.props.startBubbleSort(selectionSortTimeout, insertionSortTimeout, bubbleSortTimeout, mergeSortTimeout, quickSortTimeout) }>Bubble Sort</button>
             <button className="sort-button sort-button-size btn-responsive" onClick={ () => this.props.startMergeSort(selectionSortTimeout, insertionSortTimeout, bubbleSortTimeout, mergeSortTimeout, quickSortTimeout) }>Merge Sort</button>
             <button className="sort-button sort-button-size btn-responsive" onClick={ () => this.props.startQuickSort(selectionSortTimeout, insertionSortTimeout, bubbleSortTimeout, mergeSortTimeout, quickSortTimeout) }>Quick Sort</button>
           </Col>
-          <Col xs={ 5 } sm={ 4 } className="sort-speed-buttons pull-right">
+          <Col xs={ 4 } className="sort-speed-buttons pull-right">
             <button className={ slowSpeedClass } onClick={ () => this.props.changeSpeed('slow', selectionSortTimeout, insertionSortTimeout, bubbleSortTimeout, mergeSortTimeout, quickSortTimeout) }>Slow</button>
             <button className={ regularSpeedClass } onClick={ () => this.props.changeSpeed('regular', selectionSortTimeout, insertionSortTimeout, bubbleSortTimeout, mergeSortTimeout, quickSortTimeout) }>Regular</button>
             <button className={ fastSpeedClass } onClick={ () => this.props.changeSpeed('fast', selectionSortTimeout, insertionSortTimeout, bubbleSortTimeout, mergeSortTimeout, quickSortTimeout) }>Fast</button>

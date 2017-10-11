@@ -1,5 +1,6 @@
 .sort-button-row {
   height: 12.5%;
+  margin: 0;
 }
 
 .sort-buttons {
@@ -7,7 +8,7 @@
   background-color: white;
   margin: 0 auto;
   border: 2px solid #d9d9d9;
-  padding-right: 0;
+  padding: 0;
 }
 
 .algo-buttons {
@@ -84,6 +85,9 @@
 }
 
 @media screen and (max-width: 600px) {
+  .sort-button-row {
+    height: 10%;
+  }
   .sort-button {
     width: 20%;
     margin: 0;
@@ -95,13 +99,13 @@
     width: 33%;
   }
   .sort-button-size {
-    font-size: 8px;
+    font-size: 7px;
   }
 }
 
 @media screen and (max-width: 475px) {
   .sort-button-size {
-    font-size: 7px;
+    font-size: 5px;
   }
 }
 
