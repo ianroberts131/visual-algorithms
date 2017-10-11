@@ -13,7 +13,7 @@
   display: inline-block;
   height: 100%;
   color: white;
-  margin: 1px;
+  margin: 0.075em;
   text-align: center;
   font-size: 15px;
   float: none;
@@ -68,9 +68,10 @@
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 600px) {
   .merge-sort-box-level-0, .merge-sort-box-level-1, .merge-sort-box-level-2, .merge-sort-box-level-3 {
     font-size: 10px;
+    margin: 0.05em;
   }
 }
 
