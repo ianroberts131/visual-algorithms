@@ -15,7 +15,7 @@ class InsertionSort extends React.Component {
       <CSSTransitionGroup
         transitionName="insertion-transition"
         transitionLeave={false}
-        transitionEnterTimeout={ intervalSpeed * 0.96 }
+        transitionEnterTimeout={ intervalSpeed * 0.94 }
         className="insertion-sort-box-area"
         component="div">
         { sortArray.map((number, index) => {
