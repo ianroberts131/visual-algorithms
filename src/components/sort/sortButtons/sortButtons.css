@@ -105,7 +105,13 @@
 
 @media screen and (max-width: 475px) {
   .sort-button-size {
-    font-size: 5px;
+    font-size: 6px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .sort-button-size {
+    font-size: 5.5px;
   }
 }
 

@@ -35,11 +35,20 @@ body {
 .home {
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#header-section {
+  text-align: center;
 }
 
 #home-header {
-  text-align: center;
-  margin-bottom: 5px;
+  font-size: 3em;
+}
+
+#home-description, .algo-header {
+  font-size: 1.75em;
 }
 
 .link {
@@ -47,26 +56,22 @@ body {
   color: inherit;
 }
 
-#home-description {
-  text-align: center;
-  margin-bottom: 30px;
-  margin-top: 0px;
-}
 
 #algo-boxes {
   text-align: center;
 }
 
 .algo-item {
-  width: 550px;
-  height: 400px;
+  /*width: 25em;
+  height: 18em;*/
+  /*height: 50%;*/
   overflow: hidden;
   display: inline-block;
 }
 
 .search-img, .sort-img {
-  width: 90%;
-  height: 90%;
+  width: 45em;
+  height: 30em;
 }
 
 button:hover {
@@ -102,6 +107,20 @@ button:hover {
   padding: 0;
 }
 
+@media screen and (max-width: 1450px) {
+  .search-img, .sort-img {
+    width: 40em;
+    height: 26.67em;
+  }
+  #home-header {
+    font-size: 2.75em;
+  }
+
+  #home-description, .algo-header {
+    font-size: 1.7em;
+  }
+}
+
 @media screen and (max-width: 1199px) {
   .navbar-row {
     height: 8%;
@@ -112,6 +131,45 @@ button:hover {
   }
   .sort-box, .label-box {
     font-size: 14px;
+  }
+  .search-img, .sort-img {
+    width: 35em;
+    height: 23.33em;
+  }
+  #home-header {
+    font-size: 2.6em;
+  }
+
+  #home-description, .algo-header {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .search-img, .sort-img {
+    width: 30em;
+    height: 20em;
+  }
+  #home-header {
+    font-size: 2.5em;
+  }
+
+  #home-description, .algo-header {
+    font-size: 1.35em;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .search-img, .sort-img {
+    width: 24em;
+    height: 16em;
+  }
+  #home-header {
+    font-size: 2.25em;
+  }
+
+  #home-description, .algo-header {
+    font-size: 1.25em;
   }
 }
 
@@ -124,6 +182,13 @@ button:hover {
   }
   .sort-box, .label-box {
     font-size: 12px;
+  }
+  #home-header {
+    font-size: 2.0em;
+  }
+
+  #home-description, .algo-header {
+    font-size: 0.95em;
   }
 }
 
@@ -148,5 +213,9 @@ button:hover {
   }z
   .sort-box, .label-box {
     font-size: 8px;
+  }
+  .search-img, .sort-img {
+    width: 18em;
+    height: 12em;
   }
 }
