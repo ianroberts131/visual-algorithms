@@ -13,7 +13,7 @@ class Home extends Component {
         <Col xs={ 12 } id="algo-boxes">
           <Col xs={ 12 } sm={ 6 } className='algo-item'>
             <Link className="link" to="/search">
-              <h3 className="algo-header">Searching Algorithms</h3>
+              <h3 className="algo-header">Search Algorithms</h3>
               <img className='search-img' src={require('../images/search-img.jpg')} alt="Searching Algorithm" onClick={ (e) => {
                   this.props.searchBaseState();
                   this.props.changeSpeed('regular');
@@ -23,7 +23,7 @@ class Home extends Component {
           </Col>
           <Col xs={ 12 } sm={ 6 } className='algo-item'>
             <Link className="link" to="/sort">
-              <h3 className="algo-header">Sorting Algorithms</h3>
+              <h3 className="algo-header">Sort Algorithms</h3>
               <img className='sort-img' src={require('../images/sort-img.jpg')} alt="Sorting Algorithm" onClick={ (e) => {
                   this.props.sortBaseState();
                   this.props.changeSpeed('regular');

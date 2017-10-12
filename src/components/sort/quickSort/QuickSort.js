@@ -13,7 +13,7 @@ class QuickSort extends React.Component {
         <CSSTransitionGroup
           transitionName="quick-transition"
           transitionLeave={false}
-          transitionEnterTimeout={ intervalSpeed * .96 }
+          transitionEnterTimeout={ intervalSpeed * .90 }
           className="quick-sort-box-area"
           component="div">
           { sortArray.map((number, index) => {
