@@ -195,7 +195,7 @@ button:hover {
 @media screen and (max-width: 575px) {
   .sort-section {
     height: 22.5%;
-    margin-top: 7.5%;
+    margin-top: 10.0%;
   }
   .sort-box, .label-box {
     font-size: 10px;
