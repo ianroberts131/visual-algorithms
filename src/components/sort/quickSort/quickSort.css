@@ -252,5 +252,5 @@
 
 .right-swapped-pivot.quick-transition-enter-active, .right-swapped-pivot.quick-transition-enter {
   background-color: black;
-  border: 5px solid yellow;
+  border: 0.3em solid yellow;
 }
