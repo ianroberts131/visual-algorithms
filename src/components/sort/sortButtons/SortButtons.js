@@ -69,7 +69,7 @@ class SortButtons extends React.Component {
     return (
       <Row className="sort-button-row">
         <Col xs={ 12 } className="sort-buttons">
-          <Col xs={ 8 } className="algo-buttons pull-left">
+          <Col xs={ 8 } className="algo-buttons">
             <button className="sort-button sort-button-size btn-responsive" onClick={ () => this.props.startSelectionSort(selectionSortTimeout, insertionSortTimeout, bubbleSortTimeout, mergeSortTimeout, quickSortTimeout) }>Selection Sort</button>
             <button className="sort-button sort-button-size btn-responsive" onClick={ () => this.props.startInsertionSort(selectionSortTimeout, insertionSortTimeout, bubbleSortTimeout, mergeSortTimeout, quickSortTimeout) }>Insertion Sort</button>
             <button className="sort-button sort-button-size btn-responsive" onClick={ () => this.props.startBubbleSort(selectionSortTimeout, insertionSortTimeout, bubbleSortTimeout, mergeSortTimeout, quickSortTimeout) }>Bubble Sort</button>
