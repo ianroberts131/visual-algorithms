@@ -21,7 +21,8 @@ const searchState = {
   targetFound: false,
   iterations: 0,
   searchNumber: searchArray[Math.floor((Math.random() * 225) + 1)],
-  isRunning: false
+  isRunning: false,
+  paused: false
 }
 
 function search(state = searchState, action) {
@@ -41,7 +42,15 @@ function search(state = searchState, action) {
         targetFound: false,
         iterations: 0,
         searchNumber: searchArray[Math.floor((Math.random() * 225) + 1)],
-        isRunning: false
+        isRunning: false,
+        paused: false
+      }
+
+    case 'TOGGLE_PLAY_PAUSE' :
+      return {
+        ...state,
+        isRunning: action.isRunning,
+        paused: action.paused
       }
 
     case 'START_BINARY_SEARCH' :
@@ -57,7 +66,8 @@ function search(state = searchState, action) {
         targetFound: false,
         iterations: 0,
         searchNumber: newSearchNumber,
-        isRunning: true
+        isRunning: true,
+        paused: false
       }
 
     case 'BINARY_SEARCH' :
@@ -88,7 +98,8 @@ function search(state = searchState, action) {
           targetFound: false,
           iterations: 0,
           searchNumber: newSearchNumber,
-          isRunning: true
+          isRunning: true,
+          paused: false
         }
 
     case 'LINEAR_SEARCH' :

@@ -55,6 +55,7 @@ const sortState = {
   stopQuickSort: false,
   isRunning: false,
   isSorted: false,
+  paused: false,
 }
 
 function sort(state = sortState, action) {
@@ -104,6 +105,14 @@ function sort(state = sortState, action) {
         quickSwappedIndices: [],
         isRunning: false,
         isSorted: false,
+        paused: false
+      }
+
+    case 'TOGGLE_PLAY_PAUSE' :
+      return {
+        ...state,
+        isRunning: action.isRunning,
+        paused: action.paused
       }
 
     case 'START_SELECTION_SORT' :
@@ -118,7 +127,8 @@ function sort(state = sortState, action) {
         swappedElement: 0,
         isRunning: true,
         iterations: 0,
-        isSorted: false
+        isSorted: false,
+        paused: false
       }
 
     case 'SELECTION_SORT' :
@@ -149,7 +159,8 @@ function sort(state = sortState, action) {
           insertionReplacedIndex: 0,
           isRunning: true,
           iterations: 0,
-          isSorted: false
+          isSorted: false,
+          paused: false
         }
 
       case 'INSERTION_SORT' :
@@ -178,7 +189,8 @@ function sort(state = sortState, action) {
             bubbleSwapping: false,
             isRunning: true,
             iterations: 0,
-            isSorted: false
+            isSorted: false,
+            paused: false
           }
 
         case 'BUBBLE_SORT' :
@@ -219,7 +231,8 @@ function sort(state = sortState, action) {
               isRunning: true,
               iterations: 0,
               isSorted: false,
-              mergeFinalSort: false
+              mergeFinalSort: false,
+              paused: false
             }
 
           case 'MERGE_SORT' :
@@ -266,7 +279,8 @@ function sort(state = sortState, action) {
                 isRunning: true,
                 iterations: 0,
                 isSorted: false,
-                stopQuickSort: false
+                stopQuickSort: false,
+                paused: false
               }
 
             case 'QUICK_SORT' :

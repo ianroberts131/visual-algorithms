@@ -10,6 +10,14 @@ export function sortBaseState() {
   }
 }
 
+export function togglePlayPause(isRunning, paused) {
+  return {
+    type: 'TOGGLE_PLAY_PAUSE',
+    isRunning: isRunning,
+    paused: paused
+  }
+}
+
 export function startSelectionSort(...timeouts) {
   for (var i = 0; i < timeouts.length; i++) {
     clearTimeout(timeouts[i]);

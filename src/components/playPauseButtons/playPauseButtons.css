@@ -1,0 +1,286 @@
+.play-pause-area {
+  text-align: center;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.play, .pause {
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  border-left: 60px solid #2c3e50;
+  margin: 0 auto;
+  position: relative;
+  left: 10px;
+}
+
+.play:before {
+  content: '';
+  position: absolute;
+  top: -75px;
+  left: -115px;
+  bottom: -75px;
+  right: -35px;
+  border-radius: 50%;
+  border: 10px solid #2c3e50;
+  z-index: 2;
+}
+
+.play:after {
+  content: '';
+  opacity: 0;
+}
+
+.pause {
+  border-color: transparent;
+}
+
+.pause:before {
+  content: '';
+  position: absolute;
+  top: -75px;
+  left: -115px;
+  bottom: -75px;
+  right: -35px;
+  border-radius: 50%;
+  border: 10px solid #2c3e50;
+  z-index: 2;
+}
+
+.pause:after {
+  content: '';
+  position: absolute;
+  opacity: 1;
+  height: 80px;
+  right: 5px;
+  top: -40px;
+  left: -75px;
+  border-left: 20px solid #2c3e50;
+  box-shadow:inset 30px 0 0 0 #f9f9f9;
+  background: #2c3e50;
+}
+
+.play:hover, .pause:hover {
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 1199px) {
+  .play, .pause {
+    border-top: 45px solid transparent;
+    border-bottom: 45px solid transparent;
+    border-left: 54px solid #2c3e50;
+    left: 9px;
+  }
+
+  .pause {
+    border-color: transparent;
+  }
+
+  .play:before, .pause:before {
+    top: -67.5px;
+    left: -103.5px;
+    bottom: -67.5px;
+    right: -31.5px;
+    border: 9px solid #2c3e50;
+  }
+
+  .pause:after {
+    height: 72px;
+    right: 4.5px;
+    top: -36px;
+    left: -67.5px;
+    border-left: 18px solid #2c3e50;
+    box-shadow:inset 27px 0 0 0 #f9f9f9;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .play, .pause {
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+    border-left: 48px solid #2c3e50;
+    left: 8px;
+  }
+
+  .pause {
+    border-color: transparent;
+  }
+
+  .play:before, .pause:before {
+    top: -60.0px;
+    left: -92.0px;
+    bottom: -60.0px;
+    right: -28.0px;
+    border: 8px solid #2c3e50;
+  }
+
+  .pause:after {
+    height: 64px;
+    right: 4.0px;
+    top: -32px;
+    left: -60.0px;
+    border-left: 16px solid #2c3e50;
+    box-shadow:inset 24px 0 0 0 #f9f9f9;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .play, .pause {
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid transparent;
+    border-left: 42px solid #2c3e50;
+    left: 7px;
+  }
+
+  .pause {
+    border-color: transparent;
+  }
+
+  .play:before, .pause:before {
+    top: -52.5px;
+    left: -80.5px;
+    bottom: -52.5px;
+    right: -24.5px;
+    border: 7px solid #2c3e50;
+  }
+
+  .pause:after {
+    height: 56px;
+    right: 3.5px;
+    top: -28px;
+    left: -52.5px;
+    border-left: 14px solid #2c3e50;
+    box-shadow:inset 21px 0 0 0 #f9f9f9;
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .play, .pause {
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-left: 36px solid #2c3e50;
+    left: 6px;
+  }
+
+  .pause {
+    border-color: transparent;
+  }
+
+  .play:before, .pause:before {
+    top: -45.0px;
+    left: -69.0px;
+    bottom: -45.0px;
+    right: -21.0px;
+    border: 6px solid #2c3e50;
+  }
+
+  .pause:after {
+    height: 48px;
+    right: 3.0px;
+    top: -24px;
+    left: -45.0px;
+    border-left: 12px solid #2c3e50;
+    box-shadow:inset 18px 0 0 0 #f9f9f9;
+  }
+}
+
+@media screen and (max-width: 675px) {
+  .play, .pause {
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    border-left: 30px solid #2c3e50;
+    left: 5px;
+  }
+
+  .pause {
+    border-color: transparent;
+  }
+
+  .play:before, .pause:before {
+    top: -37.5px;
+    left: -57.5px;
+    bottom: -37.5px;
+    right: -17.5px;
+    border: 5px solid #2c3e50;
+  }
+
+  .pause:after {
+    height: 40px;
+    right: 2.5px;
+    top: -20px;
+    left: -37.5px;
+    border-left: 10px solid #2c3e50;
+    box-shadow:inset 15px 0 0 0 #f9f9f9;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .play, .pause {
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 24px solid #2c3e50;
+    left: 4px;
+  }
+
+  .pause {
+    border-color: transparent;
+  }
+
+  .play:before, .pause:before {
+    top: -30.0px;
+    left: -46.0px;
+    bottom: -30.0px;
+    right: -14.0px;
+    border: 4px solid #2c3e50;
+  }
+
+  .pause:after {
+    height: 32px;
+    right: 2.0px;
+    top: -16px;
+    left: -30.0px;
+    border-left: 8px solid #2c3e50;
+    box-shadow:inset 12px 0 0 0 #f9f9f9;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .play, .pause {
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 18px solid #2c3e50;
+    left: 3px;
+  }
+
+  .pause {
+    border-color: transparent;
+  }
+
+  .play:before, .pause:before {
+    top: -22.5px;
+    left: -34.5px;
+    bottom: -22.5px;
+    right: -10.5px;
+    border: 3px solid #2c3e50;
+  }
+
+  .pause:after {
+    height: 24px;
+    right: 1.5px;
+    top: -12px;
+    left: -22.5px;
+    border-left: 6px solid #2c3e50;
+    box-shadow:inset 9px 0 0 0 #f9f9f9;
+  }
+}

@@ -13,6 +13,12 @@
   height: 100%;
 }
 
+.play-pause-button-wrapper {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .search-algo-buttons:before, .speed-buttons:before {
   content: "";
   display: inline-block;
@@ -38,13 +44,14 @@
 
 .speed-buttons {
   height: 100%;
-  float: right;
+  text-align: right;
 }
 
 .speed-button {
   background-color: white;
   width: 25%;
   border: 1px solid #d9d9d9;
+  margin-right: 0;
 }
 
 .active-btn {

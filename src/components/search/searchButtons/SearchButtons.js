@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router';
 import { Row, Col } from 'react-bootstrap';
 
+import PlayPauseButtons from '../../playPauseButtons/PlayPauseButtons';
+
 import './searchButtons.css';
 
 var classNames = require('classnames');
@@ -10,7 +12,7 @@ class SearchButtons extends React.Component {
 
   render() {
 
-    const { searchArray, searchNumber, low, high, iterations, isRunning, targetFound, searchAlgorithm } = this.props.search;
+    const { searchArray, searchNumber, low, high, iterations, isRunning, targetFound, searchAlgorithm, paused } = this.props.search;
 
     const { intervalSpeed, speedString, regularActive, slowActive, fastActive } = this.props.speed;
 
@@ -45,6 +47,11 @@ class SearchButtons extends React.Component {
       binaryTimeout = setTimeout (() => {
       this.props.binarySearch(searchArray, searchNumber, low, high, iterations);
       }, intervalSpeed);
+    }
+
+    if (paused) {
+      clearTimeout(linearTimeout);
+      clearTimeout(binaryTimeout);
     }
 
     return (
