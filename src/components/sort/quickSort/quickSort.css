@@ -254,3 +254,130 @@
   background-color: black;
   border: 0.3em solid yellow;
 }
+
+
+
+
+/* Key Code CSS */
+
+.merge-sort-area {
+  height: 100%;
+}
+
+.key-sort-box-area {
+  height: 22.5%;
+  margin-top: 1%;
+  text-align: center;
+  padding: 0;
+}
+
+.key-sort-box-level-3 {
+  display: inline-block;
+  height: 100%;
+  color: white;
+  margin: 0.075em;
+  text-align: center;
+  font-size: 15px;
+  float: none;
+  padding: 0;
+}
+
+/* Center number within box vertically */
+.key-sort-box-level-3:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.key-sort-box-level-3 {
+  width: 96%;
+}
+
+.sort-less-than-pivot {
+  background-color: orange;
+}
+
+.sort-greater-than-pivot {
+  background-color: #800080;
+}
+
+
+@media screen and (max-width: 1199px) {
+  .key-sort-box-level-3 {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .key-sort-box-level-3 {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .key-sort-box-level-3 {
+    font-size: 10px;
+    margin: 0.05em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .key-sort-box-level-3 {
+    font-size: 9px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .key-sort-box-level-3 {
+    font-size: 8px;
+  }
+}
+
+.level-3-0 {
+  float: left;
+  margin-top: 2%;
+  margin-left: 7.2917%;
+}
+
+.level-3-1 {
+  float: left;
+  margin-top: 2%;
+  margin-left: 4.1667%;
+}
+
+.level-3-2 {
+  float: left;
+  margin-top: 2%;
+  margin-left: 1.0417%;
+}
+
+.level-3-3 {
+  float: left;
+  margin-top: 2%;
+  margin-left: 4.1667%;
+}
+
+.level-3-4 {
+  float: left;
+  margin-top: 2%;
+  margin-left: 0;
+}
+
+.level-3-5 {
+  float: left;
+  margin-top: 2%;
+  margin-left: 4.1667%;
+}
+
+.level-3-6 {
+  float: left;
+  margin-top: 2%;
+  margin-left: 1.0417%;
+}
+
+.level-3-7 {
+  float: left;
+  margin-top: 2%;
+  margin-left: 4.1667%;
+}

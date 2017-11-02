@@ -85,6 +85,12 @@ class QuickSort extends React.Component {
                 return <Col xs={1} key={ index } className="label-box quick-label-hidden no-float"></Col>
             }
           }) }
+          <Col xs={ 1 } className="key-sort-box-area level-3-0">
+            <Col xs={ 1 } className="key-sort-box-level-3 sort-less-than-pivot">Less Than The Pivot</Col>
+          </Col>
+          <Col xs={ 1 } className="key-sort-box-area level-3-0">
+            <Col xs={ 1 } className="key-sort-box-level-3 sort-greater-than-pivot">Great Than The Pivot</Col>
+          </Col>
         </Col>
       </Col>
     )
