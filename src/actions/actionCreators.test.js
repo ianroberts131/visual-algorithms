@@ -1,3 +1,4 @@
+
 import { sortBaseState } from './actionCreators';
 import { searchBaseState } from './actionCreators';
 import { togglePlayPause } from './actionCreators';
@@ -9,7 +10,6 @@ import { startQuickSort } from './actionCreators';
 import { startBinarySearch } from './actionCreators';
 import { startLinearSearch } from './actionCreators';
 import { changeSpeed } from './actionCreators';
-
 
 describe('sortBaseState type', () => {
   it('Should Create an Action to sortBaseState', () => {

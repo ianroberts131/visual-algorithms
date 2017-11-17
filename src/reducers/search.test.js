@@ -58,7 +58,6 @@ describe('search reducer', () => {
     type: "START_BINARY_SEARCH"
     }
     const results = search(state, action)
-
     const state2 = results
     const action2 = {
     type: "BINARY_SEARCH"
@@ -112,7 +111,6 @@ describe('search reducer', () => {
       type: "START_LINEAR_SEARCH"
       }
       const results = search(state, action)
-
       const state2 = results
       const action2 = {
       type: "LINEAR_SEARCH"

@@ -40,6 +40,4 @@ function speed(state = speedState, action) {
   }
 }
 
-console.log(speed);
-
 export default speed;
