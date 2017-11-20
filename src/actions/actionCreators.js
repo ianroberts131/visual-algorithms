@@ -472,6 +472,36 @@ export function quickSort(sortArray, currentlyChecking, quickPivotIndex, quickLo
   }
 }
 
+// ################################################
+
+export function startHeapSort(...timeouts) {
+  for (var i = 0; i < timeouts.length; i++) {
+    clearTimeout(timeouts[i]);
+  }
+  return {
+    type: 'START_HEAP_SORT'
+  }
+}
+
+// ################################################
+
+export function heapSort(finishBuildHeap = false) {
+  var isRunning = true;
+
+  if (finishBuildHeap === false) {
+    console.log(' Inside HEAP_SORT in the build heap section')
+  } else {
+    console.log(' Inside HEAP_SORT in the sort section')
+  }
+
+  return {
+    type: 'HEAP_SORT',
+
+  }
+}
+
+// ################################################
+
 export function startBinarySearch(binaryTimeout, linearTimeout) {
   clearTimeout(binaryTimeout);
   clearTimeout(linearTimeout);

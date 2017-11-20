@@ -54,3 +54,12 @@ export var quickSort = {
   bestCase: "O(n lg n)",
   averageCase: "O(n lg n)"
 }
+
+export var heapSort = {
+  name: "Heap Sort",
+  url: "heap-sort",
+  description: "  .",
+  worstCase: "O(n log n)",
+  bestCase: "O(n)",
+  averageCase: "O(n log n)"
+}
