@@ -7,46 +7,37 @@ import './heapSort.css';
 
 class HeapSort extends React.Component {
   render() {
-    const { sortArray, bubbleIndex, isSorted, bubbleSwapsCounter, bubbleSwapping } = this.props.sort;
+    const { sortArray, heapArrayLeft1, heapArrayLeft2, heapArrayLeft3, heapArrayLeft4, finishBuildHeap, heapFinalSort, startHeapBuild } = this.props.sort;
     const { intervalSpeed, speedString } = this.props.speed;
-
     return (
-      <Col xs={ 12 } className="sort-algo-section">
-        <CSSTransitionGroup
-          transitionName="bubble-transition"
-          transitionLeave={false}
-          transitionEnterTimeout={ intervalSpeed * 0.9 }
-          className="bubble-sort-box-area"
-          component="div">
+      <div className="heap-sort-area">
+        <Col xs={ 8 } xsOffset={ 2 } className="heap-sort-box-area">
           { sortArray.map((number, index) => {
-            var isCurrentIndex = (index === bubbleIndex && index < sortArray.length - 1)
-            var isComparisonIndex = (index === bubbleIndex + 1 && index < sortArray.length)
-            var isLastIndex = (index === bubbleIndex && index === sortArray.length - 1)
-            if (!isSorted) {
-              if (isCurrentIndex && !bubbleSwapping) {
-                return <Col xs={1} key={ `${number}${index}` } className="sort-box bubble-checking no-float">{ number }</Col>
-              } else if (isComparisonIndex) {
-                  return <Col xs={1} key={ `${number}${index}` } className="sort-box bubble-checking no-float">{ number }</Col>
-              } else if (isCurrentIndex && bubbleSwapping ) {
-                  return <Col xs={1} key={ `${number}${index}` } className={`sort-box bubble-swapping-right-${speedString} no-float`}>{ number }</Col>
-              } else if ((index === bubbleIndex - 1) && bubbleSwapping) {
-                  return <Col xs={1} key={ `${number}${index}` } className={`sort-box bubble-swapping-left-${speedString} no-float`}>{ number }</Col>
-              } else if (isLastIndex && bubbleSwapping) {
-                  return <Col xs={1} key={ `${number}${index}` } className={`sort-box bubble-swapping-last-${speedString} no-float`}>{ number }</Col>
-              } else {
-                  return <Col xs={1} key={ `${number}${index}` } className="sort-box bubble-unsorted no-float">{ number }</Col>
-              }
-            } else {
-                return <Col xs={1} key={ `${number}${index}` } className="sort-box bubble-sorted no-float">{ number }</Col>
-            }
+              var classVar = heapFinalSort ? "sorted" : "unsorted";
+              return <Col xs={ 1 } key={ index } className={number > -1 ? `heap-sort-box-level-0 heap-${classVar}` : "heap-sort-box-level-0 heap-hidden"}>{ number }</Col>
           })}
-        </CSSTransitionGroup>
-        { !isSorted &&
-          <div className="bubble-counter-box-wrapper">
-            <p className="bubble-counter-text">Swaps Counter: { bubbleSwapsCounter }</p>
-          </div>
-        }
-      </Col>
+        </Col>
+        <Col xs={ 8 } xsOffset={ 2 } className="heap-sort-box-area">
+          { heapArrayLeft1.map((number, index) => {
+              return <Col xs={ 1 } key={ index } className={number > -1 ? "heap-sort-box-level-0 heap-top" : "heap-sort-box-level-0 heap-hidden"}>{ number }</Col>
+          })}
+        </Col>
+        <Col xs={ 8 } xsOffset={ 2 } className="heap-sort-box-area">
+          { heapArrayLeft2.map((number, index) => {
+              return <Col xs={ 1 } key={ index } className={number > -1 ? "heap-sort-box-level-0 heap-second" : "heap-sort-box-level-0 heap-hidden"}>{ number }</Col>
+          })}
+        </Col>
+        <Col xs={ 8 } xsOffset={ 2 } className="heap-sort-box-area">
+          { heapArrayLeft3.map((number, index) => {
+              return <Col xs={ 1 } key={ index } className={number > -1 ? "heap-sort-box-level-0 heap-third" : "heap-sort-box-level-0 heap-hidden"}>{ number }</Col>
+          })}
+        </Col>
+        <Col xs={ 8 } xsOffset={ 2 } className="heap-sort-box-area">
+          { heapArrayLeft4.map((number, index) => {
+              return <Col xs={ 1 } key={ index } className={number > -1 ? "heap-sort-box-level-0 heap-fourth" : "heap-sort-box-level-0 heap-hidden"}>{ number }</Col>
+          })}
+        </Col>
+      </div>
     )
   }
 }

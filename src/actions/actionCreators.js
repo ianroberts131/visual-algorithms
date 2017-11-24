@@ -171,6 +171,8 @@ export function mergeSort(mergeArray, mergePrior, mergePriorSorted, mergeArrayMa
   iterations += 1;
   var isRunning = true;
   var mergeFinalSort = false;
+  console.log('mergeArrayLeft1');
+  console.log(mergeArrayLeft1);
   // Split the main array into 2 separate arrays, creating tier 2
   if (mergePrior === 0 && mergePriorSorted === false) {
       mergeArrayLeft1 = mergeArrayMain.slice(0,4);
@@ -479,24 +481,69 @@ export function startHeapSort(...timeouts) {
     clearTimeout(timeouts[i]);
   }
   return {
-    type: 'START_HEAP_SORT'
+    type: 'START_HEAP_SORT',
   }
 }
 
 // ################################################
 
-export function heapSort(finishBuildHeap = false) {
+export function heapSort(sortArray, iterations, heapArrayLeft1, heapArrayLeft2, heapArrayLeft3, heapArrayLeft4, finishBuildHeap, isSorted = false) {
+  const {floor} = Math;
+  const heapCurrentCount = sortArray.length;
+  iterations += 1;
   var isRunning = true;
+  var heapFinalSort = false;
+	let heapFirstStart = floor((heapCurrentCount - 2) / 2);
 
-  if (finishBuildHeap === false) {
-    console.log(' Inside HEAP_SORT in the build heap section')
-  } else {
-    console.log(' Inside HEAP_SORT in the sort section')
+  function compareAB(a, b) {
+	   return a > b ? 1 : a < b ? -1 : 0;
+  }
+  //console.log("heapCurrentCount :  " + heapCurrentCount + "  and end:  " + end);
+  //console.log(finishBuildHeap);
+  //console.log(heapArrayLeft1);
+  //console.log(heapArrayLeft2);
+  //console.log(heapArrayLeft3);
+  //console.log(heapArrayLeft4);
+
+  if ( finishBuildHeap === false ) {
+
+    //console.log(heapCurrentCount, heapCurrentStart)
+    console.log(' Inside HEAP_SORT in the build heap section *************')
+
+    heapArrayLeft1 = [-1, -1, -1, -1, -1, 89, -1, -1, -1, -1, -1];
+    heapArrayLeft2 = [-1, -1, 23, -1, -1, -1, -1, -1, 67, -1, -1];
+    heapArrayLeft3 = [-1, 11, -1, 12, -1, -1, -1, 13, -1, 14, -1];
+    heapArrayLeft4 = [8, 9, -1, 10, 11, -1, 5, 1, -1, 2, 3];
+
+
+
+    // heapArrayLeft1[5] = iterations
+
+    if (iterations > 9) {
+      finishBuildHeap = true;
+    }
+
+  } else  {
+
+    console.log(' Inside HEAP_SORT in the sort section');
+    if (iterations >= 20) {
+      isRunning = false;
+      isSorted = true;
+    }
   }
 
   return {
     type: 'HEAP_SORT',
-
+    sortArray: sortArray,
+    heapFinalSort: heapFinalSort,
+    heapArrayLeft1: heapArrayLeft1,
+    heapArrayLeft2: heapArrayLeft2,
+    heapArrayLeft3: heapArrayLeft3,
+    heapArrayLeft4: heapArrayLeft4,
+    finishBuildHeap: finishBuildHeap,
+    iterations: iterations,
+    isRunning: isRunning,
+    isSorted: isSorted
   }
 }
 

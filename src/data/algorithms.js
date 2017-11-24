@@ -58,7 +58,7 @@ export var quickSort = {
 export var heapSort = {
   name: "Heap Sort",
   url: "heap-sort",
-  description: "  .",
+  description: "A comparison-based sorting algorithm. Heapsort can be thought of as an improved selection sort. The improvement consists of the use of a heap data structure rather than a linear-time search to find the maximum. Like a selection sort, a heap sort divides its input into a sorted and an unsorted region, and it iteratively shrinks the unsorted region by extracting the largest element and moving that to the sorted region. The first step is building a heap.",
   worstCase: "O(n log n)",
   bestCase: "O(n)",
   averageCase: "O(n log n)"
