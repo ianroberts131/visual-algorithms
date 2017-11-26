@@ -9,7 +9,7 @@ import { selectionSort, insertionSort, bubbleSort, mergeSort, quickSort, heapSor
 // create an array for the search area
 var sortArray = randomlyGenerateArray(10, 100, false);
 var mergeArray = randomlyGenerateArray(8, 100, false);
-var heapArray = randomlyGenerateArray(8, 100, false);
+var heapSortArray = randomlyGenerateArray(10, 100, false);
 
 const sortState = {
   sortArray: sortArray,
@@ -54,11 +54,13 @@ const sortState = {
   quickSwapping: false,
   quickSwappedIndices: [],
   stopQuickSort: false,
-  heapArray: heapArray,
-  heapArrayLeft1: [],
-  heapArrayLeft2: [],
-  heapArrayLeft3: [],
-  heapArrayLeft4: [],
+  heapSortArray: [],
+  originalHeapArray: [],
+  heapTreeTop: [],
+  heapTreeRow2: [],
+  heapTreeRow3: [],
+  heapTreeRow4: [],
+  startHeapTree: true,
   finishBuildHeap: false,
   isRunning: false,
   isSorted: false,
@@ -110,11 +112,13 @@ function sort(state = sortState, action) {
         quickPriorPivots: [],
         quickSwapping: false,
         quickSwappedIndices: [],
-        heapArray: heapArray,
-        heapArrayLeft1: [],
-        heapArrayLeft2: [],
-        heapArrayLeft3: [],
-        heapArrayLeft4: [],
+        heapSortArray: heapSortArray,
+        originalHeapArray: [],
+        heapTreeTop: [],
+        heapTreeRow2: [],
+        heapTreeRow3: [],
+        heapTreeRow4: [],
+        startHeapTree: true,
         finishBuildHeap: false,
         isRunning: false,
         isSorted: false,
@@ -317,18 +321,21 @@ function sort(state = sortState, action) {
 // &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
     case 'START_HEAP_SORT' :
-      var newheapArray = randomlyGenerateArray(8, 100, false);
+      var newHeapArray = randomlyGenerateArray(10, 100, false);
       console.log('inside start heap sort in sort.js');
         return {
           ...state,
-          sortArray: newheapArray,
+          sortArray: newHeapArray,
           sortAlgorithm: heapSort,
+          heapSortArray: newHeapArray,
+          originalHeapArray: newHeapArray,
           iterations: 0,
-          heapArrayLeft1: [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
-          heapArrayLeft2: [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
-          heapArrayLeft3: [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
-          heapArrayLeft4: [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+          heapTreeTop: [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+          heapTreeRow2: [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+          heapTreeRow3: [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
+          heapTreeRow4: [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
           finishBuildHeap: false,
+          startHeapTree: true,
           isRunning: true,
           isSorted: false,
           paused: false
@@ -336,21 +343,20 @@ function sort(state = sortState, action) {
 
     case 'HEAP_SORT' :
     console.log('inside heap sort in sort.js');
-    
       return {
         ...state,
-        sortArray: heapArray,
+        heapSortArray: action.heapSortArray,
         sortAlgorithm: heapSort,
         iterations: action.iterations,
-        heapArrayLeft1: action.heapArrayLeft1,
-        heapArrayLeft2: action.heapArrayLeft2,
-        heapArrayLeft3: action.heapArrayLeft3,
-        heapArrayLeft4: action.heapArrayLeft4,
+        heapTreeTop: action.heapTreeTop,
+        heapTreeRow2: action.heapTreeRow2,
+        heapTreeRow3: action.heapTreeRow3,
+        heapTreeRow4: action.heapTreeRow4,
+        startHeapTree: action.startHeapTree,
         finishBuildHeap: action.finishBuildHeap,
         isRunning: action.isRunning,
         isSorted: action.isSorted
       }
-
 
     default:
       return state;

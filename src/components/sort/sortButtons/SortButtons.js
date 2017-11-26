@@ -8,7 +8,7 @@ var classNames = require('classnames');
 class SortButtons extends React.Component {
   render() {
 
-    const { sortArray, mergeArray, mergePrior, mergeArrayMain, mergePriorSorted, mergeArrayLeft1, mergeArrayLeft2, mergeArrayLeft3, mergeArrayLeft4, mergeArrayLeft5, mergeArrayLeft6, mergeArrayLeft7, mergeArrayRight1, mergeArrayRight2, mergeArrayRight3, mergeArrayRight4, mergeArrayRight5, mergeArrayRight6, mergeArrayRight7, sortedGroupIndex, currentlyChecking, currentLow, iterations, isRunning, insertionIndex, insertionKey, bubbleSwapsCounter, bubbleIndex, quickPivotIndex, quickLowIndex, quickHighIndex, quickPairsToSort, heapArrayLeft1, heapArrayLeft2, heapArrayLeft3, heapArrayLeft4, heapFinalSort, finishBuildHeap, quickPriorPivots, sortAlgorithm, stopQuickSort, paused } = this.props.sort;
+    const { sortArray, mergeArray, mergePrior, mergeArrayMain, mergePriorSorted, mergeArrayLeft1, mergeArrayLeft2, mergeArrayLeft3, mergeArrayLeft4, mergeArrayLeft5, mergeArrayLeft6, mergeArrayLeft7, mergeArrayRight1, mergeArrayRight2, mergeArrayRight3, mergeArrayRight4, mergeArrayRight5, mergeArrayRight6, mergeArrayRight7, sortedGroupIndex, currentlyChecking, currentLow, iterations, isRunning, insertionIndex, insertionKey, bubbleSwapsCounter, bubbleIndex, quickPivotIndex, quickLowIndex, quickHighIndex, quickPairsToSort, heapSortArray, originalHeapArray, heapTreeTop, heapTreeRow2, heapTreeRow3, heapTreeRow4, startHeapTree, heapFinalSort, finishBuildHeap, quickPriorPivots, sortAlgorithm, stopQuickSort, paused } = this.props.sort;
 
     const { intervalSpeed, regularActive, slowActive, fastActive } = this.props.speed;
 
@@ -69,7 +69,7 @@ class SortButtons extends React.Component {
 
     if (isRunning && sortAlgorithm.name === 'Heap Sort') {
       heapSortTimeout = setTimeout (()=> {
-        this.props.heapSort( sortArray, iterations, heapArrayLeft1, heapArrayLeft2, heapArrayLeft3, heapArrayLeft4, finishBuildHeap );
+        this.props.heapSort( sortArray, heapSortArray, originalHeapArray, iterations, heapTreeTop, heapTreeRow2, heapTreeRow3, heapTreeRow4, startHeapTree, finishBuildHeap );
       }, intervalSpeed);
     }
 
