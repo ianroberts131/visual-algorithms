@@ -472,19 +472,30 @@ export function quickSort(sortArray, currentlyChecking, quickPivotIndex, quickLo
   }
 }
 
-export function startBinarySearch(binaryTimeout, linearTimeout) {
+export function startBinarySearch(binaryTimeout, linearTimeout, breadthFirstTimeout) {
   clearTimeout(binaryTimeout);
   clearTimeout(linearTimeout);
+  clearTimeout(breadthFirstTimeout);
   return {
     type: 'START_BINARY_SEARCH'
   }
 }
 
-export function startLinearSearch(binaryTimeout, linearTimeout) {
+export function startLinearSearch(binaryTimeout, linearTimeout, breadthFirstTimeout) {
   clearTimeout(binaryTimeout);
   clearTimeout(linearTimeout);
+  clearTimeout(breadthFirstTimeout);
   return {
     type: 'START_LINEAR_SEARCH'
+  }
+}
+
+export function startBreadthFirstSearch(binaryTimeout, linearTimeout, breadthFirstTimeout) {
+  clearTimeout(binaryTimeout);
+  clearTimeout(linearTimeout);
+  clearTimeout(breadthFirstTimeout);
+  return {
+    type: 'START_BREADTH_FIRST_SEARCH'
   }
 }
 
@@ -555,6 +566,51 @@ export function binarySearch(searchArray, searchNumber, low, high, iterations) {
       target: target
     }
 }
+
+// ********  Breadth First Search ****************
+
+export function breadthFirstSearch(searchArray, searchNumber, low, high, iterations) {
+
+    iterations += 1;
+    var isRunning = true;
+    var targetFound = false;
+    var index = 0; //this is a place holder!!!!!!!!!!!!!!
+/*
+    var mid = Math.floor((low + high) / 2);
+
+    var testItem = mid;
+
+    if (searchArray[testItem] !== searchNumber && isRunning) {
+      searchNumber < searchArray[testItem] ? high = mid : low = mid;
+      mid = Math.floor((low + high) / 2);
+      testItem = mid;
+
+    } else {
+      testItem = mid;
+      var target = mid;
+      targetFound = true;
+      isRunning = false;
+    }
+*/
+    return {
+      type: 'BREADTH_FIRST_SEARCH',
+      searchArray: searchArray,
+      searchNumber: searchNumber,
+      //low: low,
+      //high: high,
+      //mid: mid,
+      //testItem: testItem,
+      index: index,
+      iterations: iterations,
+      isRunning: isRunning,
+      targetFound: targetFound
+      //target: target
+    }
+}
+
+
+// ********  Breadth First Search ****************
+
 
 export function changeSpeed(speed, ...timeouts) {
   // unkown number of timeouts cleared, since different for search/sort algorithm pages

@@ -10,6 +10,12 @@ export var linearSearch = {
   description: "A search algorithm that finds the position of a target value within an array (sorted or unsorted). It sequentially checks each element of the list for the target value until a match is found or until all the elements have been searched."
 }
 
+export var breadthFirstSearch = {
+  name: "Breadth First Search",
+  url: "breadth-first-search",
+  description: "A search algorithm that ."
+}
+
 export var selectionSort = {
   name: "Selection Sort",
   url: "selection-sort",
