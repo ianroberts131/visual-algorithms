@@ -12,7 +12,7 @@ class SearchButtons extends React.Component {
 
   render() {
 
-    const { searchArray, maxHeapSearchArray, searchNumber, low, high, iterations, isRunning, targetFound, searchAlgorithm, paused } = this.props.search;
+    const { searchArray, maxHeapSearchArray, testMaxHeapArray, stepIndex, searchNumber, low, high, iterations, isRunning, targetFound, searchAlgorithm, paused } = this.props.search;
 
     const { intervalSpeed, speedString, regularActive, slowActive, fastActive } = this.props.speed;
 
@@ -52,7 +52,7 @@ class SearchButtons extends React.Component {
 
     if (targetFound === false && isRunning && searchAlgorithm.name === 'Breadth First Search') {
       breadthFirstTimeout = setTimeout (() => {
-      this.props.breadthFirstSearch(searchArray, maxHeapSearchArray, searchNumber, low, high, iterations);
+      this.props.breadthFirstSearch(searchArray, maxHeapSearchArray, testMaxHeapArray, stepIndex, searchNumber, low, high, iterations);
       }, intervalSpeed);
     }
 

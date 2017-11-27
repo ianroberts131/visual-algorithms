@@ -13,7 +13,7 @@ export var linearSearch = {
 export var breadthFirstSearch = {
   name: "Breadth First Search",
   url: "breadth-first-search",
-  description: "A search algorithm that ."
+  description: "A search algorithm for traversing or searching tree or graph data structures. It starts at the tree root and explores the neighbor nodes first, before moving to the next level neighbours."
 }
 
 export var selectionSort = {

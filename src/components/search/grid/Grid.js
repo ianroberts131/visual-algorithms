@@ -16,7 +16,6 @@ class Grid extends React.Component {
             var isTargetItem = index === target && targetFound === true;
             if (targetFound === false) {
               if (!inSearchArea) {
-                //return <Col xs={ 1 } key={ index } className={number > -1 ? "grid-item hidden-element" : "grid-item not-in-remaining-elements"}>{ number }</Col>
                 return <div key={ index } className={number > -1 ? "grid-item not-in-remaining-elements" : "grid-item hidden-element"}>{ number }</div>;
               } else if (isHighOrLow) {
                 return <div key={ index } className={number > -1 ? "grid-item high-or-low-element" : "grid-item hidden-element"}>{ number }</div>;
@@ -32,7 +31,6 @@ class Grid extends React.Component {
                   return <div key={ index } className={number > -1 ? "grid-item not-in-remaining-elements" : "grid-item hidden-element"}>{ number }</div>;
                 }
             }
-
           })}
         </Col>
       </Row>

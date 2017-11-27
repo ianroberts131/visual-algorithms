@@ -3,7 +3,7 @@
 // 1. the action (info about what happened)
 // 2. copy of current state
 
-import { randomlyGenerateArray, buildMaxHeap, setUpHeapSearchArray } from '../helpers';
+import { randomlyGenerateArray, buildMaxHeap, setUpHeapSearchArray, setUpTestMaxHeapArray, stepIndex } from '../helpers';
 import { binarySearch, linearSearch, breadthFirstSearch } from '../data/algorithms';
 
 // create an array for the grid
@@ -125,18 +125,19 @@ function search(state = searchState, action) {
         targetFound: action.targetFound,
       }
 
-// **************** breadth First Search ****************
-
-
     case 'START_BREADTH_FIRST_SEARCH' :
+      var maxHeapSearchArray = buildMaxHeap(heapSearchArray);
+      var maxHeapSearchNumber = maxHeapSearchArray[Math.floor((Math.random() * 26) + 1)];
       return {
         ...state,
         searchArray: setUpHeapSearchArray(searchArray, maxHeapSearchArray),
         maxHeapSearchArray: maxHeapSearchArray,
+        testMaxHeapArray: setUpTestMaxHeapArray(),
+        stepIndex: 0,
         searchAlgorithm: breadthFirstSearch,
         index: "",
-        low: 0,
-        high: maxHeapSearchArray[0],
+        low: 6,
+        high: 84,
         testItem: "",
         target: "",
         targetFound: false,
@@ -149,7 +150,9 @@ function search(state = searchState, action) {
     case 'BREADTH_FIRST_SEARCH' :
       return {
         ...state,
+        searchArray: action.searchArray,
         searchAlgorithm: breadthFirstSearch,
+        stepIndex: action.stepIndex,
         low: action.low,
         high: action.high,
         mid: action.mid,
@@ -160,7 +163,6 @@ function search(state = searchState, action) {
         isRunning: action.isRunning,
         targetFound: action.targetFound,
       }
-  // **************** breadth First Search ****************
 
     default:
       return state;

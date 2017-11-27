@@ -64,23 +64,44 @@ export function buildMaxHeap(array, maxHeapComparator = maxHeapAscendantComparat
 	    array[b] = tmp;
     }
 
-
 export function setUpHeapSearchArray(searchArray, maxHeapSearchArray) {
   var stepArray = [7,
                 34, 40,
                 47, 50, 54, 57,
-                61, 63, 64, 66, 68, 70, 72, 74,
-                75, 76, 77, 80, 81, 82, 83, 84, 85, 86];
-                //console.log(stepArray.length);
-                //console.log(stepArray);
+                61, 62, 64, 66, 68, 70, 72, 73,
+                75, 76, 77, 78, 79, 80, 81, 82, 83];
 
   for (var i = 0; i < 225; i++) {
     searchArray[i] = -1;
   }
-
   for (var i = 0; i < 24; i++) {
     var location = stepArray[i];
     searchArray[location] = maxHeapSearchArray[i];
   }
   return searchArray;
+}
+
+export function setUpTestMaxHeapArray() {
+  var stepArray = [7,
+                34, 40,
+                47, 50, 54, 57,
+                61, 62, 64, 66, 68, 70, 72, 73,
+                75, 76, 77, 78, 79, 80, 81, 82, 83];
+
+  var testMaxHeapArray = [];
+
+  for (var i = 15; i < 24; i++) {
+    testMaxHeapArray.push(stepArray[i]);
+  }
+  for (var i = 7; i < 15; i++) {
+    testMaxHeapArray.push(stepArray[i]);
+  }
+  for (var i = 3; i < 7; i++) {
+    testMaxHeapArray.push(stepArray[i]);
+  }
+  for (var i = 1; i < 3; i++) {
+    testMaxHeapArray.push(stepArray[i]);
+  }
+  testMaxHeapArray.push(stepArray[0]);
+  return testMaxHeapArray;
 }

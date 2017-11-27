@@ -529,7 +529,6 @@ export function linearSearch(searchArray, searchNumber, low, high, iterations) {
   }
 }
 
-
 export function binarySearch(searchArray, searchNumber, low, high, iterations) {
 
     iterations += 1;
@@ -567,44 +566,37 @@ export function binarySearch(searchArray, searchNumber, low, high, iterations) {
     }
 }
 
-// ********  Breadth First Search ****************
-
-export function breadthFirstSearch(searchArray, searchNumber, low, high, iterations) {
+export function breadthFirstSearch(searchArray, maxHeapSearchArray, testMaxHeapArray, stepIndex, searchNumber, low, high, iterations) {
 
     iterations += 1;
     var isRunning = true;
     var targetFound = false;
-    var index = 0; //this is a place holder!!!!!!!!!!!!!!
-/*
-    var mid = Math.floor((low + high) / 2);
+    var target = searchNumber;
+    var index = 0;
+    var testIndex = testMaxHeapArray[stepIndex];
 
-    var testItem = mid;
-
-    if (searchArray[testItem] !== searchNumber && isRunning) {
-      searchNumber < searchArray[testItem] ? high = mid : low = mid;
-      mid = Math.floor((low + high) / 2);
-      testItem = mid;
-
-    } else {
-      testItem = mid;
-      var target = mid;
+    if ( searchArray[testIndex] === searchNumber ) {
+      index = testIndex;
       targetFound = true;
       isRunning = false;
+    } else {
+      index = testIndex;
+      searchArray[testIndex] = -1;
+      stepIndex += 1;
     }
-*/
+
     return {
       type: 'BREADTH_FIRST_SEARCH',
       searchArray: searchArray,
       searchNumber: searchNumber,
-      //low: low,
-      //high: high,
-      //mid: mid,
-      //testItem: testItem,
+      stepIndex: stepIndex,
+      low: low,
+      high: high,
       index: index,
       iterations: iterations,
       isRunning: isRunning,
-      targetFound: targetFound
-      //target: target
+      targetFound: targetFound,
+      target: target
     }
 }
 
