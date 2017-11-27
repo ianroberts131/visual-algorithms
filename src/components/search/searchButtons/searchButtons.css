@@ -32,9 +32,9 @@
   padding: 1%;
 }
 
-.linear-search-button, .binary-search-button {
+.linear-search-button, .binary-search-button, .breadth-first-search-button {
   background-color: #0066ff;
-  width: 30%;
+  width: 28%;
   color: white;
   border-radius: 5px;
   margin-left: 0.5%;

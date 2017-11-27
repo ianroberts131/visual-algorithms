@@ -472,19 +472,30 @@ export function quickSort(sortArray, currentlyChecking, quickPivotIndex, quickLo
   }
 }
 
-export function startBinarySearch(binaryTimeout, linearTimeout) {
+export function startBinarySearch(binaryTimeout, linearTimeout, breadthFirstTimeout) {
   clearTimeout(binaryTimeout);
   clearTimeout(linearTimeout);
+  clearTimeout(breadthFirstTimeout);
   return {
     type: 'START_BINARY_SEARCH'
   }
 }
 
-export function startLinearSearch(binaryTimeout, linearTimeout) {
+export function startLinearSearch(binaryTimeout, linearTimeout, breadthFirstTimeout) {
   clearTimeout(binaryTimeout);
   clearTimeout(linearTimeout);
+  clearTimeout(breadthFirstTimeout);
   return {
     type: 'START_LINEAR_SEARCH'
+  }
+}
+
+export function startBreadthFirstSearch(binaryTimeout, linearTimeout, breadthFirstTimeout) {
+  clearTimeout(binaryTimeout);
+  clearTimeout(linearTimeout);
+  clearTimeout(breadthFirstTimeout);
+  return {
+    type: 'START_BREADTH_FIRST_SEARCH'
   }
 }
 
@@ -517,7 +528,6 @@ export function linearSearch(searchArray, searchNumber, low, high, iterations) {
     target: target
   }
 }
-
 
 export function binarySearch(searchArray, searchNumber, low, high, iterations) {
 
@@ -555,6 +565,44 @@ export function binarySearch(searchArray, searchNumber, low, high, iterations) {
       target: target
     }
 }
+
+export function breadthFirstSearch(searchArray, maxHeapSearchArray, testMaxHeapArray, stepIndex, searchNumber, low, high, iterations) {
+
+    iterations += 1;
+    var isRunning = true;
+    var targetFound = false;
+    var target = searchNumber;
+    var index = 0;
+    var testIndex = testMaxHeapArray[stepIndex];
+
+    if ( searchArray[testIndex] === searchNumber ) {
+      index = testIndex;
+      targetFound = true;
+      isRunning = false;
+    } else {
+      index = testIndex;
+      searchArray[testIndex] = -1;
+      stepIndex += 1;
+    }
+
+    return {
+      type: 'BREADTH_FIRST_SEARCH',
+      searchArray: searchArray,
+      searchNumber: searchNumber,
+      stepIndex: stepIndex,
+      low: low,
+      high: high,
+      index: index,
+      iterations: iterations,
+      isRunning: isRunning,
+      targetFound: targetFound,
+      target: target
+    }
+}
+
+
+// ********  Breadth First Search ****************
+
 
 export function changeSpeed(speed, ...timeouts) {
   // unkown number of timeouts cleared, since different for search/sort algorithm pages
