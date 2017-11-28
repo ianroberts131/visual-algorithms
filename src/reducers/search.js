@@ -3,8 +3,8 @@
 // 1. the action (info about what happened)
 // 2. copy of current state
 
-import { randomlyGenerateArray, buildMaxHeap, setUpHeapSearchArray, setUpTestMaxHeapArray, stepIndex } from '../helpers';
-import { binarySearch, linearSearch, breadthFirstSearch } from '../data/algorithms';
+import { randomlyGenerateArray, buildMaxHeap, setUpHeapSearchArray, setUpTestMaxHeapArray, setUpDepthFirstTestMaxHeapArray, stepIndex } from '../helpers';
+import { binarySearch, linearSearch, breadthFirstSearch, depthFirstSearch } from '../data/algorithms';
 
 // create an array for the grid
 var searchArray = randomlyGenerateArray(225, 999);
@@ -152,6 +152,45 @@ function search(state = searchState, action) {
         ...state,
         searchArray: action.searchArray,
         searchAlgorithm: breadthFirstSearch,
+        stepIndex: action.stepIndex,
+        low: action.low,
+        high: action.high,
+        mid: action.mid,
+        iterations: action.iterations,
+        target: action.target,
+        testItem: action.testItem,
+        index: action.index,
+        isRunning: action.isRunning,
+        targetFound: action.targetFound,
+      }
+
+    case 'START_DEPTH_FIRST_SEARCH' :
+      var maxHeapSearchArray = buildMaxHeap(heapSearchArray);
+      var maxHeapSearchNumber = maxHeapSearchArray[Math.floor((Math.random() * 26) + 1)];
+        return {
+          ...state,
+          searchArray: setUpHeapSearchArray(searchArray, maxHeapSearchArray),
+          maxHeapSearchArray: maxHeapSearchArray,
+          testMaxHeapArray: setUpDepthFirstTestMaxHeapArray(),
+          stepIndex: 0,
+          searchAlgorithm: depthFirstSearch,
+          index: "",
+          low: 6,
+          high: 84,
+          testItem: "",
+          target: "",
+          targetFound: false,
+          iterations: 0,
+          searchNumber: maxHeapSearchNumber,
+          isRunning: true,
+          paused: false
+        }
+
+    case 'DEPTH_FIRST_SEARCH' :
+      return {
+        ...state,
+        searchArray: action.searchArray,
+        searchAlgorithm: depthFirstSearch,
         stepIndex: action.stepIndex,
         low: action.low,
         high: action.high,

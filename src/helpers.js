@@ -105,3 +105,20 @@ export function setUpTestMaxHeapArray() {
   testMaxHeapArray.push(stepArray[0]);
   return testMaxHeapArray;
 }
+
+export function setUpDepthFirstTestMaxHeapArray() {
+  var stepArray = [7,
+                  34, 47, 61, 75,
+                  76, 62, 77, 78,
+                  50, 64, 79, 80,
+                  66, 81, 82,
+                  40, 54, 68, 83,
+                  70, 57, 72, 73];
+
+  var testMaxHeapArray = [];
+
+  for (var i = 0; i < 24; i++) {
+    testMaxHeapArray.push(stepArray[i]);
+  }
+  return testMaxHeapArray;
+}
