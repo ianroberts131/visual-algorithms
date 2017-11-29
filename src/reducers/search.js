@@ -31,10 +31,10 @@ const searchState = {
 
 function search(state = searchState, action) {
   var newSearchArray = randomlyGenerateArray(225, 999);
-  var heapSearchArray = randomlyGenerateArray(26, 500, false);
+  var heapSearchArray = randomlyGenerateArray(24, 500, false);
   var maxHeapSearchArray = buildMaxHeap(heapSearchArray);
   var newSearchNumber = newSearchArray[Math.floor((Math.random() * 225 ) + 1)];
-  var maxHeapSearchNumber = maxHeapSearchArray[Math.floor((Math.random() * 26) + 1)];
+  var maxHeapSearchNumber = maxHeapSearchArray[Math.floor((Math.random() * 24) + 1)];
 
   switch(action.type) {
     case 'SEARCH_BASE_STATE' :
@@ -127,7 +127,7 @@ function search(state = searchState, action) {
 
     case 'START_BREADTH_FIRST_SEARCH' :
       var maxHeapSearchArray = buildMaxHeap(heapSearchArray);
-      var maxHeapSearchNumber = maxHeapSearchArray[Math.floor((Math.random() * 26) + 1)];
+      var maxHeapSearchNumber = maxHeapSearchArray[Math.floor((Math.random() * 24) + 1)];
       return {
         ...state,
         searchArray: setUpHeapSearchArray(searchArray, maxHeapSearchArray),
@@ -166,7 +166,7 @@ function search(state = searchState, action) {
 
     case 'START_DEPTH_FIRST_SEARCH' :
       var maxHeapSearchArray = buildMaxHeap(heapSearchArray);
-      var maxHeapSearchNumber = maxHeapSearchArray[Math.floor((Math.random() * 26) + 1)];
+      var maxHeapSearchNumber = maxHeapSearchArray[Math.floor((Math.random() * 24) + 1)];
         return {
           ...state,
           searchArray: setUpHeapSearchArray(searchArray, maxHeapSearchArray),
