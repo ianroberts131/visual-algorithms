@@ -32,14 +32,15 @@
   padding: 1%;
 }
 
-.linear-search-button, .binary-search-button {
+.linear-search-button, .binary-search-button, .breadth-first-search-button, .depth-first-search-button {
   background-color: #0066ff;
-  width: 30%;
+  width: 28%;
   color: white;
   border-radius: 5px;
   margin-left: 0.5%;
   padding-top: 0px;
   padding-bottom: 0px;
+  width: 24%;
 }
 
 .speed-buttons {
@@ -52,6 +53,7 @@
   width: 25%;
   border: 1px solid #d9d9d9;
   margin-right: 0;
+    padding: 1%;
 }
 
 .active-btn {
@@ -71,7 +73,7 @@
     padding: 0.5%;
   }
   .linear-search-button, .binary-search-button {
-    width: 35%;
+    width: 30%;
   }
 }
 
@@ -83,7 +85,7 @@
     font-size: 9px;
   }
   .linear-search-button, .binary-search-button {
-    width: 40%;
+    width: 35%;
   }
   .speed-button {
     width: 33%
@@ -98,7 +100,7 @@
     font-size: 8px;
   }
   .linear-search-button, .binary-search-button {
-    width: 49%;
+    width: 45%;
   }
 }
 
