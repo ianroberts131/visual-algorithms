@@ -14,23 +14,31 @@ class Grid extends React.Component {
             var isTestItem = index === testItem && targetFound === false;
             var isHighOrLow = index === low || index === high;
             var isTargetItem = index === target && targetFound === true;
+            var hiddenElement = "grid-item hidden-element";
+            var notInRemainingElements = "grid-item not-in-remaining-elements";
+            var targetElements = "grid-item target-element";
+            var inRemaingElements = "grid-item in-remaining-elements";
+            var highOrLowElement = "grid-item high-or-low-element";
+            var veiwOfElements = "";
+
             if (targetFound === false) {
-              if (!inSearchArea) {
-                return <div key={ index } className={number > -1 ? "grid-item not-in-remaining-elements" : "grid-item hidden-element"}>{ number }</div>;
+              if (!inSearchArea){
+                veiwOfElements = notInRemainingElements;
               } else if (isHighOrLow) {
-                return <div key={ index } className={number > -1 ? "grid-item high-or-low-element" : "grid-item hidden-element"}>{ number }</div>;
+                veiwOfElements = highOrLowElement;
               } else if (isTestItem) {
-                return <div key={ index } className={number > -1 ? "grid-item target-element" : "grid-item hidden-element"}>{ number }</div>;
+                veiwOfElements = targetElements;
               } else {
-                return <div key={ index } className={number > -1 ? "grid-item in-remaining-elements" : "grid-item hidden-element"}>{ number }</div>;
+                veiwOfElements = inRemaingElements;
               }
             } else {
-                if (isTargetItem) {
-                  return <div key={ index } className={number > -1 ? "grid-item target-element" : "grid-item hidden-element"}>{ number }</div>;
-                } else {
-                  return <div key={ index } className={number > -1 ? "grid-item not-in-remaining-elements" : "grid-item hidden-element"}>{ number }</div>;
-                }
+              if (isTargetItem) {
+                veiwOfElements = targetElements;
+              } else {
+                veiwOfElements = notInRemainingElements;
+              }
             }
+            return <div key={ index } className={number > -1 ? veiwOfElements : hiddenElement }>{ number }</div>;
           })}
         </Col>
       </Row>
