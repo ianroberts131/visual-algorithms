@@ -472,19 +472,43 @@ export function quickSort(sortArray, currentlyChecking, quickPivotIndex, quickLo
   }
 }
 
-export function startBinarySearch(binaryTimeout, linearTimeout) {
+export function startBinarySearch(binaryTimeout, linearTimeout, breadthFirstTimeout, depthFirstTimeout) {
   clearTimeout(binaryTimeout);
   clearTimeout(linearTimeout);
+  clearTimeout(breadthFirstTimeout);
+  clearTimeout(depthFirstTimeout);
   return {
     type: 'START_BINARY_SEARCH'
   }
 }
 
-export function startLinearSearch(binaryTimeout, linearTimeout) {
+export function startLinearSearch(binaryTimeout, linearTimeout, breadthFirstTimeout, depthFirstTimeout) {
   clearTimeout(binaryTimeout);
   clearTimeout(linearTimeout);
+  clearTimeout(breadthFirstTimeout);
+  clearTimeout(depthFirstTimeout);
   return {
     type: 'START_LINEAR_SEARCH'
+  }
+}
+
+export function startBreadthFirstSearch(binaryTimeout, linearTimeout, breadthFirstTimeout, depthFirstTimeout) {
+  clearTimeout(binaryTimeout);
+  clearTimeout(linearTimeout);
+  clearTimeout(breadthFirstTimeout);
+  clearTimeout(depthFirstTimeout);
+  return {
+    type: 'START_BREADTH_FIRST_SEARCH'
+  }
+}
+
+export function startDepthFirstSearch(binaryTimeout, linearTimeout, breadthFirstTimeout, depthFirstTimeout) {
+  clearTimeout(binaryTimeout);
+  clearTimeout(linearTimeout);
+  clearTimeout(breadthFirstTimeout);
+  clearTimeout(depthFirstTimeout);
+  return {
+    type: 'START_DEPTH_FIRST_SEARCH'
   }
 }
 
@@ -518,7 +542,6 @@ export function linearSearch(searchArray, searchNumber, low, high, iterations) {
   }
 }
 
-
 export function binarySearch(searchArray, searchNumber, low, high, iterations) {
 
     iterations += 1;
@@ -549,6 +572,75 @@ export function binarySearch(searchArray, searchNumber, low, high, iterations) {
       mid: mid,
       testItem: testItem,
       index: mid,
+      iterations: iterations,
+      isRunning: isRunning,
+      targetFound: targetFound,
+      target: target
+    }
+}
+
+export function breadthFirstSearch(searchArray, maxHeapSearchArray, testMaxHeapArray, stepIndex, searchNumber, low, high, iterations) {
+
+    iterations += 1;
+    var isRunning = true;
+    var targetFound = false;
+    var target = searchNumber;
+    var index = 0;
+    var testIndex = testMaxHeapArray[stepIndex];
+
+    if ( searchArray[testIndex] === searchNumber ) {
+      index = testIndex;
+      targetFound = true;
+      isRunning = false;
+    } else {
+      index = testIndex;
+      searchArray[testIndex] = -1;
+      stepIndex += 1;
+    }
+
+    return {
+      type: 'BREADTH_FIRST_SEARCH',
+      searchArray: searchArray,
+      searchNumber: searchNumber,
+      stepIndex: stepIndex,
+      low: low,
+      high: high,
+      index: index,
+      iterations: iterations,
+      isRunning: isRunning,
+      targetFound: targetFound,
+      target: target
+    }
+}
+
+
+export function depthFirstSearch(searchArray, maxHeapSearchArray, testMaxHeapArray, stepIndex, searchNumber, low, high, iterations) {
+
+    iterations += 1;
+    var isRunning = true;
+    var targetFound = false;
+    var target = searchNumber;
+    var index = 0;
+    var testIndex = testMaxHeapArray[stepIndex];
+
+    if ( searchArray[testIndex] === searchNumber ) {
+      index = testIndex;
+      targetFound = true;
+      isRunning = false;
+    } else {
+      index = testIndex;
+      searchArray[testIndex] = -1;
+      stepIndex += 1;
+    }
+
+    return {
+      type: 'DEPTH_FIRST_SEARCH',
+      searchArray: searchArray,
+      searchNumber: searchNumber,
+      stepIndex: stepIndex,
+      low: low,
+      high: high,
+      index: index,
       iterations: iterations,
       isRunning: isRunning,
       targetFound: targetFound,
