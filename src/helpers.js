@@ -64,6 +64,9 @@ export function buildMaxHeap(array, maxHeapComparator = maxHeapAscendantAB) {
 	    array[b] = tmp;
     }
 
+// end bulid heap tree
+
+
 export function setUpHeapSearchArray(searchArray, maxHeapSearchArray) {
   var stepArray = [7,
                 34, 40,

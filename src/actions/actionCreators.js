@@ -488,101 +488,56 @@ export function startHeapSort(...timeouts) {
 
 // ################################################
 
-export function heapSort(sortArray, heapSortArray, originalHeapArray, iterations, heapTreeTop, heapTreeRow2, heapTreeRow3, heapTreeRow4, startHeapTree, finishBuildHeap, isSorted = false) {
-  const {floor} = Math;
-  const heapCurrentCount = heapSortArray.length;
-  /*if ( startHeapTree === true ) {
-     originalHeapArray = heapSortArray;
-     startHeapTree = false;
-  } */
-  console.log('originalHeapArray:    ' + originalHeapArray);
+export function heapSort(sortArray, heapSortArray, iterations, heapTreeTop, heapTreeRow2, heapTreeRow3, heapTreeRow4, heapSortStep, smallHeapSortStep, startHeapTree, finishBuildHeap, isSorted = false) {
+
   iterations += 1;
   var isRunning = true;
   var heapFinalSort = false;
-	let heapFirstStart = floor((heapCurrentCount - 2) / 2);
+console.log('heap sort array  ' + heapSortArray);
 
-  function compareAB(a, b) {
-	   return a > b ? 1 : a < b ? -1 : 0;
+  if ( startHeapTree === true ) {
+    
+
+
+
   }
 
 
-  if ( finishBuildHeap === false ) {
-    // ******************** building the heap
-    //const count = sortArray.length; // see heapCurrentCount
-	  //let start = floor((count - 2) / 2); // see heapFirstStart
-    //var heapSortArray = sortArray;
-
-    while (heapFirstStart >= 0) {
-		   siftDown(heapSortArray, heapFirstStart, heapCurrentCount - 1, compareAB);
-		   heapFirstStart = heapFirstStart - 1;
-	  }
-
-
-
-    function siftDown(array, heapFirstStart, end, compareAB) {
-	     let root = heapFirstStart;
-	     while (root * 2 + 1 <= end) {
-		     const lChild = root * 2 + 1;
-		     const rChild = lChild + 1;
-		     let swap = root;
-
-		     if (compareAB(array[swap], array[lChild]) < 0) {
-			      swap = lChild;
-		     }
-		     if (rChild <= end && compareAB(array[swap], array[rChild]) < 0) {
-			      swap = rChild;
-		     }
-		     if (swap === root) {
-			      return;
-		     }
-		     swapElems(array, root, swap);
-		     root = swap;
-	     }
-    }
-
-    function swapElems(array, a, b) {
-      console.log('originalHeapArray:    ' + originalHeapArray);
-	     const tmp = array[a];
-	     console.log(array[a]);
-	     console.log(array[b]);
-	     array[a] = array[b];
-	     array[b] = tmp;
-	     console.log(array);
-    }
     // ******************** building the heap
     console.log(' Inside HEAP_SORT in the build heap section *************')
-
+/*
     heapTreeTop = [-1, -1, -1, -1, -1, 89, -1, -1, -1, -1, -1];
     heapTreeRow2 = [-1, -1, 23, -1, -1, -1, -1, -1, 67, -1, -1];
     heapTreeRow3 = [-1, 11, -1, 12, -1, -1, -1, 13, -1, 14, -1];
     heapTreeRow4 = [8, 9, -1, 10, 11, -1, 5, 1, -1, 2, 3];
 
+*/
 
 
-
-    if (iterations > 9) {
+    if (iterations > 30) {
       finishBuildHeap = true;
     }
-
+/*
   } else  {
-
     console.log(' Inside HEAP_SORT in the sort section');
-    if (iterations >= 20) {
+    if (iterations >= 35) {
       isRunning = false;
       isSorted = true;
     }
-  }
 
+  }
+*/
   return {
     type: 'HEAP_SORT',
     sortArray: sortArray,
     heapSortArray: heapSortArray,
-    originalHeapArray: originalHeapArray,
     heapFinalSort: heapFinalSort,
     heapTreeTop: heapTreeTop,
     heapTreeRow2: heapTreeRow2,
     heapTreeRow3: heapTreeRow3,
     heapTreeRow4: heapTreeRow4,
+    heapSortStep: heapSortStep,
+    smallHeapSortStep: smallHeapSortStep,
     finishBuildHeap: finishBuildHeap,
     iterations: iterations,
     startHeapTree: startHeapTree,
