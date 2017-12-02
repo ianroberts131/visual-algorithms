@@ -7,7 +7,7 @@ import './heapSort.css';
 
 class HeapSort extends React.Component {
   render() {
-    const { sortArray, heapSortArray, heapTreeTop, heapTreeRow2, heapTreeRow3, heapTreeRow4, heapSortStep, smallHeapSortStep,startHeapTree, finishBuildHeap, heapFinalSort, startHeapBuild } = this.props.sort;
+    const { sortArray, heapSortArray, step2HeapSortArray, step3HeapSortArray, heapTreeTop, heapTreeRow2, heapTreeRow3, heapTreeRow4, heapSortStep, smallHeapSortStep,startHeapTree, finishBuildHeap, heapFinalSort, startHeapBuild } = this.props.sort;
     const { intervalSpeed, speedString } = this.props.speed;
     return (
       <div className="heap-sort-area">

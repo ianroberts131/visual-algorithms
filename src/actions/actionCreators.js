@@ -1,3 +1,5 @@
+
+
 export function searchBaseState() {
   return {
     type: 'SEARCH_BASE_STATE'
@@ -488,23 +490,54 @@ export function startHeapSort(...timeouts) {
 
 // ################################################
 
-export function heapSort(sortArray, heapSortArray, iterations, heapTreeTop, heapTreeRow2, heapTreeRow3, heapTreeRow4, heapSortStep, smallHeapSortStep, startHeapTree, finishBuildHeap, isSorted = false) {
-
+export function heapSort(sortArray, heapSortArray, step2HeapSortArray, step3HeapSortArray, iterations, heapTreeTop, heapTreeRow2, heapTreeRow3, heapTreeRow4, heapSortStep, smallHeapSortStep, startHeapTree, finishBuildHeap, isSorted = false) {
   iterations += 1;
   var isRunning = true;
   var heapFinalSort = false;
-console.log('heap sort array  ' + heapSortArray);
 
+  // build the heap tree from orginal ramdom array
   if ( startHeapTree === true ) {
-    
-
-
+    var veiwedNumber = 0;
+    veiwedNumber = heapSortArray[heapSortStep];
+        if ( smallHeapSortStep === 1 ) {
+        heapTreeTop[0] = veiwedNumber;
+        }
+        if ( smallHeapSortStep === 2 ) {
+          if( heapSortStep === 0 ) heapTreeTop[5] = veiwedNumber;
+          if( heapSortStep === 1 ) heapTreeRow2[2] = veiwedNumber;
+          if( heapSortStep === 2 ) heapTreeRow2[8] = veiwedNumber;
+          if( heapSortStep === 3 ) heapTreeRow3[1] = veiwedNumber;
+          if( heapSortStep === 4 ) heapTreeRow3[3] = veiwedNumber;
+          if( heapSortStep === 5 ) heapTreeRow3[7] = veiwedNumber;
+          if( heapSortStep === 6 ) heapTreeRow3[9] = veiwedNumber;
+          if( heapSortStep === 7 ) heapTreeRow4[0] = veiwedNumber;
+          if( heapSortStep === 8 ) heapTreeRow4[1] = veiwedNumber;
+          if( heapSortStep === 9 ) heapTreeRow4[3] = veiwedNumber;
+        }
+        if ( smallHeapSortStep === 3 ) {
+          heapTreeTop[0] = -1;
+        }
+        if ( smallHeapSortStep ===4 ) {
+          heapSortArray[heapSortStep] = -1;
+        }
+        smallHeapSortStep += 1;
+        if ( smallHeapSortStep === 5 ) {
+          smallHeapSortStep = 1;
+          heapSortStep += 1;
+          if (heapSortStep > 9) startHeapTree = false;
+        }
 
   }
 
+  // sort the heap tree itself
+
+
+
+
+
+
 
     // ******************** building the heap
-    console.log(' Inside HEAP_SORT in the build heap section *************')
 /*
     heapTreeTop = [-1, -1, -1, -1, -1, 89, -1, -1, -1, -1, -1];
     heapTreeRow2 = [-1, -1, 23, -1, -1, -1, -1, -1, 67, -1, -1];
@@ -531,6 +564,8 @@ console.log('heap sort array  ' + heapSortArray);
     type: 'HEAP_SORT',
     sortArray: sortArray,
     heapSortArray: heapSortArray,
+    step2HeapSortArray: step2HeapSortArray,
+    step3HeapSortArray: step3HeapSortArray,
     heapFinalSort: heapFinalSort,
     heapTreeTop: heapTreeTop,
     heapTreeRow2: heapTreeRow2,

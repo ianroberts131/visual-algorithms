@@ -10,6 +10,8 @@ export function randomlyGenerateArray(size, maxNumber, sorted=true) {
   return sorted ? array.sort(function(a,b){return a - b}) : array;
 }
 
+
+
 // build max heap tree from random array
 const {floor} = Math;
 
@@ -19,7 +21,8 @@ export function buildMaxHeap(array, maxHeapComparator = maxHeapAscendantAB) {
 	let end = count - 1;
 
 	maxHeapify(array, maxHeapComparator);
-	return array;
+  return array;
+
 }
 
     function maxHeapAscendantAB(a, b) {
@@ -52,9 +55,8 @@ export function buildMaxHeap(array, maxHeapComparator = maxHeapAscendantAB) {
 		    if (swap === root) {
 			    return;
 		    }
-
-		    maxHeapSwapElems(array, root, swap);
-		    root = swap;
+        maxHeapSwapElems(array, root, swap);
+  	    root = swap;
 	    }
     }
 
