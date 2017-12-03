@@ -333,7 +333,7 @@ function sort(state = sortState, action) {
           sortArray: newHeapArray,
           sortAlgorithm: heapSort,
           heapSortArray: newHeapArray,
-          //step2HeapSortArray: step2HeapSortArray,
+          step2HeapSortArray: [],
           step3HeapSortArray: [],
           iterations: 0,
           heapTreeTop: [ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
@@ -350,7 +350,7 @@ function sort(state = sortState, action) {
         }
 
     case 'HEAP_SORT' :
-    console.log('inside heap sort in sort.js');
+    //console.log('inside heap sort in sort.js');
       return {
         ...state,
         sortAlgorithm: heapSort,

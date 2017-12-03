@@ -10,8 +10,6 @@ export function randomlyGenerateArray(size, maxNumber, sorted=true) {
   return sorted ? array.sort(function(a,b){return a - b}) : array;
 }
 
-
-
 // build max heap tree from random array
 const {floor} = Math;
 
@@ -126,4 +124,88 @@ export function setUpDepthFirstTestMaxHeapArray() {
     testMaxHeapArray.push(stepArray[i]);
   }
   return testMaxHeapArray;
+}
+
+
+//################### start sort
+
+
+export function step2HeapSort(step2Array, compare = maxHeapAscendantAB2) {
+
+	const count = step2Array.length;
+	let end = count - 1;
+
+	step2Heapify(step2Array, compare);
+	return testArray;
+}
+  // can come out
+  function maxHeapAscendantAB2(a, b) {
+      return a > b ? 1 : ( a < b ? -1 : 0 ); // if a > b then return 1 else return -1 or 0
+    }
+
+
+function step2Heapify(step2Array, compare) {
+	const count = step2Array.length;
+	let start = floor((count - 2) / 2);
+	while (start >= 0) {
+		step2ShiftDown(step2Array, start, count - 1, compare);
+		start = start - 1;
+	}
+}
+
+function step2ShiftDown(array, start, end, compare) {
+	let root = start;
+
+	while (root * 2 + 1 <= end) {
+		const lChild = root * 2 + 1;
+		const rChild = lChild + 1;
+		let swap = root;
+
+		if (compare(array[swap], array[lChild]) < 0) {
+			swap = lChild;
+		}
+		if (rChild <= end && compare(array[swap], array[rChild]) < 0) {
+			swap = rChild;
+		}
+		if (swap === root) {
+			return;
+		}
+
+		step2SwapElements(array, root, swap);
+		root = swap;
+	}
+}
+
+
+
+
+//&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+var testArray = [];
+
+function step2SwapElements(step2Array, a, b) {
+  var holdArrayA = [ -1, -1 ];
+  var holdArrayB = [ -1, -1 ];
+  //########################################
+
+	const tmp = step2Array[a];
+	holdArrayA = [ step2Array[a] ];
+	testArray.push(holdArrayA); // step 1 hold area A
+	holdArrayB = [ step2Array[b] ];
+	testArray.push(holdArrayB);// step 2 hold area B
+
+		//########################################
+	step2Array[a] = step2Array[b];
+	testArray.push([a]);// step 3 index for a
+	testArray.push([b]);// step 4 index for b
+
+		//########################################
+	step2Array[b] = tmp;
+	holdArrayA = [ -1 ];
+	holdArrayB = [ -1 ];
+	testArray.push(holdArrayA);// step 5 clear hold area A
+	testArray.push(holdArrayB);// step 6 clear hold area B
+	//testArray.push(['#######'])
+	//testArray.push(step2Array);// step 7 new array for master
+	//########################################
+	//console.log(testArray)
 }

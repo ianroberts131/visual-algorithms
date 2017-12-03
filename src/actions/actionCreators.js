@@ -1,4 +1,4 @@
-
+import { step2HeapSort } from '../helpers';
 
 export function searchBaseState() {
   return {
@@ -525,6 +525,8 @@ export function heapSort(sortArray, heapSortArray, step2HeapSortArray, step3Heap
           if (heapSortStep > 9) {
              startHeapTree = false;
              heapSortStep = 0;
+             var step2Array = [ heapTreeTop[5], heapTreeRow2[2], heapTreeRow2[8], heapTreeRow3[1], heapTreeRow3[3], heapTreeRow3[7], heapTreeRow3[9], heapTreeRow4[0], heapTreeRow4[1], heapTreeRow4[3] ]
+             var step2HeapSortArray = step2HeapSort(step2Array);
           }
         }
 
@@ -532,11 +534,11 @@ export function heapSort(sortArray, heapSortArray, step2HeapSortArray, step3Heap
 
   // sort the heap tree itself
 
+  if ( startHeapTree === false && finishBuildHeap === false ) {
+    console.log(' Inside step 2');
+    console.log('step2HeapSortArray:  ' + step2HeapSortArray);
 
-
-
-
-
+  }
 
     // ******************** building the heap
 /*
@@ -548,10 +550,12 @@ export function heapSort(sortArray, heapSortArray, step2HeapSortArray, step3Heap
 */
 
 
-    if (iterations > 30) {
-      finishBuildHeap = true;
-    }
+
 /*
+
+if (iterations > 30) {
+  finishBuildHeap = true;
+}
   } else  {
     console.log(' Inside HEAP_SORT in the sort section');
     if (iterations >= 35) {
