@@ -327,13 +327,13 @@ function sort(state = sortState, action) {
     case 'START_HEAP_SORT' :
       var newHeapArray = randomlyGenerateArray(10, 100, false);
       var holdHeapArray = newHeapArray;
-      var step2HeapSortArray = buildMaxHeap(holdHeapArray);
+      //var step2HeapSortArray = buildMaxHeap(holdHeapArray);
         return {
           ...state,
           sortArray: newHeapArray,
           sortAlgorithm: heapSort,
           heapSortArray: newHeapArray,
-          step2HeapSortArray: step2HeapSortArray,
+          //step2HeapSortArray: step2HeapSortArray,
           step3HeapSortArray: [],
           iterations: 0,
           heapTreeTop: [ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1],

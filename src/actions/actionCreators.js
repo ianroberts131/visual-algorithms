@@ -516,15 +516,16 @@ export function heapSort(sortArray, heapSortArray, step2HeapSortArray, step3Heap
         }
         if ( smallHeapSortStep === 3 ) {
           heapTreeTop[0] = -1;
-        }
-        if ( smallHeapSortStep ===4 ) {
           heapSortArray[heapSortStep] = -1;
         }
         smallHeapSortStep += 1;
-        if ( smallHeapSortStep === 5 ) {
+        if ( smallHeapSortStep === 4 ) {
           smallHeapSortStep = 1;
           heapSortStep += 1;
-          if (heapSortStep > 9) startHeapTree = false;
+          if (heapSortStep > 9) {
+             startHeapTree = false;
+             heapSortStep = 0;
+          }
         }
 
   }
