@@ -4,7 +4,6 @@ import { Col } from 'react-bootstrap';
 
 import './heapSort.css';
 
-
 class HeapSort extends React.Component {
   render() {
     const { sortArray, heapSortArray, step2HeapSortArray, step3HeapSortArray, heapTreeTop, heapTreeRow2, heapTreeRow3, heapTreeRow4, heapSortStep, smallHeapSortStep,startHeapTree, finishBuildHeap, heapFinalSort, startHeapBuild } = this.props.sort;

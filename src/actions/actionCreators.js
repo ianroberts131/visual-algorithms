@@ -1,4 +1,4 @@
-import { step2HeapSort } from '../helpers';
+import { step2HeapSort, step3HeapSort } from '../helpers';
 
 export function searchBaseState() {
   return {
@@ -173,8 +173,6 @@ export function mergeSort(mergeArray, mergePrior, mergePriorSorted, mergeArrayMa
   iterations += 1;
   var isRunning = true;
   var mergeFinalSort = false;
-  console.log('mergeArrayLeft1');
-  console.log(mergeArrayLeft1);
   // Split the main array into 2 separate arrays, creating tier 2
   if (mergePrior === 0 && mergePriorSorted === false) {
       mergeArrayLeft1 = mergeArrayMain.slice(0,4);
@@ -476,9 +474,6 @@ export function quickSort(sortArray, currentlyChecking, quickPivotIndex, quickLo
   }
 }
 
-
-// ################################################
-
 export function startHeapSort(...timeouts) {
   for (var i = 0; i < timeouts.length; i++) {
     clearTimeout(timeouts[i]);
@@ -487,8 +482,6 @@ export function startHeapSort(...timeouts) {
     type: 'START_HEAP_SORT',
   }
 }
-
-// ################################################
 
 export function heapSort(sortArray, heapSortArray, step2HeapSortArray, step3HeapSortArray, iterations, heapTreeTop, heapTreeRow2, heapTreeRow3, heapTreeRow4, heapSortStep, smallHeapSortStep, startHeapTree, finishBuildHeap, isSorted = false) {
   iterations += 1;
@@ -525,20 +518,61 @@ export function heapSort(sortArray, heapSortArray, step2HeapSortArray, step3Heap
           if (heapSortStep > 9) {
              startHeapTree = false;
              heapSortStep = 0;
-             var step2Array = [ heapTreeTop[5], heapTreeRow2[2], heapTreeRow2[8], heapTreeRow3[1], heapTreeRow3[3], heapTreeRow3[7], heapTreeRow3[9], heapTreeRow4[0], heapTreeRow4[1], heapTreeRow4[3] ]
+             var  step2Array = [ heapTreeTop[5], heapTreeRow2[2], heapTreeRow2[8], heapTreeRow3[1], heapTreeRow3[3], heapTreeRow3[7], heapTreeRow3[9], heapTreeRow4[0], heapTreeRow4[1], heapTreeRow4[3] ]
              var step2HeapSortArray = step2HeapSort(step2Array);
+             heapSortArray = step2HeapSortArray;
           }
         }
-
   }
 
   // sort the heap tree itself
-
   if ( startHeapTree === false && finishBuildHeap === false ) {
-    console.log(' Inside step 2');
-    console.log('step2HeapSortArray:  ' + step2HeapSortArray);
+    var veiwedNumber = 0;
+    veiwedNumber = step2HeapSortArray[heapSortStep];
+        if ( smallHeapSortStep === 1 ) {
+        heapTreeTop[9] = veiwedNumber;
+        }
+        if ( smallHeapSortStep === 2 ) {
+          if( heapSortStep === 0 ) heapTreeTop[5] = veiwedNumber;
+          if( heapSortStep === 1 ) heapTreeRow2[2] = veiwedNumber;
+          if( heapSortStep === 2 ) heapTreeRow2[8] = veiwedNumber;
+          if( heapSortStep === 3 ) heapTreeRow3[1] = veiwedNumber;
+          if( heapSortStep === 4 ) heapTreeRow3[3] = veiwedNumber;
+          if( heapSortStep === 5 ) heapTreeRow3[7] = veiwedNumber;
+          if( heapSortStep === 6 ) heapTreeRow3[9] = veiwedNumber;
+          if( heapSortStep === 7 ) heapTreeRow4[0] = veiwedNumber;
+          if( heapSortStep === 8 ) heapTreeRow4[1] = veiwedNumber;
+          if( heapSortStep === 9 ) heapTreeRow4[3] = veiwedNumber;
+        }
+        if ( smallHeapSortStep === 3 ) {
+          heapTreeTop[9] = -1;
+          heapSortArray[heapSortStep] = -1;
+        }
+        smallHeapSortStep += 1;
+        if ( smallHeapSortStep === 4 ) {
+          smallHeapSortStep = 1;
+          heapSortStep += 1;
+          if (heapSortStep > 9) {
+             startHeapTree = false;
+             finishBuildHeap = true;
+             heapSortStep = 0;
+             var  step3Array = [ heapTreeTop[5], heapTreeRow2[2], heapTreeRow2[8], heapTreeRow3[1], heapTreeRow3[3], heapTreeRow3[7], heapTreeRow3[9], heapTreeRow4[0], heapTreeRow4[1], heapTreeRow4[3] ]
+             var step3HeapSortArray = step3HeapSort(step3Array);
+             //heapSortArray = step3HeapSortArray;
+             // #####################################
+             //isRunning = false;
+             //isSorted = true;
+             console.log(step3HeapSortArray);
+          }
+        }
+   }
+
+   // Final sort from heap back to a sorted array low to high - left to right
+   if ( startHeapTree === false && finishBuildHeap === true && isSorted === false ) {
+     console.log(' inside step 3')
 
   }
+
 
     // ******************** building the heap
 /*

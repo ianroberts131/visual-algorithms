@@ -327,7 +327,6 @@ function sort(state = sortState, action) {
     case 'START_HEAP_SORT' :
       var newHeapArray = randomlyGenerateArray(10, 100, false);
       var holdHeapArray = newHeapArray;
-      //var step2HeapSortArray = buildMaxHeap(holdHeapArray);
         return {
           ...state,
           sortArray: newHeapArray,
@@ -350,10 +349,11 @@ function sort(state = sortState, action) {
         }
 
     case 'HEAP_SORT' :
-    //console.log('inside heap sort in sort.js');
       return {
         ...state,
         sortAlgorithm: heapSort,
+        heapSortArray: action.heapSortArray,
+        step2HeapSortArray: action.step2HeapSortArray,
         iterations: action.iterations,
         heapTreeTop: action.heapTreeTop,
         heapTreeRow2: action.heapTreeRow2,
