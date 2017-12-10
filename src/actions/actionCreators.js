@@ -483,7 +483,7 @@ export function startHeapSort(...timeouts) {
   }
 }
 
-export function heapSort(sortArray, heapSortArray, step2HeapSortArray, step3HeapSortArray, iterations, heapTreeTop, heapTreeRow2, heapTreeRow3, heapTreeRow4, heapSortStep, smallHeapSortStep, startHeapTree, finishBuildHeap, isSorted = false) {
+export function heapSort(sortArray, heapSortArray, step2HeapSortArray, step3HeapSortArray, iterations, heapTreeTop, heapTreeRow2, heapTreeRow3, heapTreeRow4, heapSortStep, smallHeapSortStep, heapArrayIndex, startHeapTree, finishBuildHeap, isSorted = false) {
   iterations += 1;
   var isRunning = true;
   var heapFinalSort = false;
@@ -524,7 +524,6 @@ export function heapSort(sortArray, heapSortArray, step2HeapSortArray, step3Heap
           }
         }
   }
-
   // sort the heap tree itself
   if ( startHeapTree === false && finishBuildHeap === false ) {
     var veiwedNumber = 0;
@@ -558,47 +557,248 @@ export function heapSort(sortArray, heapSortArray, step2HeapSortArray, step3Heap
              heapSortStep = 0;
              var  step3Array = [ heapTreeTop[5], heapTreeRow2[2], heapTreeRow2[8], heapTreeRow3[1], heapTreeRow3[3], heapTreeRow3[7], heapTreeRow3[9], heapTreeRow4[0], heapTreeRow4[1], heapTreeRow4[3] ]
              var step3HeapSortArray = step3HeapSort(step3Array);
-             //heapSortArray = step3HeapSortArray;
-             // #####################################
-             //isRunning = false;
-             //isSorted = true;
-             console.log(step3HeapSortArray);
           }
         }
    }
 
    // Final sort from heap back to a sorted array low to high - left to right
    if ( startHeapTree === false && finishBuildHeap === true && isSorted === false ) {
-     console.log(' inside step 3')
+     if ( heapSortStep === 0 ) {
+        if ( smallHeapSortStep === 1 ) {
+          heapTreeTop[2] = heapTreeTop[5];
+          heapTreeTop[5] = -1;
+          smallHeapSortStep += 1;
+        } else if ( smallHeapSortStep === 2 ) {
+          heapSortArray[9] = heapTreeTop[2];
+          smallHeapSortStep += 1;
+        } else {
+          heapTreeTop[2] = -1;
+          heapSortStep += 1;
+          smallHeapSortStep = 1;
+        }
+      }
 
+      if ( heapSortStep === 1 ) {
+        if ( smallHeapSortStep === 1 ) {
+          heapTreeTop[2] = heapTreeRow2[8];
+          heapTreeRow2[8] = -1;
+          smallHeapSortStep += 1;
+        } else if ( smallHeapSortStep === 2 ) {
+          heapSortArray[8] = heapTreeTop[2];
+          smallHeapSortStep += 1;
+        } else {
+          heapTreeTop[2] = -1;
+          heapSortStep += 1;
+          smallHeapSortStep = 1;
+        }
+      }
+
+      if ( heapSortStep === 2 ) {
+        if ( smallHeapSortStep === 1 ) {
+          heapTreeTop[2] = heapTreeRow2[2];
+          heapTreeRow2[2] = -1;
+          smallHeapSortStep += 1;
+          heapArrayIndex = 7;
+        } else if ( smallHeapSortStep === 2 ) {
+          if ( heapSortArray[heapArrayIndex] === -1 ) heapArrayIndex += 1;
+          if ( heapSortArray[heapArrayIndex] > heapTreeTop[2] ) {
+            heapSortArray[heapArrayIndex - 1] = heapTreeTop[2];
+            smallHeapSortStep += 1;
+          }
+          if ( heapSortArray[heapArrayIndex] < heapTreeTop[2] ) {
+            heapSortArray[heapArrayIndex - 1] = heapSortArray[heapArrayIndex];
+            heapSortArray[heapArrayIndex] = -1;
+            heapArrayIndex += 1;
+          }
+        } else {
+          heapTreeTop[2] = -1;
+          heapSortStep += 1;
+          smallHeapSortStep = 1;
+          heapArrayIndex = 0;
+        }
+      }
+
+      if ( heapSortStep === 3 ) {
+        if ( smallHeapSortStep === 1 ) {
+          heapTreeTop[2] = heapTreeRow3[1];
+          heapTreeRow3[1] = -1;
+          smallHeapSortStep += 1;
+          heapArrayIndex = 6;
+        } else if ( smallHeapSortStep === 2 ) {
+          if ( heapSortArray[heapArrayIndex] === -1 ) heapArrayIndex += 1;
+          if ( heapSortArray[heapArrayIndex] > heapTreeTop[2] ) {
+            heapSortArray[heapArrayIndex - 1] = heapTreeTop[2];
+            smallHeapSortStep += 1;
+          }
+          if ( heapSortArray[heapArrayIndex] < heapTreeTop[2] ) {
+            heapSortArray[heapArrayIndex - 1] = heapSortArray[heapArrayIndex];
+            heapSortArray[heapArrayIndex] = -1;
+            heapArrayIndex += 1;
+          }
+        } else {
+          heapTreeTop[2] = -1;
+          heapSortStep += 1;
+          smallHeapSortStep = 1;
+          heapArrayIndex = 0;
+        }
+      }
+
+      if ( heapSortStep === 4 ) {
+        if ( smallHeapSortStep === 1 ) {
+          heapTreeTop[2] = heapTreeRow3[3];
+          heapTreeRow3[3] = -1;
+          smallHeapSortStep += 1;
+          heapArrayIndex = 5;
+        } else if ( smallHeapSortStep === 2 ) {
+          if ( heapSortArray[heapArrayIndex] === -1 ) heapArrayIndex += 1;
+          if ( heapSortArray[heapArrayIndex] > heapTreeTop[2] ) {
+            heapSortArray[heapArrayIndex - 1] = heapTreeTop[2];
+            smallHeapSortStep += 1;
+          }
+          if ( heapSortArray[heapArrayIndex] < heapTreeTop[2] ) {
+            heapSortArray[heapArrayIndex - 1] = heapSortArray[heapArrayIndex];
+            heapSortArray[heapArrayIndex] = -1;
+            heapArrayIndex += 1;
+          }
+        } else {
+          heapTreeTop[2] = -1;
+          heapSortStep += 1;
+          smallHeapSortStep = 1;
+          heapArrayIndex = 0;
+        }
+      }
+
+      if ( heapSortStep === 5 ) {
+        if ( smallHeapSortStep === 1 ) {
+          heapTreeTop[2] = heapTreeRow3[7];
+          heapTreeRow3[7] = -1;
+          smallHeapSortStep += 1;
+          heapArrayIndex = 4;
+        } else if ( smallHeapSortStep === 2 ) {
+          if ( heapSortArray[heapArrayIndex] === -1 ) heapArrayIndex += 1;
+          if ( heapSortArray[heapArrayIndex] > heapTreeTop[2] ) {
+            heapSortArray[heapArrayIndex - 1] = heapTreeTop[2];
+            smallHeapSortStep += 1;
+          }
+          if ( heapSortArray[heapArrayIndex] < heapTreeTop[2] ) {
+            heapSortArray[heapArrayIndex - 1] = heapSortArray[heapArrayIndex];
+            heapSortArray[heapArrayIndex] = -1;
+            heapArrayIndex += 1;
+          }
+        } else {
+          heapTreeTop[2] = -1;
+          heapSortStep += 1;
+          smallHeapSortStep = 1;
+          heapArrayIndex = 0;
+        }
+      }
+
+      if ( heapSortStep === 6 ) {
+        if ( smallHeapSortStep === 1 ) {
+          heapTreeTop[2] = heapTreeRow3[9];
+          heapTreeRow3[9] = -1;
+          smallHeapSortStep += 1;
+          heapArrayIndex = 3;
+        } else if ( smallHeapSortStep === 2 ) {
+          if ( heapSortArray[heapArrayIndex] === -1 ) heapArrayIndex += 1;
+          if ( heapSortArray[heapArrayIndex] > heapTreeTop[2] ) {
+            heapSortArray[heapArrayIndex - 1] = heapTreeTop[2];
+            smallHeapSortStep += 1;
+          }
+          if ( heapSortArray[heapArrayIndex] < heapTreeTop[2] ) {
+            heapSortArray[heapArrayIndex - 1] = heapSortArray[heapArrayIndex];
+            heapSortArray[heapArrayIndex] = -1;
+            heapArrayIndex += 1;
+          }
+        } else {
+          heapTreeTop[2] = -1;
+          heapSortStep += 1;
+          smallHeapSortStep = 1;
+          heapArrayIndex = 0;
+        }
+      }
+
+      if ( heapSortStep === 7 ) {
+        if ( smallHeapSortStep === 1 ) {
+          heapTreeTop[2] = heapTreeRow4[0];
+          heapTreeRow4[0] = -1;
+          smallHeapSortStep += 1;
+          heapArrayIndex = 2;
+        } else if ( smallHeapSortStep === 2 ) {
+          if ( heapSortArray[heapArrayIndex] === -1 ) heapArrayIndex += 1;
+          if ( heapSortArray[heapArrayIndex] > heapTreeTop[2] ) {
+            heapSortArray[heapArrayIndex - 1] = heapTreeTop[2];
+            smallHeapSortStep += 1;
+          }
+          if ( heapSortArray[heapArrayIndex] < heapTreeTop[2] ) {
+            heapSortArray[heapArrayIndex - 1] = heapSortArray[heapArrayIndex];
+            heapSortArray[heapArrayIndex] = -1;
+            heapArrayIndex += 1;
+          }
+        } else {
+          heapTreeTop[2] = -1;
+          heapSortStep += 1;
+          smallHeapSortStep = 1;
+          heapArrayIndex = 0;
+        }
+      }
+
+      if ( heapSortStep === 8 ) {
+        if ( smallHeapSortStep === 1 ) {
+          heapTreeTop[2] = heapTreeRow4[1];
+          heapTreeRow4[1] = -1;
+          smallHeapSortStep += 1;
+          heapArrayIndex = 1;
+        } else if ( smallHeapSortStep === 2 ) {
+          if ( heapSortArray[heapArrayIndex] === -1 ) heapArrayIndex += 1;
+          if ( heapSortArray[heapArrayIndex] > heapTreeTop[2] ) {
+            heapSortArray[heapArrayIndex - 1] = heapTreeTop[2];
+            smallHeapSortStep += 1;
+          }
+          if ( heapSortArray[heapArrayIndex] < heapTreeTop[2] ) {
+            heapSortArray[heapArrayIndex - 1] = heapSortArray[heapArrayIndex];
+            heapSortArray[heapArrayIndex] = -1;
+            heapArrayIndex += 1;
+          }
+        } else {
+          heapTreeTop[2] = -1;
+          heapSortStep += 1;
+          smallHeapSortStep = 1;
+          heapArrayIndex = 0;
+        }
+      }
+
+      if ( heapSortStep === 9 ) {
+        if ( smallHeapSortStep === 1 ) {
+          heapTreeTop[2] = heapTreeRow4[3];
+          heapTreeRow4[3] = -1;
+          smallHeapSortStep += 1;
+          heapArrayIndex = 0;
+        } else if ( smallHeapSortStep === 2 ) {
+          if ( heapSortArray[heapArrayIndex] === -1 ) heapArrayIndex += 1;
+          if ( heapSortArray[heapArrayIndex] > heapTreeTop[2] ) {
+            heapSortArray[heapArrayIndex - 1] = heapTreeTop[2];
+            smallHeapSortStep += 1;
+          }
+          if ( heapSortArray[heapArrayIndex] < heapTreeTop[2] ) {
+            heapSortArray[heapArrayIndex - 1] = heapSortArray[heapArrayIndex];
+            heapSortArray[heapArrayIndex] = -1;
+            heapArrayIndex += 1;
+          }
+        } else {
+          heapTreeTop[2] = -1;
+          heapSortStep += 1;
+          smallHeapSortStep = 1;
+          heapArrayIndex = 0;
+        }
+      }
+
+      if ( heapSortStep === 10 ) {
+        isRunning = false;
+        isSorted = true;
+      }
   }
 
-
-    // ******************** building the heap
-/*
-    heapTreeTop = [-1, -1, -1, -1, -1, 89, -1, -1, -1, -1, -1];
-    heapTreeRow2 = [-1, -1, 23, -1, -1, -1, -1, -1, 67, -1, -1];
-    heapTreeRow3 = [-1, 11, -1, 12, -1, -1, -1, 13, -1, 14, -1];
-    heapTreeRow4 = [8, 9, -1, 10, 11, -1, 5, 1, -1, 2, 3];
-
-*/
-
-
-
-/*
-
-if (iterations > 30) {
-  finishBuildHeap = true;
-}
-  } else  {
-    console.log(' Inside HEAP_SORT in the sort section');
-    if (iterations >= 35) {
-      isRunning = false;
-      isSorted = true;
-    }
-
-  }
-*/
   return {
     type: 'HEAP_SORT',
     sortArray: sortArray,
@@ -612,6 +812,7 @@ if (iterations > 30) {
     heapTreeRow4: heapTreeRow4,
     heapSortStep: heapSortStep,
     smallHeapSortStep: smallHeapSortStep,
+    heapArrayIndex: heapArrayIndex,
     finishBuildHeap: finishBuildHeap,
     iterations: iterations,
     startHeapTree: startHeapTree,
@@ -619,8 +820,6 @@ if (iterations > 30) {
     isSorted: isSorted
   }
 }
-
-// ################################################
 
 export function startBinarySearch(binaryTimeout, linearTimeout, breadthFirstTimeout, depthFirstTimeout) {
   clearTimeout(binaryTimeout);
