@@ -563,6 +563,7 @@ export function heapSort(sortArray, heapSortArray, step2HeapSortArray, step3Heap
 
    // Final sort from heap back to a sorted array low to high - left to right
    if ( startHeapTree === false && finishBuildHeap === true && isSorted === false ) {
+     var temp = 0;
      if ( heapSortStep === 0 ) {
         if ( smallHeapSortStep === 1 ) {
           heapTreeTop[2] = heapTreeTop[5];
@@ -598,7 +599,7 @@ export function heapSort(sortArray, heapSortArray, step2HeapSortArray, step3Heap
           heapTreeTop[2] = heapTreeRow2[2];
           heapTreeRow2[2] = -1;
           smallHeapSortStep += 1;
-          heapArrayIndex = 7;
+          heapArrayIndex = ( 9 - heapSortStep );
         } else if ( smallHeapSortStep === 2 ) {
           if ( heapSortArray[heapArrayIndex] === -1 ) heapArrayIndex += 1;
           if ( heapSortArray[heapArrayIndex] > heapTreeTop[2] ) {
@@ -623,7 +624,7 @@ export function heapSort(sortArray, heapSortArray, step2HeapSortArray, step3Heap
           heapTreeTop[2] = heapTreeRow3[1];
           heapTreeRow3[1] = -1;
           smallHeapSortStep += 1;
-          heapArrayIndex = 6;
+          heapArrayIndex = ( 9 - heapSortStep );
         } else if ( smallHeapSortStep === 2 ) {
           if ( heapSortArray[heapArrayIndex] === -1 ) heapArrayIndex += 1;
           if ( heapSortArray[heapArrayIndex] > heapTreeTop[2] ) {
@@ -648,7 +649,7 @@ export function heapSort(sortArray, heapSortArray, step2HeapSortArray, step3Heap
           heapTreeTop[2] = heapTreeRow3[3];
           heapTreeRow3[3] = -1;
           smallHeapSortStep += 1;
-          heapArrayIndex = 5;
+          heapArrayIndex = ( 9 - heapSortStep );
         } else if ( smallHeapSortStep === 2 ) {
           if ( heapSortArray[heapArrayIndex] === -1 ) heapArrayIndex += 1;
           if ( heapSortArray[heapArrayIndex] > heapTreeTop[2] ) {
@@ -673,7 +674,7 @@ export function heapSort(sortArray, heapSortArray, step2HeapSortArray, step3Heap
           heapTreeTop[2] = heapTreeRow3[7];
           heapTreeRow3[7] = -1;
           smallHeapSortStep += 1;
-          heapArrayIndex = 4;
+          heapArrayIndex = ( 9 - heapSortStep );
         } else if ( smallHeapSortStep === 2 ) {
           if ( heapSortArray[heapArrayIndex] === -1 ) heapArrayIndex += 1;
           if ( heapSortArray[heapArrayIndex] > heapTreeTop[2] ) {
@@ -698,7 +699,7 @@ export function heapSort(sortArray, heapSortArray, step2HeapSortArray, step3Heap
           heapTreeTop[2] = heapTreeRow3[9];
           heapTreeRow3[9] = -1;
           smallHeapSortStep += 1;
-          heapArrayIndex = 3;
+          heapArrayIndex = ( 9 - heapSortStep );
         } else if ( smallHeapSortStep === 2 ) {
           if ( heapSortArray[heapArrayIndex] === -1 ) heapArrayIndex += 1;
           if ( heapSortArray[heapArrayIndex] > heapTreeTop[2] ) {
@@ -723,7 +724,7 @@ export function heapSort(sortArray, heapSortArray, step2HeapSortArray, step3Heap
           heapTreeTop[2] = heapTreeRow4[0];
           heapTreeRow4[0] = -1;
           smallHeapSortStep += 1;
-          heapArrayIndex = 2;
+          heapArrayIndex = ( 9 - heapSortStep );
         } else if ( smallHeapSortStep === 2 ) {
           if ( heapSortArray[heapArrayIndex] === -1 ) heapArrayIndex += 1;
           if ( heapSortArray[heapArrayIndex] > heapTreeTop[2] ) {
@@ -748,7 +749,7 @@ export function heapSort(sortArray, heapSortArray, step2HeapSortArray, step3Heap
           heapTreeTop[2] = heapTreeRow4[1];
           heapTreeRow4[1] = -1;
           smallHeapSortStep += 1;
-          heapArrayIndex = 1;
+          heapArrayIndex = ( 9 - heapSortStep );
         } else if ( smallHeapSortStep === 2 ) {
           if ( heapSortArray[heapArrayIndex] === -1 ) heapArrayIndex += 1;
           if ( heapSortArray[heapArrayIndex] > heapTreeTop[2] ) {
@@ -773,7 +774,7 @@ export function heapSort(sortArray, heapSortArray, step2HeapSortArray, step3Heap
           heapTreeTop[2] = heapTreeRow4[3];
           heapTreeRow4[3] = -1;
           smallHeapSortStep += 1;
-          heapArrayIndex = 0;
+          heapArrayIndex = ( 9 - heapSortStep );
         } else if ( smallHeapSortStep === 2 ) {
           if ( heapSortArray[heapArrayIndex] === -1 ) heapArrayIndex += 1;
           if ( heapSortArray[heapArrayIndex] > heapTreeTop[2] ) {
