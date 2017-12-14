@@ -581,8 +581,8 @@ export function heapSort(sortArray, heapSortArray, step2HeapSortArray, step3Heap
 
       if ( heapSortStep === 1 ) {
         if ( smallHeapSortStep === 1 ) {
-          heapTreeTop[2] = heapTreeRow2[8];
-          heapTreeRow2[8] = -1;
+          heapTreeTop[2] = heapTreeRow2[2];
+          heapTreeRow2[2] = -1;
           smallHeapSortStep += 1;
         } else if ( smallHeapSortStep === 2 ) {
           heapSortArray[8] = heapTreeTop[2];
@@ -594,9 +594,9 @@ export function heapSort(sortArray, heapSortArray, step2HeapSortArray, step3Heap
         }
       }
 
-      if ( heapSortStep >= 2  && heapSortStep < 10 ) {
+      if ( heapSortStep > 1  && heapSortStep < 10 ) {
         if ( smallHeapSortStep === 1 ) {
-            if( heapSortStep === 2 ) heapTreeTop[2] = heapTreeRow2[2];
+            if( heapSortStep === 2 ) heapTreeTop[2] = heapTreeRow2[8];
             if( heapSortStep === 3 ) heapTreeTop[2] = heapTreeRow3[1];
             if( heapSortStep === 4 ) heapTreeTop[2] = heapTreeRow3[3];
             if( heapSortStep === 5 ) heapTreeTop[2] = heapTreeRow3[7];
@@ -605,7 +605,7 @@ export function heapSort(sortArray, heapSortArray, step2HeapSortArray, step3Heap
             if( heapSortStep === 8 ) heapTreeTop[2] = heapTreeRow4[1];
             if( heapSortStep === 9 ) heapTreeTop[2] = heapTreeRow4[3];
 
-            if( heapSortStep === 2 ) heapTreeRow2[2] = -1;
+            if( heapSortStep === 2 ) heapTreeRow2[8] = -1;
             if( heapSortStep === 3 ) heapTreeRow3[1] = -1;
             if( heapSortStep === 4 ) heapTreeRow3[3] = -1;
             if( heapSortStep === 5 ) heapTreeRow3[7] = -1;
