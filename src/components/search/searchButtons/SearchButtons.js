@@ -39,6 +39,7 @@ class SearchButtons extends React.Component {
     var breadthFirstTimeout;
     var depthFirstTimeout;
 
+
     if (targetFound === false && isRunning && searchAlgorithm.name === 'Linear Search') {
       linearTimeout = setTimeout (() => {
       this.props.linearSearch(searchArray, searchNumber, low, high, iterations);

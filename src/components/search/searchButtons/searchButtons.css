@@ -34,13 +34,12 @@
 
 .linear-search-button, .binary-search-button, .breadth-first-search-button, .depth-first-search-button {
   background-color: #0066ff;
-  width: 28%;
+  width: 24%;
   color: white;
   border-radius: 5px;
   margin-left: 0.5%;
   padding-top: 0px;
   padding-bottom: 0px;
-  width: 24%;
 }
 
 .speed-buttons {

@@ -11,23 +11,18 @@ import * as  actionQuickSort from './actionQuickSort';
 import * as  actionSelectionSort from './actionSelectionSort';
 
 
-let obj = {};
+let actionObj = {};
 
-obj = Object.assign(obj, actionTypeSet);
-obj = Object.assign(obj, actionBinarySearch);
-obj = Object.assign(obj, actionBreadthFirstSearch);
-obj = Object.assign(obj, actionLinearSearch);
-obj = Object.assign(obj, actionDepthFirstSearch);
-obj = Object.assign(obj, actionBubbleSort);
-obj = Object.assign(obj, actionHeapSort);
-obj = Object.assign(obj, actionInsertionSort);
-obj = Object.assign(obj, actionMergeSort);
-obj = Object.assign(obj, actionQuickSort);
-obj = Object.assign(obj, actionSelectionSort);
+actionObj = Object.assign(actionObj, actionBaseSet);
+actionObj = Object.assign(actionObj, actionBinarySearch);
+actionObj = Object.assign(actionObj, actionBreadthFirstSearch);
+actionObj = Object.assign(actionObj, actionLinearSearch);
+actionObj = Object.assign(actionObj, actionDepthFirstSearch);
+actionObj = Object.assign(actionObj, actionBubbleSort);
+actionObj = Object.assign(actionObj, actionHeapSort);
+actionObj = Object.assign(actionObj, actionInsertionSort);
+actionObj = Object.assign(actionObj, actionMergeSort);
+actionObj = Object.assign(actionObj, actionQuickSort);
+actionObj = Object.assign(actionObj, actionSelectionSort);
 
-const actionCreators = Object.assign({}, obj);
-
-
-console.log('inside ---- actionCreators');
-
-export default actionCreators;
+export const actionCreators = Object.assign({}, actionObj);
