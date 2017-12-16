@@ -107,8 +107,8 @@ export function heapSort(sortArray, heapSortArray, step2HeapSortArray, step3Heap
 
       if ( heapSortStep === 1 ) {
         if ( smallHeapSortStep === 1 ) {
-          heapTreeTop[2] = heapTreeRow2[8];
-          heapTreeRow2[8] = -1;
+          heapTreeTop[2] = heapTreeRow2[2];
+          heapTreeRow2[2] = -1;
           smallHeapSortStep += 1;
         } else if ( smallHeapSortStep === 2 ) {
           heapSortArray[8] = heapTreeTop[2];
@@ -120,185 +120,26 @@ export function heapSort(sortArray, heapSortArray, step2HeapSortArray, step3Heap
         }
       }
 
-      if ( heapSortStep === 2 ) {
+      if ( heapSortStep > 1  && heapSortStep < 10 ) {
         if ( smallHeapSortStep === 1 ) {
-          heapTreeTop[2] = heapTreeRow2[2];
-          heapTreeRow2[2] = -1;
-          smallHeapSortStep += 1;
-          heapArrayIndex = ( 9 - heapSortStep );
-        } else if ( smallHeapSortStep === 2 ) {
-          if ( heapSortArray[heapArrayIndex] === -1 ) heapArrayIndex += 1;
-          if ( heapSortArray[heapArrayIndex] > heapTreeTop[2] ) {
-            heapSortArray[heapArrayIndex - 1] = heapTreeTop[2];
-            smallHeapSortStep += 1;
-          }
-          if ( heapSortArray[heapArrayIndex] < heapTreeTop[2] ) {
-            heapSortArray[heapArrayIndex - 1] = heapSortArray[heapArrayIndex];
-            heapSortArray[heapArrayIndex] = -1;
-            heapArrayIndex += 1;
-          }
-        } else {
-          heapTreeTop[2] = -1;
-          heapSortStep += 1;
-          smallHeapSortStep = 1;
-          heapArrayIndex = 0;
-        }
-      }
+            if( heapSortStep === 2 ) heapTreeTop[2] = heapTreeRow2[8];
+            if( heapSortStep === 3 ) heapTreeTop[2] = heapTreeRow3[1];
+            if( heapSortStep === 4 ) heapTreeTop[2] = heapTreeRow3[3];
+            if( heapSortStep === 5 ) heapTreeTop[2] = heapTreeRow3[7];
+            if( heapSortStep === 6 ) heapTreeTop[2] = heapTreeRow3[9];
+            if( heapSortStep === 7 ) heapTreeTop[2] = heapTreeRow4[0];
+            if( heapSortStep === 8 ) heapTreeTop[2] = heapTreeRow4[1];
+            if( heapSortStep === 9 ) heapTreeTop[2] = heapTreeRow4[3];
 
-      if ( heapSortStep === 3 ) {
-        if ( smallHeapSortStep === 1 ) {
-          heapTreeTop[2] = heapTreeRow3[1];
-          heapTreeRow3[1] = -1;
-          smallHeapSortStep += 1;
-          heapArrayIndex = ( 9 - heapSortStep );
-        } else if ( smallHeapSortStep === 2 ) {
-          if ( heapSortArray[heapArrayIndex] === -1 ) heapArrayIndex += 1;
-          if ( heapSortArray[heapArrayIndex] > heapTreeTop[2] ) {
-            heapSortArray[heapArrayIndex - 1] = heapTreeTop[2];
-            smallHeapSortStep += 1;
-          }
-          if ( heapSortArray[heapArrayIndex] < heapTreeTop[2] ) {
-            heapSortArray[heapArrayIndex - 1] = heapSortArray[heapArrayIndex];
-            heapSortArray[heapArrayIndex] = -1;
-            heapArrayIndex += 1;
-          }
-        } else {
-          heapTreeTop[2] = -1;
-          heapSortStep += 1;
-          smallHeapSortStep = 1;
-          heapArrayIndex = 0;
-        }
-      }
+            if( heapSortStep === 2 ) heapTreeRow2[8] = -1;
+            if( heapSortStep === 3 ) heapTreeRow3[1] = -1;
+            if( heapSortStep === 4 ) heapTreeRow3[3] = -1;
+            if( heapSortStep === 5 ) heapTreeRow3[7] = -1;
+            if( heapSortStep === 6 ) heapTreeRow3[9] = -1;
+            if( heapSortStep === 7 ) heapTreeRow4[0] = -1;
+            if( heapSortStep === 8 ) heapTreeRow4[1] = -1;
+            if( heapSortStep === 9 ) heapTreeRow4[3] = -1;
 
-      if ( heapSortStep === 4 ) {
-        if ( smallHeapSortStep === 1 ) {
-          heapTreeTop[2] = heapTreeRow3[3];
-          heapTreeRow3[3] = -1;
-          smallHeapSortStep += 1;
-          heapArrayIndex = ( 9 - heapSortStep );
-        } else if ( smallHeapSortStep === 2 ) {
-          if ( heapSortArray[heapArrayIndex] === -1 ) heapArrayIndex += 1;
-          if ( heapSortArray[heapArrayIndex] > heapTreeTop[2] ) {
-            heapSortArray[heapArrayIndex - 1] = heapTreeTop[2];
-            smallHeapSortStep += 1;
-          }
-          if ( heapSortArray[heapArrayIndex] < heapTreeTop[2] ) {
-            heapSortArray[heapArrayIndex - 1] = heapSortArray[heapArrayIndex];
-            heapSortArray[heapArrayIndex] = -1;
-            heapArrayIndex += 1;
-          }
-        } else {
-          heapTreeTop[2] = -1;
-          heapSortStep += 1;
-          smallHeapSortStep = 1;
-          heapArrayIndex = 0;
-        }
-      }
-
-      if ( heapSortStep === 5 ) {
-        if ( smallHeapSortStep === 1 ) {
-          heapTreeTop[2] = heapTreeRow3[7];
-          heapTreeRow3[7] = -1;
-          smallHeapSortStep += 1;
-          heapArrayIndex = ( 9 - heapSortStep );
-        } else if ( smallHeapSortStep === 2 ) {
-          if ( heapSortArray[heapArrayIndex] === -1 ) heapArrayIndex += 1;
-          if ( heapSortArray[heapArrayIndex] > heapTreeTop[2] ) {
-            heapSortArray[heapArrayIndex - 1] = heapTreeTop[2];
-            smallHeapSortStep += 1;
-          }
-          if ( heapSortArray[heapArrayIndex] < heapTreeTop[2] ) {
-            heapSortArray[heapArrayIndex - 1] = heapSortArray[heapArrayIndex];
-            heapSortArray[heapArrayIndex] = -1;
-            heapArrayIndex += 1;
-          }
-        } else {
-          heapTreeTop[2] = -1;
-          heapSortStep += 1;
-          smallHeapSortStep = 1;
-          heapArrayIndex = 0;
-        }
-      }
-
-      if ( heapSortStep === 6 ) {
-        if ( smallHeapSortStep === 1 ) {
-          heapTreeTop[2] = heapTreeRow3[9];
-          heapTreeRow3[9] = -1;
-          smallHeapSortStep += 1;
-          heapArrayIndex = ( 9 - heapSortStep );
-        } else if ( smallHeapSortStep === 2 ) {
-          if ( heapSortArray[heapArrayIndex] === -1 ) heapArrayIndex += 1;
-          if ( heapSortArray[heapArrayIndex] > heapTreeTop[2] ) {
-            heapSortArray[heapArrayIndex - 1] = heapTreeTop[2];
-            smallHeapSortStep += 1;
-          }
-          if ( heapSortArray[heapArrayIndex] < heapTreeTop[2] ) {
-            heapSortArray[heapArrayIndex - 1] = heapSortArray[heapArrayIndex];
-            heapSortArray[heapArrayIndex] = -1;
-            heapArrayIndex += 1;
-          }
-        } else {
-          heapTreeTop[2] = -1;
-          heapSortStep += 1;
-          smallHeapSortStep = 1;
-          heapArrayIndex = 0;
-        }
-      }
-
-      if ( heapSortStep === 7 ) {
-        if ( smallHeapSortStep === 1 ) {
-          heapTreeTop[2] = heapTreeRow4[0];
-          heapTreeRow4[0] = -1;
-          smallHeapSortStep += 1;
-          heapArrayIndex = ( 9 - heapSortStep );
-        } else if ( smallHeapSortStep === 2 ) {
-          if ( heapSortArray[heapArrayIndex] === -1 ) heapArrayIndex += 1;
-          if ( heapSortArray[heapArrayIndex] > heapTreeTop[2] ) {
-            heapSortArray[heapArrayIndex - 1] = heapTreeTop[2];
-            smallHeapSortStep += 1;
-          }
-          if ( heapSortArray[heapArrayIndex] < heapTreeTop[2] ) {
-            heapSortArray[heapArrayIndex - 1] = heapSortArray[heapArrayIndex];
-            heapSortArray[heapArrayIndex] = -1;
-            heapArrayIndex += 1;
-          }
-        } else {
-          heapTreeTop[2] = -1;
-          heapSortStep += 1;
-          smallHeapSortStep = 1;
-          heapArrayIndex = 0;
-        }
-      }
-
-      if ( heapSortStep === 8 ) {
-        if ( smallHeapSortStep === 1 ) {
-          heapTreeTop[2] = heapTreeRow4[1];
-          heapTreeRow4[1] = -1;
-          smallHeapSortStep += 1;
-          heapArrayIndex = ( 9 - heapSortStep );
-        } else if ( smallHeapSortStep === 2 ) {
-          if ( heapSortArray[heapArrayIndex] === -1 ) heapArrayIndex += 1;
-          if ( heapSortArray[heapArrayIndex] > heapTreeTop[2] ) {
-            heapSortArray[heapArrayIndex - 1] = heapTreeTop[2];
-            smallHeapSortStep += 1;
-          }
-          if ( heapSortArray[heapArrayIndex] < heapTreeTop[2] ) {
-            heapSortArray[heapArrayIndex - 1] = heapSortArray[heapArrayIndex];
-            heapSortArray[heapArrayIndex] = -1;
-            heapArrayIndex += 1;
-          }
-        } else {
-          heapTreeTop[2] = -1;
-          heapSortStep += 1;
-          smallHeapSortStep = 1;
-          heapArrayIndex = 0;
-        }
-      }
-
-      if ( heapSortStep === 9 ) {
-        if ( smallHeapSortStep === 1 ) {
-          heapTreeTop[2] = heapTreeRow4[3];
-          heapTreeRow4[3] = -1;
           smallHeapSortStep += 1;
           heapArrayIndex = ( 9 - heapSortStep );
         } else if ( smallHeapSortStep === 2 ) {
