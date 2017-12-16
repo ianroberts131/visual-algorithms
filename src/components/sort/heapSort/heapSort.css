@@ -1,0 +1,199 @@
+/* Heap Sort CSS */
+.heap-sort-area {
+  height: 100%;
+}
+
+.heap-sort-box-area {
+  height: 22.5%;
+  margin-top: 1%;
+  text-align: center;
+  padding: 0;
+}
+
+.heap-sort-box-level-0, .heap-sort-box-level-1, .heap-sort-box-level-2, .heap-sort-box-level-3, .heap-sort-box-level-4 {
+  display: inline-block;
+  height: 100%;
+  color: white;
+  margin: 0.075em;
+  text-align: center;
+  font-size: 15px;
+  float: none;
+  padding: 0;
+}
+
+/* Center number within box vertically */
+.heap-sort-box-level-0:before, .heap-sort-box-level-1:before, .heap-sort-box-level-2:before, .heap-sort-box-level-3:before, .heap-sort-box-level-4:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.heap-sort-box-level-0 {
+  width: 8%;
+}
+
+.heap-sort-box-level-1 {
+  width: 24%;
+}
+
+.heap-sort-box-level-2 {
+  width: 48%;
+}
+
+.heap-sort-box-level-3 {
+  width: 96%;
+}
+
+.heap-sort-box-level-4 {
+  width: 96%;
+}
+
+.heap-unsorted {
+  background-color: blue;
+}
+
+.heap-sorted {
+  background-color: #00cc00;
+}
+
+.heap-hidden {
+  visibility: hidden;
+}
+
+.heap-top {
+  background-color: purple;
+}
+
+.heap-second {
+  background-color: red;
+}
+
+.heap-third {
+  background-color: orange;
+}
+
+.heap-fourth {
+  background-color: pink;
+}
+
+@media screen and (max-width: 1199px) {
+  .heap-sort-box-level-0, .heap-sort-box-level-1, .heap-sort-box-level-2, .heap-sort-box-level-3, .heap-sort-box-level-4 {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .heap-sort-box-level-0, .heap-sort-box-level-1, .heap-sort-box-level-2, .heap-sort-box-level-3, .heap-sort-box-level-4 {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .heap-sort-box-level-0, .heap-sort-box-level-1, .heap-sort-box-level-2, .heap-sort-box-level-3, .heap-sort-box-level-4 {
+    font-size: 10px;
+    margin: 0.05em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .heap-sort-box-level-0, .heap-sort-box-level-1, .heap-sort-box-level-2, .heap-sort-box-level-3, .heap-sort-box-level-4 {
+    font-size: 9px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .heap-sort-box-level-0, .heap-sort-box-level-1, .heap-sort-box-level-2, .heap-sort-box-level-3, .heap-sort-box-level-4 {
+    font-size: 8px;
+  }
+}
+
+.level-1-0 {
+  float: center;
+  margin-top: 2%;
+  margin-left: 12.5%;
+}
+
+.level-1-Center {
+  float: center;
+  margin-top: 2%;
+  margin-left: 8.333%;
+}
+
+.level-1-1 {
+  float: left;
+  margin-top: 2%;
+  margin-left: 8.333%;
+}
+
+.level-2-0 {
+  float: left;
+  margin-top: 2%;
+  margin-left: 9.375%;
+}
+
+.level-2-1 {
+  float: left;
+  margin-top: 2%;
+  margin-left: 6.25%;
+}
+
+.level-2-2 {
+  float: left;
+  margin-top: 2%;
+  margin-left: 2.0833%;
+}
+
+.level-2-3 {
+  float: left;
+  margin-top: 2%;
+  margin-left: 6.25%;
+}
+
+.level-3-0 {
+  float: left;
+  margin-top: 2%;
+  margin-left: 7.2917%;
+}
+
+.level-3-1 {
+  float: left;
+  margin-top: 2%;
+  margin-left: 4.1667%;
+}
+
+.level-3-2 {
+  float: left;
+  margin-top: 2%;
+  margin-left: 1.0417%;
+}
+
+.level-3-3 {
+  float: left;
+  margin-top: 2%;
+  margin-left: 4.1667%;
+}
+
+.level-3-4 {
+  float: left;
+  margin-top: 2%;
+  margin-left: 0;
+}
+
+.level-3-5 {
+  float: left;
+  margin-top: 2%;
+  margin-left: 4.1667%;
+}
+
+.level-3-6 {
+  float: left;
+  margin-top: 2%;
+  margin-left: 1.0417%;
+}
+
+.level-3-7 {
+  float: left;
+  margin-top: 2%;
+  margin-left: 4.1667%;
+}

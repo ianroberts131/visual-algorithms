@@ -32,9 +32,9 @@
   padding: 1%;
 }
 
-.linear-search-button, .binary-search-button {
+.linear-search-button, .binary-search-button, .breadth-first-search-button, .depth-first-search-button {
   background-color: #0066ff;
-  width: 30%;
+  width: 20%; /* updated from 30% */
   color: white;
   border-radius: 5px;
   margin-left: 0.5%;
@@ -71,7 +71,7 @@
     padding: 0.5%;
   }
   .linear-search-button, .binary-search-button {
-    width: 35%;
+    width: 30%;
   }
 }
 
@@ -82,8 +82,8 @@
   .button-size {
     font-size: 9px;
   }
-  .linear-search-button, .binary-search-button {
-    width: 40%;
+  .linear-search-button, .binary-search-button, .breadth-first-search-button, .depth-first-search-button {
+    width: 28%; /* updated from 35% */
   }
   .speed-button {
     width: 33%
@@ -97,8 +97,8 @@
   .button-size {
     font-size: 8px;
   }
-  .linear-search-button, .binary-search-button {
-    width: 49%;
+  .linear-search-button, .binary-search-button, .breadth-first-search-button, .depth-first-search-button {
+    width: 40%; /* updated from 45% */
   }
 }
 

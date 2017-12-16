@@ -10,6 +10,18 @@ export var linearSearch = {
   description: "A search algorithm that finds the position of a target value within an array (sorted or unsorted). It sequentially checks each element of the list for the target value until a match is found or until all the elements have been searched."
 }
 
+export var breadthFirstSearch = {
+  name: "Breadth First Search",
+  url: "breadth-first-search",
+  description: "A search algorithm for traversing or searching tree or graph data structures. It starts at the tree root and explores the neighbor nodes first, before moving to the next level neighbours."
+}
+
+export var depthFirstSearch = {
+  name: "Depth First Search",
+  url: "depth-first-search",
+  description: "A search algorithm for traversing or searching tree or graph data structures. One starts at the root and explores as far as possible along each branch before backtracking."
+}
+
 export var selectionSort = {
   name: "Selection Sort",
   url: "selection-sort",
@@ -53,4 +65,13 @@ export var quickSort = {
   worstCase: "O(n<sup>2</sup>)",
   bestCase: "O(n lg n)",
   averageCase: "O(n lg n)"
+}
+
+export var heapSort = {
+  name: "Heap Sort",
+  url: "heap-sort",
+  description: "A comparison-based sorting algorithm. Heapsort can be thought of as an improved selection sort. The improvement consists of the use of a heap data structure rather than a linear-time search to find the maximum. Like a selection sort, a heap sort divides its input into a sorted and an unsorted region, and it iteratively shrinks the unsorted region by extracting the largest element and moving that to the sorted region. The first step is building a heap.",
+  worstCase: "O(n log n)",
+  bestCase: "O(n)",
+  averageCase: "O(n log n)"
 }
