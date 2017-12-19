@@ -1,13 +1,12 @@
 import React from 'react';
-import { CSSTransitionGroup } from 'react-transition-group';
 import { Col } from 'react-bootstrap';
 
 import './heapSort.css';
 
 class HeapSort extends React.Component {
   render() {
-    const { sortArray, heapSortArray, step2HeapSortArray, step3HeapSortArray, heapTreeTop, heapTreeRow2, heapTreeRow3, heapTreeRow4, heapSortStep, smallHeapSortStep, heapArrayIndex, startHeapTree, finishBuildHeap, heapFinalSort, startHeapBuild } = this.props.sort;
-    const { intervalSpeed, speedString } = this.props.speed;
+    const { heapSortArray, heapTreeTop, heapTreeRow2, heapTreeRow3, heapTreeRow4, heapFinalSort } = this.props.sort;
+    //const { intervalSpeed, speedString } = this.props.speed;
     return (
       <div className="heap-sort-area">
         <Col xs={ 8 } xsOffset={ 2 } className="heap-sort-box-area">

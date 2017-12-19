@@ -152,11 +152,9 @@ export function mergeSort(mergeArray, mergePrior, mergePriorSorted, mergeArrayMa
       // Go through mergeArrayRight2 & mergeArrayRight3 and move items to
       // mergeArrayRight1, in order, until 1 of the arrays is empty
     } else if (mergePrior === 7 && mergePriorSorted === true) {
-          var min;
-          var index;
-          var destinationIndex = mergeArrayRight1.indexOf(-1);
-          var array1 = mergeArrayRight2.filter(number => number > -1);
-          var array2 = mergeArrayRight3.filter(number => number > -1);
+          destinationIndex = mergeArrayRight1.indexOf(-1);
+          array1 = mergeArrayRight2.filter(number => number > -1);
+          array2 = mergeArrayRight3.filter(number => number > -1);
           if (array1.length > 0 && array2.length > 0) {
               if (array1[0] < array2[0]) {
                 min = array1[0];
@@ -169,8 +167,8 @@ export function mergeSort(mergeArray, mergePrior, mergePriorSorted, mergeArrayMa
               }
               mergeArrayRight1[destinationIndex] = min;
           } else {
-            var finalArray = array1.concat(array2);
-            for (var i = 0; i < finalArray.length; i++) {
+            finalArray = array1.concat(array2);
+            for (i = 0; i < finalArray.length; i++) {
               mergeArrayRight1[destinationIndex] = finalArray[i];
               destinationIndex += 1;
             }
@@ -180,12 +178,10 @@ export function mergeSort(mergeArray, mergePrior, mergePriorSorted, mergeArrayMa
             mergePriorSorted = true;
           }
       } else if (mergePrior === 1 && mergePriorSorted === true) {
-          var min;
-          var index;
           mergeFinalSort = true;
-          var destinationIndex = mergeArrayMain.indexOf(-1);
-          var array1 = mergeArrayLeft1.filter(number => number > -1);
-          var array2 = mergeArrayRight1.filter(number => number > -1);
+          destinationIndex = mergeArrayMain.indexOf(-1);
+          array1 = mergeArrayLeft1.filter(number => number > -1);
+          array2 = mergeArrayRight1.filter(number => number > -1);
           if (array1.length > 0 && array2.length > 0) {
             if (array1[0] < array2[0]) {
               min = array1[0];
@@ -198,8 +194,8 @@ export function mergeSort(mergeArray, mergePrior, mergePriorSorted, mergeArrayMa
             }
             mergeArrayMain[destinationIndex] = min;
           } else {
-            var finalArray = array1.concat(array2);
-            for (var i = 0; i < finalArray.length; i++) {
+            finalArray = array1.concat(array2);
+            for (i = 0; i < finalArray.length; i++) {
               mergeArrayMain[destinationIndex] = finalArray[i];
               destinationIndex += 1
             }

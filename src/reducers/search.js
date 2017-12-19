@@ -3,7 +3,7 @@
 // 1. the action (info about what happened)
 // 2. copy of current state
 
-import { randomlyGenerateArray, buildMaxHeap, setUpHeapSearchArray, setUpTestMaxHeapArray, setUpDepthFirstTestMaxHeapArray, stepIndex } from '../helpers';
+import { randomlyGenerateArray, buildMaxHeap, setUpHeapSearchArray, setUpTestMaxHeapArray, setUpDepthFirstTestMaxHeapArray } from '../helpers';
 import { binarySearch, linearSearch, breadthFirstSearch, depthFirstSearch } from '../data/algorithms';
 
 // create an array for the grid
@@ -126,8 +126,8 @@ function search(state = searchState, action) {
       }
 
     case 'START_BREADTH_FIRST_SEARCH' :
-      var maxHeapSearchArray = buildMaxHeap(heapSearchArray);
-      var maxHeapSearchNumber = maxHeapSearchArray[Math.floor((Math.random() * 24) + 1)];
+      maxHeapSearchArray = buildMaxHeap(heapSearchArray);
+      maxHeapSearchNumber = maxHeapSearchArray[Math.floor((Math.random() * 24) + 1)];
       return {
         ...state,
         searchArray: setUpHeapSearchArray(searchArray, maxHeapSearchArray),
@@ -165,8 +165,8 @@ function search(state = searchState, action) {
       }
 
     case 'START_DEPTH_FIRST_SEARCH' :
-      var maxHeapSearchArray = buildMaxHeap(heapSearchArray);
-      var maxHeapSearchNumber = maxHeapSearchArray[Math.floor((Math.random() * 24) + 1)];
+      maxHeapSearchArray = buildMaxHeap(heapSearchArray);
+      maxHeapSearchNumber = maxHeapSearchArray[Math.floor((Math.random() * 24) + 1)];
         return {
           ...state,
           searchArray: setUpHeapSearchArray(searchArray, maxHeapSearchArray),

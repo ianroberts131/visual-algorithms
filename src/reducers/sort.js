@@ -3,7 +3,7 @@
 // 1. the action (info about what happened)
 // 2. copy of current state
 
-import { randomlyGenerateArray, firstHeapTree, buildMaxHeap } from '../helpers';
+import { randomlyGenerateArray } from '../helpers';
 import { selectionSort, insertionSort, bubbleSort, mergeSort, quickSort, heapSort } from '../data/algorithms';
 
 // create an array for the search area
@@ -328,7 +328,6 @@ function sort(state = sortState, action) {
 
     case 'START_HEAP_SORT' :
       var newHeapArray = randomlyGenerateArray(10, 100, false);
-      var holdHeapArray = newHeapArray;
         return {
           ...state,
           sortArray: newHeapArray,
@@ -364,7 +363,7 @@ function sort(state = sortState, action) {
         heapTreeRow4: action.heapTreeRow4,
         heapSortStep: action.heapSortStep,
         smallHeapSortStep: action.smallHeapSortStep,
-        heapArrayIndex: action.heapArrayIndex, 
+        heapArrayIndex: action.heapArrayIndex,
         startHeapTree: action.startHeapTree,
         finishBuildHeap: action.finishBuildHeap,
         isRunning: action.isRunning,

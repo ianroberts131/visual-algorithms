@@ -1,8 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
 import { Row, Col } from 'react-bootstrap';
-
-import PlayPauseButtons from '../../playPauseButtons/PlayPauseButtons';
 
 import './searchButtons.css';
 
@@ -14,7 +11,7 @@ class SearchButtons extends React.Component {
 
     const { searchArray, maxHeapSearchArray, testMaxHeapArray, stepIndex, searchNumber, low, high, iterations, isRunning, targetFound, searchAlgorithm, paused } = this.props.search;
 
-    const { intervalSpeed, speedString, regularActive, slowActive, fastActive } = this.props.speed;
+    const { intervalSpeed, regularActive, slowActive, fastActive } = this.props.speed;
 
     var regularSpeedClass = classNames({
       'button-size': true,

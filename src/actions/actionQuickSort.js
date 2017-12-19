@@ -20,7 +20,7 @@ export function quickSort(sortArray, currentlyChecking, quickPivotIndex, quickLo
         sortArray[quickHighIndex] = sortArray[currentlyChecking];
         sortArray[currentlyChecking] = temp;
 
-        if (quickHighIndex != currentlyChecking) {
+        if (quickHighIndex !== currentlyChecking) {
           quickSwapping = true;
           quickSwappedIndices = [quickHighIndex, currentlyChecking];
         }
@@ -31,7 +31,7 @@ export function quickSort(sortArray, currentlyChecking, quickPivotIndex, quickLo
     } else {
       quickPriorPivots.push(sortArray[quickPivotIndex]);
       // First, swap the pivot with the high index
-      var temp = sortArray[quickHighIndex];
+      temp = sortArray[quickHighIndex];
       sortArray[quickHighIndex] = sortArray[quickPivotIndex];
       sortArray[quickPivotIndex] = temp;
       quickSwapping = true;

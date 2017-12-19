@@ -14,10 +14,6 @@ export function randomlyGenerateArray(size, maxNumber, sorted=true) {
 const {floor} = Math;
 
 export function buildMaxHeap(array, compare = maxHeapAscendantAB) {
-  const {floor} = Math;
-	const count = array.length;
-	let end = count - 1;
-
 	maxHeapify(array, compare);
   return array;
 
@@ -32,7 +28,7 @@ export function buildMaxHeap(array, compare = maxHeapAscendantAB) {
 	    let start = floor((count - 2) / 2);
 	    while (start >= 0) {
 		    heapShiftDown(array, start, count - 1, compare);
-		    start = start - 1;
+		    start -= 1;
 	    }
     }
 
@@ -75,7 +71,7 @@ export function setUpHeapSearchArray(searchArray, maxHeapSearchArray) {
   for (var i = 0; i < 225; i++) {
     searchArray[i] = -1;
   }
-  for (var i = 0; i < 24; i++) {
+  for (i = 0; i < 24; i++) {
     var location = stepArray[i];
     searchArray[location] = maxHeapSearchArray[i];
   }
@@ -93,13 +89,13 @@ export function setUpTestMaxHeapArray() {
   for (var i = 15; i < 24; i++) {
     testMaxHeapArray.push(stepArray[i]);
   }
-  for (var i = 7; i < 15; i++) {
+  for (i = 7; i < 15; i++) {
     testMaxHeapArray.push(stepArray[i]);
   }
-  for (var i = 3; i < 7; i++) {
+  for (i = 3; i < 7; i++) {
     testMaxHeapArray.push(stepArray[i]);
   }
-  for (var i = 1; i < 3; i++) {
+  for (i = 1; i < 3; i++) {
     testMaxHeapArray.push(stepArray[i]);
   }
   testMaxHeapArray.push(stepArray[0]);
@@ -126,9 +122,6 @@ export function setUpDepthFirstTestMaxHeapArray() {
 
 //################### start sort
 export function step2HeapSort(step2Array, compare = maxHeapAscendantAB) {
-	const count = step2Array.length;
-	let end = count - 1;
-
 	maxHeapify(step2Array, compare);
 	return step2Array;
 }
@@ -142,7 +135,7 @@ export function step3HeapSort(step3Array, compare = maxHeapAscendantAB) {
 
 	while (end > 0) {
 		maxHeapSwapElems(step3Array, end, 0);
-		end = end - 1;
+		end -= 1;
 		heapShiftDown(step3Array, 0, end, compare);
 	}
 	return step3Array;

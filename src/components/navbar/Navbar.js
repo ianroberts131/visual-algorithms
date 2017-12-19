@@ -3,7 +3,6 @@ import { Link } from 'react-router';
 import { Col } from 'react-bootstrap';
 
 import './navbar.css';
-import { selectAlgoGroup } from '../../helpers'
 
 var classNames = require('classnames');
 

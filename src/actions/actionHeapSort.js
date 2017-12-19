@@ -44,15 +44,15 @@ export function heapSort(sortArray, heapSortArray, step2HeapSortArray, step3Heap
         if (heapSortStep > 9) {
            startHeapTree = false;
            heapSortStep = 0;
-           var  step2Array = [ heapTreeTop[5], heapTreeRow2[2], heapTreeRow2[8], heapTreeRow3[1], heapTreeRow3[3], heapTreeRow3[7], heapTreeRow3[9], heapTreeRow4[0], heapTreeRow4[1], heapTreeRow4[3] ]
-           var step2HeapSortArray = step2HeapSort(step2Array);
+           var step2Array = [ heapTreeTop[5], heapTreeRow2[2], heapTreeRow2[8], heapTreeRow3[1], heapTreeRow3[3], heapTreeRow3[7], heapTreeRow3[9], heapTreeRow4[0], heapTreeRow4[1], heapTreeRow4[3] ]
+           step2HeapSortArray = step2HeapSort(step2Array);
            heapSortArray = step2HeapSortArray;
         }
       }
   }
   // sort the heap tree itself
   if ( startHeapTree === false && finishBuildHeap === false ) {
-    var veiwedNumber = 0;
+    veiwedNumber = 0;
     veiwedNumber = step2HeapSortArray[heapSortStep];
       if ( smallHeapSortStep === 1 ) {
       heapTreeTop[9] = veiwedNumber;
@@ -81,16 +81,16 @@ export function heapSort(sortArray, heapSortArray, step2HeapSortArray, step3Heap
            startHeapTree = false;
            finishBuildHeap = true;
            heapSortStep = 0;
-           var  step3Array = [ heapTreeTop[5], heapTreeRow2[2], heapTreeRow2[8], heapTreeRow3[1], heapTreeRow3[3], heapTreeRow3[7], heapTreeRow3[9], heapTreeRow4[0], heapTreeRow4[1], heapTreeRow4[3] ]
-           var step3HeapSortArray = step3HeapSort(step3Array);
+           var step3Array = [ heapTreeTop[5], heapTreeRow2[2], heapTreeRow2[8], heapTreeRow3[1], heapTreeRow3[3], heapTreeRow3[7], heapTreeRow3[9], heapTreeRow4[0], heapTreeRow4[1], heapTreeRow4[3] ]
+           step3HeapSortArray = step3HeapSort(step3Array);
         }
       }
    }
 
    // Final sort from heap back to a sorted array low to high - left to right
    if ( startHeapTree === false && finishBuildHeap === true && isSorted === false ) {
-     var temp = 0;
-    if ( heapSortStep === 0 ) {
+
+     if ( heapSortStep === 0 ) {
       if ( smallHeapSortStep === 1 ) {
         heapTreeTop[2] = heapTreeTop[5];
         heapTreeTop[5] = -1;
