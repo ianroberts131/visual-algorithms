@@ -4,6 +4,7 @@ import InsertionSort from '../insertionSort/InsertionSort';
 import BubbleSort from '../bubbleSort/BubbleSort';
 import MergeSort from '../mergeSort/MergeSort';
 import QuickSort from '../quickSort/QuickSort';
+import HeapSort from '../heapSort/HeapSort';
 import { Col } from 'react-bootstrap';
 
 import './sortArea.css';
@@ -27,6 +28,9 @@ class SortArea extends React.Component {
         }
         { sortAlgorithm.name === "Quick Sort" &&
           <QuickSort {...this.props} />
+        }
+        { sortAlgorithm.name === "Heap Sort" &&
+          <HeapSort {...this.props} />
         }
       </Col>
     )
