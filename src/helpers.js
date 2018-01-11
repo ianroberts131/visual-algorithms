@@ -16,7 +16,6 @@ const {floor} = Math;
 export function buildMaxHeap(array, compare = maxHeapAscendantAB) {
 	maxHeapify(array, compare);
   return array;
-
 }
 
     function maxHeapAscendantAB(a, b) {
@@ -34,7 +33,6 @@ export function buildMaxHeap(array, compare = maxHeapAscendantAB) {
 
     function heapShiftDown(array, start, end, compare) {
 	    let root = start;
-
 	    while (root * 2 + 1 <= end) {
 		    const lChild = root * 2 + 1;
 		    const rChild = lChild + 1;
@@ -119,14 +117,10 @@ export function setUpDepthFirstTestMaxHeapArray() {
   return testMaxHeapArray;
 }
 
-
-//################### start sort
 export function step2HeapSort(step2Array, compare = maxHeapAscendantAB) {
 	maxHeapify(step2Array, compare);
 	return step2Array;
 }
-
-//################### start final sort to array
 
 export function step3HeapSort(step3Array, compare = maxHeapAscendantAB) {
 	const count = step3Array.length;
