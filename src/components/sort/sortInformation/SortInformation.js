@@ -12,7 +12,7 @@ class SortInformation extends React.Component {
           <p id="sort-algorithm-name" className="header"><strong>Algorithm: </strong>{ sortAlgorithm.name }</p>
           <p id="sort-algorithm-description">{ sortAlgorithm.description }</p>
         </Col>
-        <Col xs= { 6 } smOffset={ 1 } md={ 4 } mdOffset={ 2 } lg={ 2 } lgOffset={ 0 } className="sort-algorithm-details">
+        <Col xs={ 6 } smOffset={ 1 } md={ 4 } mdOffset={ 2 } lg={ 2 } lgOffset={ 0 } className="sort-algorithm-details">
           <p id="complexity-title" className="header">Complexity</p>
           <p className="complexity-detail" dangerouslySetInnerHTML={{__html: "Worst Case: " + sortAlgorithm.worstCase}}></p>
           <p className="complexity-detail" dangerouslySetInnerHTML={{__html: "Best Case: " + sortAlgorithm.bestCase}}></p>
