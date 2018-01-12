@@ -1,5 +1,4 @@
 import React from 'react';
-import { Col } from 'react-bootstrap';
 
 import './playPauseButtons.css';
 
@@ -28,13 +27,13 @@ class PlayPauseButtons extends React.Component {
         'disabled' : isSorted
       });
     } else if (this.props.location.pathname === '/search') {
-      var playButtonClass = classNames({
+      playButtonClass = classNames({
         'play' : true,
         'hide' : !searchIsPaused && searchIterations > 0 && !targetFound,
         'disabled' : searchIterations === 0 || targetFound
       });
 
-      var pauseButtonClass = classNames({
+      pauseButtonClass = classNames({
         'pause' : true,
         'hide' : searchIsPaused || searchIterations === 0 || targetFound,
         'disabled' : targetFound

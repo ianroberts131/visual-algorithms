@@ -6,7 +6,6 @@ import './mergeSort.css';
 class MergeSort extends React.Component {
   render() {
     const { mergeArrayMain, mergeArrayLeft1, mergeArrayLeft2, mergeArrayLeft3, mergeArrayLeft4, mergeArrayLeft5, mergeArrayLeft6, mergeArrayLeft7, mergeArrayRight1, mergeArrayRight2, mergeArrayRight3, mergeArrayRight4, mergeArrayRight5, mergeArrayRight6, mergeArrayRight7, mergeFinalSort } = this.props.sort;
-    const { intervalSpeed, speedString } = this.props.speed;
     return (
       <div className="merge-sort-area">
         <Col xs={ 8 } xsOffset={ 2 } className="merge-sort-box-area">
