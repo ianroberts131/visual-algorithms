@@ -1,7 +1,7 @@
 .grid-section {
   height: 100%;
   position: relative;
-  float: right;
+  float: center;
 }
 
 button:hover {
@@ -20,7 +20,7 @@ button:hover {
 .grid {
   display: inline-block;
   text-align: center;
-  height: 80%;
+  height: 70%;
   padding: 0;
 }
 

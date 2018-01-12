@@ -7,12 +7,12 @@ class Sidebar extends React.Component {
   render() {
     const { searchAlgorithm, searchNumber, iterations, low, high, index } = this.props.search;
     return (
-      <Col xs={ 12 } sm={ 4 } className="side-bar-section">
-          <Col xs={ 6 } sm={ 12 } className="algorithm-info">
+      <Col xs={ 12 } sm={ 12 } className="side-bar-section">
+          <Col xs={ 6 } sm={ 4 } className="algorithm-info">
             <p id="algorithm-name"><strong>Algorithm: </strong>{ searchAlgorithm.name }</p>
             <p id="description">{ searchAlgorithm.description }</p>
           </Col>
-          <Col xs={ 6 } sm={ 12 } className="iteration-info-container">
+          <Col xs={ 6 } sm={ 4 } className="iteration-info-container">
             <div className="iteration-info">
               <p className="iteration-info-item">Target Item <span>{ searchNumber }</span></p>
               <p className="iteration-info-item">Iterations <span>{ iterations }</span></p>
@@ -21,11 +21,11 @@ class Sidebar extends React.Component {
               <p className="iteration-info-item">Item located at index <span>{ index }</span></p>
             </div>
           </Col>
-          <Col xs={ 6 } sm={ 12 } className="iteration-info-container">
+          <Col xs={ 6 } sm={ 4 } className="complexity-info-container">
             <div>
               <p id="complexity-title" className="header">Complexity:</p>
             </div>
-            <div className="iteration-info">
+            <div className="complexity-info">
               <p className="complexity-detail" dangerouslySetInnerHTML={{__html: "Worst Case: " + searchAlgorithm.worstCase}}></p>
               <p className="complexity-detail" dangerouslySetInnerHTML={{__html: "Best Case: " + searchAlgorithm.bestCase}}></p>
               <p className="complexity-detail" dangerouslySetInnerHTML={{__html: "Average Case: " + searchAlgorithm.averageCase}}></p>

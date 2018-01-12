@@ -11,11 +11,11 @@ class SearchAlgorithms extends Component {
     return (
       <Row className="search-algo-row">
         <Col xs={ 12 } className="search-area">
+          <SearchButtons {...this.props} />
           <Sidebar {...this.props} />
-          <Col xs={ 12 } sm={ 8 } className="grid-section">
-            <SearchButtons {...this.props} />
-            <Grid {...this.props} />
-          </Col>
+        </Col>
+        <Col xs={ 12 } sm={ 12 } className="grid-section">
+          <Grid {...this.props} />
         </Col>
       </Row>
     );
