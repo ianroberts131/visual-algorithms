@@ -12,7 +12,15 @@ import * as  actionSelectionSort from './actionSelectionSort';
 
 let actionObj = {};
 
-actionObj = Object.assign(actionObj, actionBaseSet, actionBinarySearch, actionBreadthFirstSearch, actionLinearSearch, actionDepthFirstSearch,
-  actionBubbleSort, actionHeapSort, actionInsertionSort, actionMergeSort, actionQuickSort, actionSelectionSort );
-
-export const actionCreators = Object.assign({}, actionObj);
+export const actionCreators = Object.assign(actionObj,
+  actionBaseSet,
+  actionBinarySearch,
+  actionBreadthFirstSearch,
+  actionLinearSearch,
+  actionDepthFirstSearch,
+  actionBubbleSort,
+  actionHeapSort,
+  actionInsertionSort,
+  actionMergeSort,
+  actionQuickSort,
+  actionSelectionSort );
