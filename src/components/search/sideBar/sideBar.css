@@ -27,7 +27,7 @@
 .iteration-info-container {
   border: 2px solid #d9d9d9;
   background-color: white;
-  font-size: 20px;
+  font-size: 19px;
 }
 
 .iteration-info-item {
@@ -37,6 +37,32 @@
 }
 
 .iteration-info span {
+  float: right;
+}
+
+.header {
+  font-size: 30px;
+}
+
+.complexity-info-container {
+  border: 2px solid #d9d9d9;
+  background-color: white;
+  font-size: 20px;
+}
+
+#complexity-title {
+  margin: 0px;
+  padding-bottom: 2px;
+  padding-left: 2%;
+}
+
+.complexity-detail {
+  padding-left: 2%;
+  margin: 0;
+  font-size: 19px;
+}
+
+.complexity-info span {
   float: right;
 }
 

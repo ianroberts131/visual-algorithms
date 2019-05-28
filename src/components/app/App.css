@@ -15,8 +15,16 @@ body {
   height: 7%;
 }
 
-.sort-algo-row, .search-algo-row, .search-area {
+.sort-algo-row {
+  height: 70%;
+}
+
+.search-algo-row{
   height: 90%;
+}
+
+.search-area {
+  height: 50%;
 }
 
 .sort-section {
